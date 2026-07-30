@@ -1,0 +1,18 @@
+{
+  "name": "anime-top-2026-astro",
+  "version": "5.0.0",
+  "description": "Аниме Топ 2026 — мигрировано на Astro",
+  "private": true,
+  "type": "module",
+  "scripts": {
+    "dev": "astro dev",
+    "build": "astro build",
+    "preview": "astro preview",
+    "start": "astro dev"
+  },
+  "dependencies": {
+    "@tailwindcss/vite": "^4.3.3",
+    "astro": "^5.0.0",
+    "tailwindcss": "^4.3.3"
+  }
+}

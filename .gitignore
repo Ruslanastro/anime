@@ -1,0 +1,35 @@
+# ОС и редакторы
+.DS_Store
+Thumbs.db
+*.swp
+*~
+
+# IDE
+.idea/
+.vscode/
+*.code-workspace
+
+# Логи и временные файлы
+*.log
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+
+# Зависимости (если когда-нибудь появятся)
+node_modules/
+package-lock.json
+yarn.lock
+
+# Сборки (пока нет, но на будущее)
+dist/
+build/
+.cache/
+
+# Личные заметки
+NOTES.md
+private/
+*.bak
+
+# Не коммитим большие бинарные файлы, если они не являются частью дизайна
+# (изображения в images/ и фон — коммитим осознанно)
+.aider*

@@ -1,0 +1,32 @@
+---
+// TabNav.astro
+// Навигация по вкладкам с анимированным подчёркиванием
+---
+
+<div class="max-w-7xl mx-auto px-6 pt-8">
+  <div class="flex flex-wrap gap-2 mb-8 relative" id="nav-tabs">
+    <button class="nav-tab tab-active px-6 py-2.5 rounded-2xl text-sm font-semibold flex items-center gap-x-2" id="tab-popularity" data-tab="popularity">
+      <i class="fa-solid fa-chart-line"></i>
+      <span>Популярность</span>
+    </button>
+    <button class="nav-tab px-6 py-2.5 rounded-2xl text-sm font-semibold flex items-center gap-x-2 hover:bg-white/5" id="tab-imba" data-tab="imba">
+      <i class="fa-solid fa-fist-raised"></i>
+      <span>Самые имба ГГ</span>
+    </button>
+    <button class="nav-tab px-6 py-2.5 rounded-2xl text-sm font-semibold flex items-center gap-x-2 hover:bg-white/5" id="tab-characters" data-tab="characters">
+      <i class="fa-solid fa-users"></i>
+      <span>Лучшие персонажи</span>
+    </button>
+    <button class="nav-tab px-6 py-2.5 rounded-2xl text-sm font-semibold flex items-center gap-x-2 hover:bg-white/5" id="tab-ecchi" data-tab="ecchi">
+      <i class="fa-solid fa-fire"></i>
+      <span>Самый экки / интим</span>
+    </button>
+    <button class="nav-tab px-6 py-2.5 rounded-2xl text-sm font-semibold flex items-center gap-x-2 hover:bg-white/5" id="tab-cute" data-tab="cute">
+      <i class="fa-solid fa-smile-beam"></i>
+      <span>Милые герои</span>
+    </button>
+
+    <!-- Анимированное подчёркивание активной вкладки -->
+    <div id="tab-underline" class="absolute bottom-0 h-0.5 bg-violet-400 transition-all duration-300 ease-out rounded-full"></div>
+  </div>
+</div>

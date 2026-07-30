@@ -1,0 +1,17 @@
+---
+// SearchBar.astro
+// Компонент поиска с счётчиком результатов
+export interface Props {
+  tabId: string;
+  placeholder?: string;
+}
+
+const { tabId, placeholder = 'Поиск...' } = Astro.props;
+---
+
+<div class="mb-4 flex items-center gap-3">
+  <input type="text" id={`search-${tabId}`} placeholder={placeholder}
+         class="search-input flex-1 rounded-2xl px-5 py-3 text-sm"
+         data-search={tabId}>
+  <div id={`count-${tabId}`} class="text-sm text-[var(--text-muted)] min-w-[90px] text-right"></div>
+</div>

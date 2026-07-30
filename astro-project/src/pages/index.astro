@@ -1,0 +1,137 @@
+---
+// index.astro
+// Главная страница — Аниме Топ 2026
+import BaseLayout from '../layouts/BaseLayout.astro';
+import Header from '../components/Header.astro';
+import TabNav from '../components/TabNav.astro';
+import SearchBar from '../components/SearchBar.astro';
+import AnimeCard from '../components/AnimeCard.astro';
+import InfoCard from '../components/InfoCard.astro';
+import AnimeDetail from '../components/AnimeDetail.astro';
+import CharacterModal from '../components/CharacterModal.astro';
+import Footer from '../components/Footer.astro';
+
+import { animeData, imbaData, charactersData, ecchiData, cuteData } from '../data/animeData.js';
+---
+
+<BaseLayout>
+  <Header />
+  <TabNav />
+
+  <div class="max-w-7xl mx-auto px-6 pb-16">
+
+    <!-- POPULARITY TAB -->
+    <div id="content-popularity">
+      <div class="flex items-end justify-between mb-6">
+        <div>
+          <h2 id="popularity-title" class="text-4xl font-bold tracking-tighter section-header">Топ по популярности</h2>
+          <p id="popularity-subtitle" class="text-[var(--text-muted)] mt-1">По количеству участников на MyAnimeList (май 2026)</p>
+        </div>
+        <div class="text-right">
+          <div class="text-sm text-[var(--text-muted)]">Всего тайтлов</div>
+          <div class="text-3xl font-bold text-violet-400">54</div>
+        </div>
+      </div>
+
+      <!-- Sort controls -->
+      <div class="mb-4 flex items-center gap-2">
+        <span class="text-sm text-[var(--text-muted)] mr-1">Сортировка:</span>
+        <button id="sort-rating"
+                class="px-4 py-1.5 text-sm rounded-xl border border-[var(--border)] bg-[var(--card)]/80 hover:bg-[var(--card)] active:bg-[var(--card)]">По рейтингу MAL</button>
+        <button id="sort-cozy"
+                class="px-4 py-1.5 text-sm rounded-xl border border-[var(--border)] hover:bg-[var(--card)]/80 active:bg-[var(--card)]">По уютности</button>
+      </div>
+
+      <SearchBar tabId="popularity" placeholder="Поиск по названию или жанру..." />
+
+      <div class="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 xl:grid-cols-5 2xl:grid-cols-6 gap-5" id="grid-popularity">
+        {animeData.map((anime, i) => (
+          <AnimeCard anime={anime} index={i} />
+        ))}
+      </div>
+
+      <AnimeDetail />
+    </div>
+
+    <!-- IMBA TAB -->
+    <div id="content-imba" class="hidden">
+      <div class="mb-6">
+        <h2 class="text-4xl font-bold tracking-tighter section-header">Топ самых имба главных героев</h2>
+        <p class="text-[var(--text-muted)] mt-2">По уровню силы, развитию и влиянию на мир</p>
+      </div>
+      <SearchBar tabId="imba" placeholder="Поиск героя или аниме..." />
+      <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-5" id="grid-imba">
+        {imbaData.map((hero, i) => (
+          <InfoCard type="imba" data={hero} index={i} />
+        ))}
+      </div>
+    </div>
+
+    <!-- CHARACTERS TAB -->
+    <div id="content-characters" class="hidden">
+      <div class="mb-6">
+        <h2 class="text-4xl font-bold tracking-tighter section-header">Лучшие персонажи</h2>
+        <p class="text-[var(--text-muted)] mt-2">Самые запоминающиеся и любимые герои из наших тайтлов</p>
+      </div>
+      <SearchBar tabId="characters" placeholder="Поиск персонажа..." />
+      <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-5" id="grid-characters">
+        {charactersData.map((char, i) => (
+          <InfoCard type="characters" data={char} index={i} />
+        ))}
+      </div>
+    </div>
+
+    <!-- ECCHI TAB -->
+    <div id="content-ecchi" class="hidden">
+      <div class="mb-6">
+        <div class="flex items-center gap-x-3">
+          <h2 class="text-4xl font-bold tracking-tighter section-header">Самый экки / интим</h2>
+          <div class="px-3 py-1 bg-red-500/20 text-red-400 text-xs font-bold rounded-full">18+</div>
+        </div>
+        <p class="text-[var(--text-muted)] mt-2">По уровню fanservice и откровенности (на основе отзывов и репутации тайтлов)</p>
+      </div>
+      <SearchBar tabId="ecchi" placeholder="Поиск тайтла..." />
+      <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-5" id="grid-ecchi">
+        {ecchiData.map((item, i) => (
+          <InfoCard type="ecchi" data={item} index={i} />
+        ))}
+      </div>
+
+      <div class="mt-8 p-4 bg-red-950/30 border border-red-500/30 rounded-2xl text-sm text-red-300">
+        <i class="fa-solid fa-exclamation-triangle mr-2"></i>
+        <strong>Внимание:</strong> "Гарем рабов в лабиринте другого мира" — один из самых explicit isekai. Содержит очень детальные сцены (включая uncensored OVA). Рекомендуется только взрослой аудитории.
+      </div>
+    </div>
+
+    <!-- CUTE TAB -->
+    <div id="content-cute" class="hidden">
+      <div class="mb-6">
+        <div class="flex items-center gap-x-3">
+          <h2 class="text-4xl font-bold tracking-tighter section-header">Милые герои</h2>
+          <div class="px-3 py-1 bg-amber-500/20 text-amber-400 text-xs font-bold rounded-full">Wholesome</div>
+        </div>
+        <p class="text-[var(--text-muted)] mt-2">Тайтлы с особенно очаровательными, милыми и позитивными персонажами — детям и взрослым</p>
+      </div>
+      <SearchBar tabId="cute" placeholder="Поиск милого героя или тайтла..." />
+      <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-5" id="grid-cute">
+        {cuteData.map((item, i) => (
+          <InfoCard type="cute" data={item} index={i} />
+        ))}
+      </div>
+
+      <div class="mt-8 p-4 bg-amber-950/30 border border-amber-500/30 rounded-2xl text-sm text-amber-300">
+        <i class="fa-solid fa-info-circle mr-2"></i>
+        <strong>Примечание:</strong> Здесь собраны тайтлы, где главные или важные персонажи выглядят особенно мило и вызывают тёплые эмоции. Многие из них — комедии или истории про детей/подростков с позитивным уклоном.
+      </div>
+    </div>
+
+  </div>
+
+  <Footer />
+  <CharacterModal />
+
+  <!-- Client-side scripts -->
+  <script>
+    import('../scripts/main.js');
+  </script>
+</BaseLayout>
