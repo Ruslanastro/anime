@@ -5,6 +5,8 @@ export interface Props {
   title?: string;
 }
 
+import '../styles/global.css';
+
 const { title = 'Аниме Топ • 2026' } = Astro.props;
 ---
 
@@ -18,8 +20,7 @@ const { title = 'Аниме Топ • 2026' } = Astro.props;
   <!-- Font Awesome -->
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" />
   
-  <!-- Global Styles (includes Tailwind via @import) -->
-  <link rel="stylesheet" href="/src/styles/global.css" />
+  <!-- Global Styles imported in frontmatter -->
 </head>
 <body data-parallax="hero">
   <slot />

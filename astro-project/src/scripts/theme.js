@@ -3,6 +3,13 @@
  * Логика тёмной/светлой темы с сохранением в localStorage
  */
 
+function lsSet(key, val) {
+    try { localStorage.setItem(key, val); } catch (e) { /* private browsing */ }
+}
+function lsGet(key, def) {
+    try { return localStorage.getItem(key) || def; } catch (e) { return def; }
+}
+
 export function setTheme(theme) {
     const body = document.body;
     const darkBtn = document.getElementById('dark-btn');
@@ -13,18 +20,18 @@ export function setTheme(theme) {
         body.classList.add('dark');
         if (darkBtn) darkBtn.classList.add('bg-white/10');
         if (lightBtn) lightBtn.classList.remove('bg-white/10');
-        localStorage.setItem('theme', 'dark');
+        lsSet('theme', 'dark');
     } else {
         body.classList.remove('dark');
         body.classList.add('light');
         if (lightBtn) lightBtn.classList.add('bg-white/10');
         if (darkBtn) darkBtn.classList.remove('bg-white/10');
-        localStorage.setItem('theme', 'light');
+        lsSet('theme', 'light');
     }
 }
 
 export function loadTheme() {
-    const saved = localStorage.getItem('theme') || 'dark';
+    const saved = lsGet('theme', 'dark');
     setTheme(saved);
 }
 

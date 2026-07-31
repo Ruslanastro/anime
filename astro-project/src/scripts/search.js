@@ -1,20 +1,12 @@
 /**
  * search.js
- * Поиск с debounce по всем вкладкам
+ * Поиск с debounce и сортировка — работают через DOM, без ререндера.
  */
 
-import { animeData, imbaData, charactersData, ecchiData, cuteData } from '../data/animeData.js';
-import { renderPopularityGrid, renderImbaGrid, renderCharactersGrid, renderEcchiGrid, renderCuteGrid } from './render.js';
+import { filterGrid, sortPopularityGrid } from './render.js';
 
+const SORT_ACTIVE_CLASSES = ['bg-[var(--card)]', 'border-[var(--accent)]/30'];
 let searchTimeout = null;
-
-const tabConfig = {
-    popularity: { data: animeData, render: renderPopularityGrid, searchFields: ['title', 'genre'] },
-    imba: { data: imbaData, render: renderImbaGrid, searchFields: ['name', 'anime', 'desc', 'power'] },
-    characters: { data: charactersData, render: renderCharactersGrid, searchFields: ['name', 'anime', 'desc'] },
-    ecchi: { data: ecchiData, render: renderEcchiGrid, searchFields: ['title', 'reason'] },
-    cute: { data: cuteData, render: renderCuteGrid, searchFields: ['title', 'reason'] }
-};
 
 export function filterCurrentTab() {
     const activeTab = document.querySelector('.tab-active');
@@ -22,37 +14,12 @@ export function filterCurrentTab() {
 
     const tabId = activeTab.id.replace('tab-', '');
     const searchInput = document.getElementById(`search-${tabId}`);
-
     if (!searchInput) return;
 
-    const query = searchInput.value.toLowerCase().trim();
-
-    const config = tabConfig[tabId];
-    if (!config) return;
-
-    const data = config.data;
-    let filtered = data;
-
-    if (query) {
-        filtered = data.filter(item =>
-            config.searchFields.some(field =>
-                item[field] && item[field].toLowerCase().includes(query)
-            )
-        );
-    }
-
-    config.render(filtered);
-
-    const countEl = document.getElementById(`count-${tabId}`);
-    if (countEl) {
-        countEl.textContent = filtered.length < data.length
-            ? `${filtered.length} / ${data.length}`
-            : `${data.length}`;
-    }
+    filterGrid(tabId, searchInput.value);
 }
 
 export function initSearch() {
-    // Навешиваем события на все поисковые поля с debounce
     document.querySelectorAll('[id^="search-"]').forEach(input => {
         input.addEventListener('input', () => {
             clearTimeout(searchTimeout);
@@ -62,20 +29,17 @@ export function initSearch() {
 }
 
 export function setPopularitySort(mode) {
-    window.popularitySortMode = mode;
-
     const ratingBtn = document.getElementById('sort-rating');
     const cozyBtn = document.getElementById('sort-cozy');
+    const membersBtn = document.getElementById('sort-members');
 
-    if (ratingBtn && cozyBtn) {
-        const activeClasses = ['bg-[var(--card)]', 'border-[var(--accent)]/30'];
-        if (mode === 'rating') {
-            ratingBtn.classList.add(...activeClasses);
-            cozyBtn.classList.remove(...activeClasses);
-        } else {
-            cozyBtn.classList.add(...activeClasses);
-            ratingBtn.classList.remove(...activeClasses);
-        }
+    if (ratingBtn && cozyBtn && membersBtn) {
+        ratingBtn.classList.remove(...SORT_ACTIVE_CLASSES);
+        cozyBtn.classList.remove(...SORT_ACTIVE_CLASSES);
+        membersBtn.classList.remove(...SORT_ACTIVE_CLASSES);
+        if (mode === 'rating') ratingBtn.classList.add(...SORT_ACTIVE_CLASSES);
+        else if (mode === 'cozy') cozyBtn.classList.add(...SORT_ACTIVE_CLASSES);
+        else membersBtn.classList.add(...SORT_ACTIVE_CLASSES);
     }
 
     const titleEl = document.getElementById('popularity-title');
@@ -85,29 +49,24 @@ export function setPopularitySort(mode) {
         if (mode === 'cozy') {
             titleEl.textContent = 'Топ по уютности';
             subtitleEl.textContent = 'Самые расслабленные и wholesome тайтлы';
+        } else if (mode === 'members') {
+            titleEl.textContent = 'Топ по участникам';
+            subtitleEl.textContent = 'По количеству участников на MyAnimeList (июль 2026)';
         } else {
-            titleEl.textContent = 'Топ по популярности';
-            subtitleEl.textContent = 'По количеству участников на MyAnimeList (май 2026)';
+            titleEl.textContent = 'Топ по рейтингу MAL';
+            subtitleEl.textContent = 'По оценке MyAnimeList (июль 2026)';
         }
     }
 
-    const searchInput = document.getElementById('search-popularity');
-    const query = searchInput ? searchInput.value.toLowerCase().trim() : '';
-    let filtered = null;
-    if (query) {
-        const data = animeData || [];
-        filtered = data.filter(item =>
-            (item.title && item.title.toLowerCase().includes(query)) ||
-            (item.genre && item.genre.toLowerCase().includes(query))
-        );
-    }
-    renderPopularityGrid(filtered);
+    sortPopularityGrid(mode);
 }
 
 export function initSortButtons() {
     const ratingBtn = document.getElementById('sort-rating');
     const cozyBtn = document.getElementById('sort-cozy');
+    const membersBtn = document.getElementById('sort-members');
 
     if (ratingBtn) ratingBtn.addEventListener('click', () => setPopularitySort('rating'));
     if (cozyBtn) cozyBtn.addEventListener('click', () => setPopularitySort('cozy'));
+    if (membersBtn) membersBtn.addEventListener('click', () => setPopularitySort('members'));
 }

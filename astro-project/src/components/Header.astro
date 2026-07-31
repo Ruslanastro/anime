@@ -7,21 +7,32 @@
   <div class="max-w-7xl mx-auto px-6 py-5 flex items-center justify-between">
     <div class="flex items-center gap-x-4 cursor-pointer select-none hover:opacity-90 active:opacity-75 transition-opacity" 
          id="logo-link"
-         title="Перейти на главную">
+         title="Перейти на главную"
+         tabindex="0"
+         role="button"
+         onkeydown="if (event.key === 'Enter' || event.key === ' ') { event.preventDefault(); this.click(); }">
       <div class="w-12 h-12 bg-gradient-to-br from-violet-600 to-fuchsia-500 rounded-2xl flex items-center justify-center">
         <i class="fa-solid fa-tv text-white text-3xl"></i>
       </div>
       <div>
         <h1 class="text-3xl font-bold tracking-tighter section-header">Аниме Топ 2026</h1>
-        <p class="text-sm text-[var(--text-muted)] -mt-1">54 тайтла • MyAnimeList • Май 2026</p>
+        <p class="text-sm text-[var(--text-muted)] -mt-1">55 тайтлов • MyAnimeList • Июль 2026</p>
       </div>
     </div>
 
     <div class="flex items-center gap-x-4">
+      <!-- Random Anime Button -->
+      <button id="random-btn"
+              class="px-4 py-1.5 rounded-xl text-sm font-medium flex items-center gap-x-2 bg-[var(--card)] border border-[var(--border)] hover:border-[var(--accent)]/40 hover:bg-[var(--card-hover)] active:scale-95 transition-all"
+              title="Случайное аниме">
+        <i class="fa-solid fa-dice text-[var(--accent)]"></i>
+        <span class="hidden sm:inline">Случайное</span>
+      </button>
+
       <!-- Theme Toggle -->
       <div class="flex items-center bg-[var(--card)] rounded-2xl p-1 border border-[var(--border)]">
         <button id="dark-btn"
-                class="px-4 py-1.5 rounded-xl text-sm font-medium flex items-center gap-x-2 bg-white/10 dark:bg-white/10">
+                class="px-4 py-1.5 rounded-xl text-sm font-medium flex items-center gap-x-2 bg-white/10">
           <i class="fa-solid fa-moon"></i>
           <span>Тёмная</span>
         </button>

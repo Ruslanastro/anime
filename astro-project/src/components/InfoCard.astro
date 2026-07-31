@@ -1,92 +1,80 @@
 ---
-// InfoCard.astro
-// Универсальная карточка для вкладок imba, characters, ecchi, cute
-export interface Props {
-  type: 'imba' | 'characters' | 'ecchi' | 'cute';
-  data: Record<string, any>;
-  index?: number;
-  extraClasses?: string;
-}
-
 const { type, data, index = 0, extraClasses = '' } = Astro.props;
-
-let innerHTML = '';
 let cardExtra = extraClasses;
-
-switch (type) {
-  case 'imba':
-    innerHTML = `
-      <div class="flex justify-between items-start mb-3">
-        <div>
-          <div class="font-bold text-xl">${data.name}</div>
-          <div class="text-violet-400 text-sm">${data.anime}</div>
-        </div>
-        <div class="text-right">
-          <div class="text-3xl font-bold text-violet-400">${data.level}</div>
-          <div class="text-[10px] text-[var(--text-muted)] -mt-1">POWER</div>
-        </div>
-      </div>
-      <div class="text-sm text-[var(--text-muted)] mb-3">${data.desc}</div>
-      <div class="text-xs px-3 py-1 bg-violet-500/10 text-violet-400 rounded-full inline-block">
-        ${data.power}
-      </div>
-    `;
-    break;
-
-  case 'characters':
-    innerHTML = `
-      <div class="flex items-center gap-x-4">
-        <div class="w-14 h-14 bg-gradient-to-br from-violet-500 to-fuchsia-500 rounded-2xl flex-shrink-0 flex items-center justify-center text-2xl text-white">
-          <i class="fa-solid fa-user"></i>
-        </div>
-        <div class="flex-1 min-w-0">
-          <div class="font-bold text-lg">${data.name}</div>
-          <div class="text-xs text-[var(--text-muted)]">${data.anime}</div>
-          <div class="mt-2 text-sm text-[var(--text-muted)] line-clamp-2">${data.desc}</div>
-          <div class="mt-3 flex items-center gap-x-2">
-            <div class="flex-1 h-1.5 bg-[var(--border)] rounded-full overflow-hidden">
-              <div class="h-1.5 bg-gradient-to-r from-violet-500 to-fuchsia-500 rounded-full" style="width: ${data.love}%"></div>
-            </div>
-            <span class="text-xs font-mono text-violet-400">${data.love}</span>
-          </div>
-        </div>
-      </div>
-    `;
-    break;
-
-  case 'ecchi':
-    if (index === 0) cardExtra += ' ring-2 ring-red-500';
-    innerHTML = `
-      <div class="flex items-start justify-between mb-3">
-        <div class="font-bold text-lg leading-tight">${data.title}</div>
-        ${index === 0 ? '<div class="px-2 py-0.5 bg-red-500 text-white text-[10px] font-bold rounded">№1</div>' : ''}
-      </div>
-      <div class="text-sm text-[var(--text-muted)] mb-4">${data.reason}</div>
-      <div class="flex items-center justify-between">
-        <div>
-          <div class="text-xs text-red-400">EXPLICIT LEVEL</div>
-          <div class="font-mono text-2xl font-bold text-red-400">${data.level}</div>
-        </div>
-        ${data.note ? `<div class="text-[10px] px-2 py-1 bg-red-500/10 text-red-400 rounded">${data.note}</div>` : ''}
-      </div>
-    `;
-    break;
-
-  case 'cute':
-    innerHTML = `
-      <div class="font-bold text-lg mb-2">${data.title}</div>
-      <div class="text-sm text-[var(--text-muted)] mb-3">${data.reason}</div>
-      <div class="flex items-center justify-between text-xs">
-        <div class="text-amber-400">МИЛОТА: ${data.cute}</div>
-        <div class="px-2 py-0.5 bg-amber-500/10 text-amber-400 rounded">${data.note}</div>
-      </div>
-    `;
-    break;
-}
+if (type === 'ecchi' && index === 0) cardExtra += ' ring-2 ring-red-500';
 ---
 
-<div class="info-card rounded-3xl p-5 border border-[var(--border)] {cardExtra} card-stagger" 
-     style="animation-delay: {index * 40}ms"
-     data-info-type={type}
-     set:html={innerHTML}>
+<div class={`info-card rounded-3xl p-5 border border-[var(--border)]${cardExtra ? ' ' + cardExtra : ''} card-stagger`}
+     style={`animation-delay: ${index * 40}ms`}
+     data-info-type={type}>
+
+  {type === 'imba' &&
+    <div class="flex justify-between items-start mb-3">
+      <div>
+        <div class="font-bold text-xl">{data.name}</div>
+        <div class="text-violet-400 text-sm">{data.anime}</div>
+      </div>
+      <div class="text-right">
+        <div class="text-3xl font-bold text-violet-400">{data.level}</div>
+        <div class="text-[10px] text-[var(--text-muted)] -mt-1">POWER</div>
+      </div>
+    </div>
+  }
+  {type === 'imba' &&
+    <div class="text-sm text-[var(--text-muted)] mb-3">{data.desc}</div>
+  }
+  {type === 'imba' &&
+    <div class="text-xs px-3 py-1 bg-violet-500/10 text-violet-400 rounded-full inline-block">{data.power}</div>
+  }
+
+  {type === 'characters' &&
+    <div class="flex items-center gap-x-4">
+      <div class="w-14 h-14 bg-gradient-to-br from-violet-500 to-fuchsia-500 rounded-2xl flex-shrink-0 flex items-center justify-center text-2xl text-white">
+        <i class="fa-solid fa-user"></i>
+      </div>
+      <div class="flex-1 min-w-0">
+        <div class="font-bold text-lg">{data.name}</div>
+        <div class="text-xs text-[var(--text-muted)]">{data.anime}</div>
+        <div class="mt-2 text-sm text-[var(--text-muted)] line-clamp-2">{data.desc}</div>
+        <div class="mt-3 flex items-center gap-x-2">
+          <div class="flex-1 h-1.5 bg-[var(--border)] rounded-full overflow-hidden">
+            <div class="h-1.5 bg-gradient-to-r from-violet-500 to-fuchsia-500 rounded-full" style={`width: ${data.love}%`}></div>
+          </div>
+          <span class="text-xs font-mono text-violet-400">{data.love}</span>
+        </div>
+      </div>
+    </div>
+  }
+
+  {type === 'ecchi' &&
+    <div class="flex items-start justify-between mb-3">
+      <div class="font-bold text-lg leading-tight">{data.title}</div>
+      {index === 0 && <div class="px-2 py-0.5 bg-red-500 text-white text-[10px] font-bold rounded">№1</div>}
+    </div>
+  }
+  {type === 'ecchi' &&
+    <div class="text-sm text-[var(--text-muted)] mb-4">{data.reason}</div>
+  }
+  {type === 'ecchi' &&
+    <div class="flex items-center justify-between">
+      <div>
+        <div class="text-xs text-red-400">EXPLICIT LEVEL</div>
+        <div class="font-mono text-2xl font-bold text-red-400">{data.level}</div>
+      </div>
+      {data.note && <div class="text-[10px] px-2 py-1 bg-red-500/10 text-red-400 rounded">{data.note}</div>}
+    </div>
+  }
+
+  {type === 'cute' &&
+    <div class="font-bold text-lg mb-2">{data.title}</div>
+  }
+  {type === 'cute' &&
+    <div class="text-sm text-[var(--text-muted)] mb-3">{data.reason}</div>
+  }
+  {type === 'cute' &&
+    <div class="flex items-center justify-between text-xs">
+      <div class="text-amber-400">МИЛОТА: {data.cute}</div>
+      <div class="px-2 py-0.5 bg-amber-500/10 text-amber-400 rounded">{data.note}</div>
+    </div>
+  }
 </div>

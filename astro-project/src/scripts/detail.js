@@ -3,34 +3,35 @@
  * Детальная страница аниме и модальное окно персонажа
  */
 
+import { animeData } from '../data/animeData.js';
 import { konosubaCharacters } from '../data/characters/konosuba.js';
 import { slime300Characters } from '../data/characters/slime300.js';
 import { mileCharacters } from '../data/characters/mile.js';
 import { smartphoneCharacters } from '../data/characters/smartphone.js';
 
+const CHAR_MAPS = [slime300Characters, mileCharacters, konosubaCharacters, smartphoneCharacters];
+
 let lastScrollPosition = 0;
+
+/** Hide grid/chrome when detail is open; show when closed. */
+export function setPopularityChromeVisible(visible) {
+    const ids = ['popularity-header', 'popularity-sort', 'search-row-popularity', 'grid-popularity'];
+    for (const id of ids) {
+        const el = document.getElementById(id);
+        if (!el) continue;
+        el.classList.toggle('hidden', !visible);
+    }
+}
 
 export function showAnimeDetail(anime) {
     if (!anime) return;
 
-    const content = document.getElementById('content-popularity');
-    if (!content) return;
+    const detailView = document.getElementById('anime-detail-view');
+    if (!detailView) return;
 
     lastScrollPosition = window.scrollY;
 
-    const header = content.querySelector('.flex.items-end.justify-between');
-    const sortRow = content.querySelector('.gap-2');
-    const searchRow = content.querySelector('.gap-3');
-    const grid = document.getElementById('grid-popularity');
-    const detailView = document.getElementById('anime-detail-view');
-
-    if (!detailView) return;
-
-    if (header) header.classList.add('hidden');
-    if (sortRow) sortRow.classList.add('hidden');
-    if (searchRow) searchRow.classList.add('hidden');
-    if (grid) grid.classList.add('hidden');
-
+    setPopularityChromeVisible(false);
     detailView.classList.remove('hidden');
 
     requestAnimationFrame(() => {
@@ -68,8 +69,8 @@ export function showAnimeDetail(anime) {
         const chars = d.mainCharacters || [];
         if (chars.length > 0) {
             chars.forEach(ch => {
-                const allCharMaps = [slime300Characters, mileCharacters, konosubaCharacters, smartphoneCharacters].filter(Boolean);
-                const fullChar = allCharMaps.find(m => m[ch.name]) || {};
+                const map = CHAR_MAPS.find(m => m && m[ch.name]);
+                const fullChar = map?.[ch.name] ?? {};
                 const image = ch.image || fullChar.image;
 
                 const card = document.createElement('div');
@@ -143,21 +144,10 @@ export function showAnimeDetail(anime) {
 }
 
 export function closeAnimeDetail() {
-    const content = document.getElementById('content-popularity');
-    if (!content) return;
-
-    const header = content.querySelector('.flex.items-end.justify-between');
-    const sortRow = content.querySelector('.gap-2');
-    const searchRow = content.querySelector('.gap-3');
-    const grid = document.getElementById('grid-popularity');
     const detailView = document.getElementById('anime-detail-view');
-
     if (detailView) detailView.classList.add('hidden');
 
-    if (header) header.classList.remove('hidden');
-    if (sortRow) sortRow.classList.remove('hidden');
-    if (searchRow) searchRow.classList.remove('hidden');
-    if (grid) grid.classList.remove('hidden');
+    setPopularityChromeVisible(true);
 
     requestAnimationFrame(() => {
         window.scrollTo(0, lastScrollPosition);
@@ -169,10 +159,8 @@ export function showCharacterDetail(characterName) {
     const modal = document.getElementById('character-detail-modal');
     if (!modal) return;
 
-    // Search across all character data maps
-    const charMaps = [slime300Characters, mileCharacters, konosubaCharacters, smartphoneCharacters];
     let data = null;
-    for (const map of charMaps) {
+    for (const map of CHAR_MAPS) {
         if (map && map[characterName]) {
             data = map[characterName];
             break;
@@ -180,7 +168,15 @@ export function showCharacterDetail(characterName) {
     }
 
     if (!data) {
-        alert(`Подробная информация о персонаже "${characterName}" пока не добавлена (тестовый режим).`);
+        const nameEl = document.getElementById('char-name');
+        const animeEl = document.getElementById('char-anime');
+        const descEl = document.getElementById('char-full-desc');
+        if (nameEl) nameEl.textContent = characterName;
+        if (animeEl) animeEl.textContent = '';
+        if (descEl) descEl.textContent = 'Информация о персонаже пока не добавлена.';
+        modal.classList.remove('hidden');
+        modal.classList.add('flex');
+        modal.onclick = (e) => { if (e.target === modal) closeCharacterDetail(); };
         return;
     }
 
@@ -229,15 +225,14 @@ export function closeCharacterDetail() {
 }
 
 export function initDetail() {
-    // Back button for detail view
-    const backBtn = document.querySelector('#anime-detail-view button');
-    if (backBtn) {
-        backBtn.addEventListener('click', closeAnimeDetail);
-    }
+    document.getElementById('grid-popularity')?.addEventListener('click', (e) => {
+        const card = e.target.closest('.anime-card');
+        if (!card) return;
+        const id = parseInt(card.dataset.animeId, 10);
+        const anime = animeData.find(a => a.id === id);
+        if (anime) showAnimeDetail(anime);
+    });
 
-    // Close button for character modal
-    const closeBtn = document.querySelector('#character-detail-modal button');
-    if (closeBtn) {
-        closeBtn.addEventListener('click', closeCharacterDetail);
-    }
+    document.getElementById('detail-back-btn')?.addEventListener('click', closeAnimeDetail);
+    document.getElementById('char-modal-close')?.addEventListener('click', closeCharacterDetail);
 }

@@ -14,19 +14,23 @@ export interface Props {
     description?: string;
     _cozy?: { score: number; reason: string } | null;
   };
-  sortMode?: 'rating' | 'cozy';
   index?: number;
 }
 
-const { anime, sortMode = 'rating', index = 0 } = Astro.props;
-const tooltipText = sortMode === 'cozy' && anime._cozy?.reason 
-  ? anime._cozy.reason 
-  : (anime.shortDescription || anime.description || '');
+const { anime, index = 0 } = Astro.props;
+const tooltipTextRating = anime.shortDescription || anime.description || '';
+const tooltipTextCozy = anime._cozy?.reason || tooltipTextRating;
 ---
 
-<div class="anime-card rounded-3xl overflow-hidden flex flex-col h-full card-stagger" 
-     style="animation-delay: {index * 35}ms"
-     data-tooltip={tooltipText}
+<div class="anime-card rounded-3xl overflow-hidden flex flex-col h-full card-stagger"
+     style={`animation-delay: ${index * 35}ms`}
+     data-tooltip={tooltipTextRating}
+     data-tooltip-cozy={tooltipTextCozy}
+     data-tooltip-rating={tooltipTextRating}
+     data-rank={anime.rank}
+     data-rating={anime.score}
+     data-cozy-score={anime._cozy?.score ?? ''}
+     data-members={anime.members.replace(/\s/g, '')}
      data-anime-id={anime.id}>
   <div class="relative">
     <div class="relative h-48 poster rounded-t-3xl overflow-hidden">
@@ -66,16 +70,15 @@ const tooltipText = sortMode === 'cozy' && anime._cozy?.reason
     <div class="text-xs text-violet-400 mb-auto">{anime.genre}</div>
     <div class="flex items-center justify-between pt-3 border-t border-[var(--border)] mt-3">
       <div class="flex items-baseline gap-x-1">
-        {sortMode === 'cozy' && anime._cozy ? (
-          <>
+        <div class="score-display score-rating flex items-baseline gap-x-1">
+          <span class="text-emerald-400 font-bold text-lg">{anime.score}</span>
+          <span class="text-[var(--text-muted)] text-xs">/10</span>
+        </div>
+        {anime._cozy && (
+          <div class="score-display score-cozy hidden flex items-baseline gap-x-1">
             <span class="text-emerald-400 font-bold text-lg">{anime._cozy.score}</span>
             <span class="text-[var(--text-muted)] text-xs">уют</span>
-          </>
-        ) : (
-          <>
-            <span class="text-emerald-400 font-bold text-lg">{anime.score}</span>
-            <span class="text-[var(--text-muted)] text-xs">/10</span>
-          </>
+          </div>
         )}
       </div>
     </div>

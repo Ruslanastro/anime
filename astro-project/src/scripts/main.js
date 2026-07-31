@@ -9,6 +9,7 @@ import { initSearch, initSortButtons } from './search.js';
 import { initTooltips } from './tooltip.js';
 import { initDetail } from './detail.js';
 import { initParallax } from './parallax.js';
+import { initRandomButton } from './random.js';
 
 export function initialize() {
     initTheme();
@@ -18,6 +19,7 @@ export function initialize() {
     initTooltips();
     initDetail();
     initParallax();
+    initRandomButton();
 
     // Start with popularity tab
     switchTab('popularity');

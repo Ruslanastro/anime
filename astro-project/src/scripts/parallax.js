@@ -57,14 +57,14 @@ function onScroll() {
 }
 
 function resetAllParallax() {
-    parallaxElements.forEach((_config, element) => {
+    for (const [element, cfg] of parallaxElements) {
         if (document.body.contains(element)) {
             element.style.transform = '';
-            if (_config.type === 'background') {
+            if (cfg.type === 'background') {
                 element.style.backgroundPosition = '';
             }
         }
-    });
+    }
     window.removeEventListener('scroll', onScroll);
 }
 

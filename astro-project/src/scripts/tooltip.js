@@ -38,6 +38,11 @@ export function hideTooltip() {
 }
 
 export function initTooltips() {
-    // Tooltips are handled dynamically in render.js for popularity cards
-    // For static cards, we can add tooltip support here if needed
+    document.querySelectorAll('[data-tooltip]').forEach(el => {
+        el.addEventListener('mouseenter', () => {
+            const text = el.dataset.tooltip;
+            if (text) showTooltip(el, text);
+        });
+        el.addEventListener('mouseleave', hideTooltip);
+    });
 }

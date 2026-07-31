@@ -1,0 +1,22 @@
+# dependencies
+node_modules/
+
+# build
+dist/
+.astro/
+
+# env / local
+.env
+.env.*
+!.env.example
+
+# logs / cache
+npm-debug.log*
+.DS_Store
+Thumbs.db
+*.local
+
+# editor
+.vscode/*
+!.vscode/extensions.json
+.idea/

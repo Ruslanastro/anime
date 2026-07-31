@@ -9,9 +9,10 @@ export interface Props {
 const { tabId, placeholder = 'Поиск...' } = Astro.props;
 ---
 
-<div class="mb-4 flex items-center gap-3">
+<div id={`search-row-${tabId}`} class="mb-4 flex items-center gap-3">
   <input type="text" id={`search-${tabId}`} placeholder={placeholder}
          class="search-input flex-1 rounded-2xl px-5 py-3 text-sm"
-         data-search={tabId}>
+         data-search={tabId}
+         aria-label={`Поиск по вкладке ${tabId}`}>
   <div id={`count-${tabId}`} class="text-sm text-[var(--text-muted)] min-w-[90px] text-right"></div>
 </div>

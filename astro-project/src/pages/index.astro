@@ -12,6 +12,8 @@ import CharacterModal from '../components/CharacterModal.astro';
 import Footer from '../components/Footer.astro';
 
 import { animeData, imbaData, charactersData, ecchiData, cuteData } from '../data/animeData.js';
+import { lnData } from '../data/lnData.js';
+import LnCard from '../components/LnCard.astro';
 ---
 
 <BaseLayout>
@@ -21,25 +23,27 @@ import { animeData, imbaData, charactersData, ecchiData, cuteData } from '../dat
   <div class="max-w-7xl mx-auto px-6 pb-16">
 
     <!-- POPULARITY TAB -->
-    <div id="content-popularity">
-      <div class="flex items-end justify-between mb-6">
+    <div id="content-popularity" role="tabpanel" aria-labelledby="tab-popularity" aria-hidden="false">
+      <div id="popularity-header" class="flex items-end justify-between mb-6">
         <div>
-          <h2 id="popularity-title" class="text-4xl font-bold tracking-tighter section-header">Топ по популярности</h2>
-          <p id="popularity-subtitle" class="text-[var(--text-muted)] mt-1">По количеству участников на MyAnimeList (май 2026)</p>
+          <h2 id="popularity-title" class="text-4xl font-bold tracking-tighter section-header">Топ по рейтингу MAL</h2>
+          <p id="popularity-subtitle" class="text-[var(--text-muted)] mt-1">По оценке MyAnimeList (июль 2026)</p>
         </div>
         <div class="text-right">
           <div class="text-sm text-[var(--text-muted)]">Всего тайтлов</div>
-          <div class="text-3xl font-bold text-violet-400">54</div>
+          <div class="text-3xl font-bold text-violet-400">55</div>
         </div>
       </div>
 
       <!-- Sort controls -->
-      <div class="mb-4 flex items-center gap-2">
+      <div id="popularity-sort" class="mb-4 flex items-center gap-2">
         <span class="text-sm text-[var(--text-muted)] mr-1">Сортировка:</span>
         <button id="sort-rating"
-                class="px-4 py-1.5 text-sm rounded-xl border border-[var(--border)] bg-[var(--card)]/80 hover:bg-[var(--card)] active:bg-[var(--card)]">По рейтингу MAL</button>
+                class="px-4 py-1.5 text-sm rounded-xl border border-[var(--border)] bg-[var(--card)] border-[var(--accent)]/30 hover:bg-[var(--card)] active:bg-[var(--card)]">По рейтингу MAL</button>
         <button id="sort-cozy"
                 class="px-4 py-1.5 text-sm rounded-xl border border-[var(--border)] hover:bg-[var(--card)]/80 active:bg-[var(--card)]">По уютности</button>
+        <button id="sort-members"
+                class="px-4 py-1.5 text-sm rounded-xl border border-[var(--border)] hover:bg-[var(--card)]/80 active:bg-[var(--card)]">По участникам</button>
       </div>
 
       <SearchBar tabId="popularity" placeholder="Поиск по названию или жанру..." />
@@ -54,7 +58,7 @@ import { animeData, imbaData, charactersData, ecchiData, cuteData } from '../dat
     </div>
 
     <!-- IMBA TAB -->
-    <div id="content-imba" class="hidden">
+    <div id="content-imba" class="hidden" role="tabpanel" aria-labelledby="tab-imba" aria-hidden="true">
       <div class="mb-6">
         <h2 class="text-4xl font-bold tracking-tighter section-header">Топ самых имба главных героев</h2>
         <p class="text-[var(--text-muted)] mt-2">По уровню силы, развитию и влиянию на мир</p>
@@ -68,7 +72,7 @@ import { animeData, imbaData, charactersData, ecchiData, cuteData } from '../dat
     </div>
 
     <!-- CHARACTERS TAB -->
-    <div id="content-characters" class="hidden">
+    <div id="content-characters" class="hidden" role="tabpanel" aria-labelledby="tab-characters" aria-hidden="true">
       <div class="mb-6">
         <h2 class="text-4xl font-bold tracking-tighter section-header">Лучшие персонажи</h2>
         <p class="text-[var(--text-muted)] mt-2">Самые запоминающиеся и любимые герои из наших тайтлов</p>
@@ -82,7 +86,7 @@ import { animeData, imbaData, charactersData, ecchiData, cuteData } from '../dat
     </div>
 
     <!-- ECCHI TAB -->
-    <div id="content-ecchi" class="hidden">
+    <div id="content-ecchi" class="hidden" role="tabpanel" aria-labelledby="tab-ecchi" aria-hidden="true">
       <div class="mb-6">
         <div class="flex items-center gap-x-3">
           <h2 class="text-4xl font-bold tracking-tighter section-header">Самый экки / интим</h2>
@@ -104,7 +108,7 @@ import { animeData, imbaData, charactersData, ecchiData, cuteData } from '../dat
     </div>
 
     <!-- CUTE TAB -->
-    <div id="content-cute" class="hidden">
+    <div id="content-cute" class="hidden" role="tabpanel" aria-labelledby="tab-cute" aria-hidden="true">
       <div class="mb-6">
         <div class="flex items-center gap-x-3">
           <h2 class="text-4xl font-bold tracking-tighter section-header">Милые герои</h2>
@@ -122,6 +126,17 @@ import { animeData, imbaData, charactersData, ecchiData, cuteData } from '../dat
       <div class="mt-8 p-4 bg-amber-950/30 border border-amber-500/30 rounded-2xl text-sm text-amber-300">
         <i class="fa-solid fa-info-circle mr-2"></i>
         <strong>Примечание:</strong> Здесь собраны тайтлы, где главные или важные персонажи выглядят особенно мило и вызывают тёплые эмоции. Многие из них — комедии или истории про детей/подростков с позитивным уклоном.
+      </div>
+    </div>
+
+    <!-- LN TAB -->
+    <div id="content-ln" class="hidden" role="tabpanel" aria-labelledby="tab-ln" aria-hidden="true">
+      <div class="mb-6">
+        <h2 class="text-4xl font-bold tracking-tighter section-header">Мои лайт-новеллы</h2>
+        <p class="text-[var(--text-muted)] mt-2">Собрано и отсортировано вручную • Информация обновлена 11 июля 2026</p>
+      </div>
+      <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-5" id="grid-ln">
+        {lnData.map((item, i) => <LnCard data={item} index={i} />)}
       </div>
     </div>
 
