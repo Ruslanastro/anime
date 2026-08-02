@@ -1,52 +1,67 @@
 ---
 // Header.astro
-// Шапка сайта с логотипом, названием и переключателем темы
+// Шапка с навигацией — вариант C «Тёмное стекло + градиентная кромка»
+// Верхний ряд: бренд, кнопки темы/случайное, бейдж
+// Нижний ряд: вкладки (role="tablist") со светящейся индикацией
 ---
 
-<div class="sticky top-0 z-50 bg-[var(--bg)]/95 backdrop-blur-lg border-b border-[var(--border)]">
-  <div class="max-w-7xl mx-auto px-6 py-5 flex items-center justify-between">
-    <div class="flex items-center gap-x-4 cursor-pointer select-none hover:opacity-90 active:opacity-75 transition-opacity" 
-         id="logo-link"
-         title="Перейти на главную"
-         tabindex="0"
-         role="button"
-         onkeydown="if (event.key === 'Enter' || event.key === ' ') { event.preventDefault(); this.click(); }">
-      <div class="w-12 h-12 bg-gradient-to-br from-violet-600 to-fuchsia-500 rounded-2xl flex items-center justify-center">
-        <i class="fa-solid fa-tv text-white text-3xl"></i>
+<header class="site-header sticky top-0 z-50">
+  <div class="max-w-7xl mx-auto px-6 pt-4">
+    <!-- Верхний ряд: бренд + действия -->
+    <div class="flex items-center justify-between gap-4">
+      <div class="flex items-center gap-x-3 min-w-0 cursor-pointer select-none hover:opacity-90 active:opacity-75 transition-opacity"
+           id="logo-link"
+           title="Перейти на главную"
+           tabindex="0"
+           role="button"
+           onkeydown="if (event.key === 'Enter' || event.key === ' ') { event.preventDefault(); this.click(); }">
+        <div class="hdr-brand-icon"><i class="fa-solid fa-tv"></i></div>
+        <div class="min-w-0">
+          <h1 class="text-xl md:text-2xl font-bold tracking-tighter section-header">Аниме Топ 2026</h1>
+          <p class="text-xs text-[var(--text-muted)] whitespace-nowrap overflow-hidden text-ellipsis">55 тайтлов • MyAnimeList • Июль 2026</p>
+        </div>
       </div>
-      <div>
-        <h1 class="text-3xl font-bold tracking-tighter section-header">Аниме Топ 2026</h1>
-        <p class="text-sm text-[var(--text-muted)] -mt-1">55 тайтлов • MyAnimeList • Июль 2026</p>
+
+      <div class="flex items-center gap-2 flex-shrink-0">
+        <!-- Random Anime Button -->
+        <button id="random-btn" class="hdr-btn-icon" title="Случайное аниме">
+          <i class="fa-solid fa-dice"></i>
+        </button>
+
+        <!-- Theme Toggle -->
+        <button id="dark-btn" class="hdr-btn-icon theme-active" title="Тёмная тема">
+          <i class="fa-solid fa-moon"></i>
+        </button>
+        <button id="light-btn" class="hdr-btn-icon" title="Светлая тема">
+          <i class="fa-solid fa-sun"></i>
+        </button>
+
+        <span class="hdr-tag"><span class="hdr-tag-dot"></span><span class="hidden sm:inline">Данные обновлены</span></span>
       </div>
     </div>
 
-    <div class="flex items-center gap-x-4">
-      <!-- Random Anime Button -->
-      <button id="random-btn"
-              class="px-4 py-1.5 rounded-xl text-sm font-medium flex items-center gap-x-2 bg-[var(--card)] border border-[var(--border)] hover:border-[var(--accent)]/40 hover:bg-[var(--card-hover)] active:scale-95 transition-all"
-              title="Случайное аниме">
-        <i class="fa-solid fa-dice text-[var(--accent)]"></i>
-        <span class="hidden sm:inline">Случайное</span>
+    <!-- Нижний ряд: вкладки -->
+    <nav class="hdr-nav" id="nav-tabs" role="tablist">
+      <button class="nav-tab tab-active" id="tab-popularity" data-tab="popularity" role="tab" aria-selected="true" aria-controls="content-popularity" tabindex="0">
+        <i class="fa-solid fa-chart-line"></i><span>Аниме</span>
+      </button>
+      <button class="nav-tab" id="tab-imba" data-tab="imba" role="tab" aria-selected="false" aria-controls="content-imba" tabindex="-1">
+        <i class="fa-solid fa-fist-raised"></i><span>Самые имба ГГ</span>
+      </button>
+      <button class="nav-tab" id="tab-characters" data-tab="characters" role="tab" aria-selected="false" aria-controls="content-characters" tabindex="-1">
+        <i class="fa-solid fa-users"></i><span>Лучшие персонажи</span>
+      </button>
+      <button class="nav-tab" id="tab-ecchi" data-tab="ecchi" role="tab" aria-selected="false" aria-controls="content-ecchi" tabindex="-1">
+        <i class="fa-solid fa-fire"></i><span>Самый экки / интим</span>
+      </button>
+      <button class="nav-tab" id="tab-cute" data-tab="cute" role="tab" aria-selected="false" aria-controls="content-cute" tabindex="-1">
+        <i class="fa-solid fa-smile-beam"></i><span>Милые герои</span>
+      </button>
+      <button class="nav-tab" id="tab-ln" data-tab="ln" role="tab" aria-selected="false" aria-controls="content-ln" tabindex="-1">
+        <i class="fa-solid fa-book"></i><span>Мои лайт-новеллы</span>
       </button>
 
-      <!-- Theme Toggle -->
-      <div class="flex items-center bg-[var(--card)] rounded-2xl p-1 border border-[var(--border)]">
-        <button id="dark-btn"
-                class="px-4 py-1.5 rounded-xl text-sm font-medium flex items-center gap-x-2 bg-white/10">
-          <i class="fa-solid fa-moon"></i>
-          <span>Тёмная</span>
-        </button>
-        <button id="light-btn"
-                class="px-4 py-1.5 rounded-xl text-sm font-medium flex items-center gap-x-2 hover:bg-white/5">
-          <i class="fa-solid fa-sun"></i>
-          <span>Светлая</span>
-        </button>
-      </div>
-
-      <div class="text-xs px-3 py-1 bg-emerald-500/10 text-emerald-400 rounded-full flex items-center gap-x-1.5">
-        <div class="w-2 h-2 bg-emerald-400 rounded-full animate-pulse"></div>
-        <span>Данные обновлены</span>
-      </div>
-    </div>
+      <div id="tab-underline" class="tab-underline" role="presentation"></div>
+    </nav>
   </div>
-</div>
+</header>

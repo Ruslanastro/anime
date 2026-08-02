@@ -33,3 +33,9 @@ private/
 # Не коммитим большие бинарные файлы, если они не являются частью дизайна
 # (изображения в images/ и фон — коммитим осознанно)
 .aider*
+
+# Временные/локальные артефакты
+.playwright-mcp/
+astro-home-check.png
+astro-project/docs.md
+AGENTS.md

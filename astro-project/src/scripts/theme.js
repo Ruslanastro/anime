@@ -18,14 +18,14 @@ export function setTheme(theme) {
     if (theme === 'dark') {
         body.classList.remove('light');
         body.classList.add('dark');
-        if (darkBtn) darkBtn.classList.add('bg-white/10');
-        if (lightBtn) lightBtn.classList.remove('bg-white/10');
+        if (darkBtn) darkBtn.classList.add('theme-active');
+        if (lightBtn) lightBtn.classList.remove('theme-active');
         lsSet('theme', 'dark');
     } else {
         body.classList.remove('dark');
         body.classList.add('light');
-        if (lightBtn) lightBtn.classList.add('bg-white/10');
-        if (darkBtn) darkBtn.classList.remove('bg-white/10');
+        if (lightBtn) lightBtn.classList.add('theme-active');
+        if (darkBtn) darkBtn.classList.remove('theme-active');
         lsSet('theme', 'light');
     }
 }

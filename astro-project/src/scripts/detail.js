@@ -135,7 +135,7 @@ export function showAnimeDetail(anime) {
             const div = document.createElement('div');
             div.className = 'border-l-2 border-(--border) pl-3';
             div.innerHTML = `
-                <div class="text-[10px] font-medium uppercase tracking-1.5px text-(--text-muted)">${item.label}</div>
+                <div class="text-[10px] font-medium uppercase tracking-[1.5px] text-(--text-muted)">${item.label}</div>
                 <div class="mt-0.5 font-medium text-(--text) leading-tight">${item.value}</div>
             `;
             metaContainer.appendChild(div);
@@ -235,4 +235,10 @@ export function initDetail() {
 
     document.getElementById('detail-back-btn')?.addEventListener('click', closeAnimeDetail);
     document.getElementById('char-modal-close')?.addEventListener('click', closeCharacterDetail);
+
+    // Prevent "#" navigation when malUrl is absent (link hidden but still clickable via keyboard)
+    document.getElementById('detail-mal-link')?.addEventListener('click', (e) => {
+        const href = e.currentTarget.getAttribute('href');
+        if (!href || href === '#') e.preventDefault();
+    });
 }

@@ -1,6 +1,8 @@
 @import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Poppins:wght@600&display=swap');
 @import "tailwindcss";
 
+@custom-variant light (&:where(.light, .light *));
+
 :root {
     --bg: #0f0f17;
     --card: #1a1a24;
@@ -27,53 +29,127 @@
 
 body {
     font-family: 'Inter', system-ui, sans-serif;
-    background: var(--bg);
     color: var(--text);
     transition: background 0.2s ease, color 0.2s ease;
     min-height: 100vh;
     overflow-x: hidden;
     background-color: #0a0a14;
     background-image:
-        radial-gradient(1.5px 1.5px at 25% 15%, rgba(255,255,255,0.5) 50%, transparent 50%),
-        radial-gradient(1px 1px at 65% 40%, rgba(255,255,255,0.4) 50%, transparent 50%),
-        radial-gradient(1px 1px at 85% 75%, rgba(255,255,255,0.5) 50%, transparent 50%),
-        radial-gradient(1.5px 1.5px at 45% 85%, rgba(255,255,255,0.4) 50%, transparent 50%),
-        radial-gradient(ellipse at 20% 80%, rgba(120, 40, 200, 0.35) 0%, transparent 50%),
-        radial-gradient(ellipse at 80% 20%, rgba(180, 50, 120, 0.25) 0%, transparent 50%),
-        radial-gradient(ellipse at 50% 50%, rgba(40, 60, 180, 0.15) 0%, transparent 60%),
-        radial-gradient(circle at 50% 50%, rgba(168, 85, 247, 0.08) 0%, transparent 40%),
-        linear-gradient(180deg, #0a0a14 0%, #0f0a1e 40%, #12081f 70%, #0a0a14 100%);
+        linear-gradient(rgba(10, 10, 20, 0.62) 0%, rgba(10, 10, 20, 0.72) 100%),
+        url('/images/anime-bg.jpg');
     background-size: cover;
     background-attachment: fixed;
-}
-
-body::before {
-    content: '';
-    position: fixed;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    pointer-events: none;
-    z-index: 0;
-    background-image:
-        radial-gradient(circle at 20% 30%, rgba(168, 85, 247, 0.08) 0%, transparent 50%),
-        radial-gradient(circle at 80% 70%, rgba(236, 72, 153, 0.06) 0%, transparent 40%);
+    background-position: center;
 }
 
 body.light {
     background-color: #f0f0f8;
     background-image:
-        radial-gradient(ellipse at 20% 80%, rgba(120, 80, 200, 0.15) 0%, transparent 50%),
-        radial-gradient(ellipse at 80% 20%, rgba(180, 100, 140, 0.12) 0%, transparent 50%),
-        radial-gradient(ellipse at 50% 50%, rgba(80, 100, 200, 0.08) 0%, transparent 60%),
-        linear-gradient(180deg, #f0f0f8 0%, #e8e8f4 50%, #f0f0f8 100%);
+        linear-gradient(rgba(248, 250, 252, 0.5) 0%, rgba(240, 240, 248, 0.6) 100%),
+        url('/images/anime-bg.jpg');
     background-size: cover;
     background-attachment: fixed;
+    background-position: center;
 }
 
-body.light::before {
-    display: none;
+/* === Aurora background === */
+.aurora {
+    position: fixed;
+    inset: 0;
+    z-index: 0;
+    overflow: hidden;
+    pointer-events: none;
+}
+
+.aurora-blob {
+    position: absolute;
+    border-radius: 50%;
+    filter: blur(90px);
+    opacity: 0.42;
+    will-change: transform;
+}
+
+.aurora-blob-1 {
+    width: 60vmax;
+    height: 60vmax;
+    top: -18%;
+    left: -12%;
+    background: radial-gradient(circle at 50% 50%, rgba(124, 58, 237, 0.55) 0%, transparent 62%);
+    animation: aurora-1 28s ease-in-out infinite alternate;
+}
+
+.aurora-blob-2 {
+    width: 52vmax;
+    height: 52vmax;
+    top: 22%;
+    right: -18%;
+    background: radial-gradient(circle at 50% 50%, rgba(217, 70, 239, 0.42) 0%, transparent 62%);
+    animation: aurora-2 34s ease-in-out infinite alternate;
+}
+
+.aurora-blob-3 {
+    width: 46vmax;
+    height: 46vmax;
+    bottom: -22%;
+    left: 12%;
+    background: radial-gradient(circle at 50% 50%, rgba(59, 130, 246, 0.3) 0%, transparent 62%);
+    animation: aurora-3 40s ease-in-out infinite alternate;
+}
+
+.aurora-blob-4 {
+    width: 40vmax;
+    height: 40vmax;
+    top: -8%;
+    right: 24%;
+    background: radial-gradient(circle at 50% 50%, rgba(236, 72, 153, 0.28) 0%, transparent 60%);
+    animation: aurora-4 46s ease-in-out infinite alternate;
+}
+
+.light .aurora-blob-1 {
+    background: radial-gradient(circle at 50% 50%, rgba(99, 102, 241, 0.4) 0%, transparent 62%);
+}
+
+.light .aurora-blob-2 {
+    background: radial-gradient(circle at 50% 50%, rgba(217, 70, 239, 0.28) 0%, transparent 62%);
+}
+
+.light .aurora-blob-3 {
+    background: radial-gradient(circle at 50% 50%, rgba(59, 130, 246, 0.25) 0%, transparent 62%);
+}
+
+.light .aurora-blob-4 {
+    background: radial-gradient(circle at 50% 50%, rgba(244, 114, 182, 0.22) 0%, transparent 60%);
+}
+
+@keyframes aurora-1 {
+    0%   { transform: translate3d(0, 0, 0) scale(1); }
+    100% { transform: translate3d(6vmax, 5vmax, 0) scale(1.15); }
+}
+
+@keyframes aurora-2 {
+    0%   { transform: translate3d(0, 0, 0) scale(1.1); }
+    100% { transform: translate3d(-5vmax, 4vmax, 0) scale(0.95); }
+}
+
+@keyframes aurora-3 {
+    0%   { transform: translate3d(0, 0, 0) scale(0.95); }
+    100% { transform: translate3d(5vmax, -5vmax, 0) scale(1.1); }
+}
+
+@keyframes aurora-4 {
+    0%   { transform: translate3d(0, 0, 0) scale(1.05); }
+    100% { transform: translate3d(-4vmax, -4vmax, 0) scale(0.92); }
+}
+
+@media (prefers-reduced-motion: reduce) {
+    .aurora-blob {
+        animation: none;
+    }
+}
+
+.content-layer {
+    position: relative;
+    z-index: 1;
 }
 
 .section-header {
@@ -116,17 +192,104 @@ body.light::before {
     box-shadow: 0 10px 15px -3px rgb(124 58 237 / 0.35);
 }
 
-.nav-tab {
-    transition: all 0.2s ease;
-    color: var(--text);
+/* === Шапка: вариант C «Тёмное стекло + градиентная кромка» === */
+.site-header {
+    background: rgba(10, 10, 20, 0.25);
+    backdrop-filter: blur(20px) saturate(140%);
+    -webkit-backdrop-filter: blur(20px) saturate(140%);
+    border-bottom: 1px solid transparent;
+    border-image: linear-gradient(90deg, rgba(124,58,237,0.4), rgba(217,70,239,0.4), rgba(59,130,246,0.3)) 1;
 }
-.nav-tab:hover { background: rgba(255,255,255,0.06); }
-.light .nav-tab:hover { background: #e2e8f0; }
+body.light .site-header {
+    background: rgba(255,255,255,0.3);
+    border-image: linear-gradient(90deg, rgba(99,102,241,0.35), rgba(217,70,239,0.3), rgba(59,130,246,0.3)) 1;
+}
 
-.tab-active {
-    background: var(--accent);
-    color: white;
-    box-shadow: 0 10px 15px -3px rgb(124 58 237 / 0.3);
+.hdr-brand-icon {
+    width: 44px; height: 44px; flex-shrink: 0;
+    border-radius: 14px; display: flex; align-items: center; justify-content: center;
+    background: rgba(124,58,237,0.15);
+    border: 1px solid rgba(167,139,250,0.4);
+    color: #a78bfa; font-size: 20px;
+}
+body.light .hdr-brand-icon {
+    background: rgba(99,102,241,0.12);
+    border-color: rgba(99,102,241,0.35);
+    color: #6366f1;
+}
+
+.hdr-btn-icon {
+    width: 38px; height: 38px; border-radius: 12px;
+    display: flex; align-items: center; justify-content: center; cursor: pointer;
+    background: rgba(255,255,255,0.05);
+    border: 1px solid rgba(255,255,255,0.1);
+    color: #c4c4d0;
+    transition: all 0.2s ease;
+}
+.hdr-btn-icon:hover { border-color: #818cf8; color: #fff; }
+.hdr-btn-icon.theme-active {
+    border-color: #818cf8; color: #fff;
+    background: rgba(129,140,248,0.15);
+    box-shadow: 0 4px 14px -6px rgba(129,140,248,0.6);
+}
+body.light .hdr-btn-icon {
+    background: rgba(255,255,255,0.85);
+    border-color: #e2e8f0;
+    color: #475569;
+}
+body.light .hdr-btn-icon:hover { border-color: #6366f1; color: #4338ca; }
+body.light .hdr-btn-icon.theme-active {
+    border-color: #6366f1; color: #4338ca;
+    background: rgba(99,102,241,0.12);
+    box-shadow: 0 4px 14px -6px rgba(99,102,241,0.5);
+}
+
+.hdr-tag {
+    font-size: 12px; color: #34d399;
+    background: rgba(52,211,153,0.1);
+    border: 1px solid rgba(52,211,153,0.2);
+    padding: 5px 12px; border-radius: 999px;
+    font-weight: 500; white-space: nowrap;
+    display: inline-flex; align-items: center; gap: 6px;
+}
+.hdr-tag-dot {
+    width: 6px; height: 6px; border-radius: 999px;
+    background: #34d399;
+    animation: hdr-pulse 1.6s ease-in-out infinite;
+}
+@keyframes hdr-pulse {
+    0%, 100% { opacity: 1; }
+    50% { opacity: 0.35; }
+}
+
+/* Вкладки в шапке */
+.hdr-nav {
+    position: relative;
+    display: flex; align-items: center; gap: 4px;
+    overflow-x: auto;
+    padding: 12px 0 0;
+}
+.hdr-nav .nav-tab {
+    background: transparent; border: none; color: #9a9ab0; cursor: pointer;
+    padding: 10px 14px; font-size: 13px; font-weight: 500;
+    display: flex; align-items: center; gap: 7px; white-space: nowrap;
+    border-bottom: 2px solid transparent;
+    transition: all 0.2s ease;
+}
+.hdr-nav .nav-tab:hover { color: #fff; }
+.hdr-nav .nav-tab.tab-active {
+    color: #fff; font-weight: 600;
+    box-shadow: 0 8px 20px -12px rgba(129,140,248,0.8);
+}
+body.light .hdr-nav .nav-tab { color: #64748b; }
+body.light .hdr-nav .nav-tab:hover { color: #1e293b; }
+body.light .hdr-nav .nav-tab.tab-active { color: #4338ca; box-shadow: 0 8px 20px -12px rgba(99,102,241,0.7); }
+
+#tab-underline {
+    position: absolute; bottom: 0; height: 2px; border-radius: 999px;
+    background: linear-gradient(90deg, #818cf8, #d946ef);
+    box-shadow: 0 4px 12px -2px rgba(217,70,239,0.8);
+    transition: left 0.3s ease-out, width 0.3s ease-out;
 }
 
 .poster {
@@ -142,13 +305,30 @@ body.light::before {
     transform: scale(1.12);
 }
 
-.stat-bar {
-    height: 6px;
-    background: linear-gradient(to right, var(--accent), var(--accent-light));
-    border-radius: 9999px;
+.card-random-glow.card-random-glow {
+    animation: card-random-glow 1.6s ease-in-out infinite;
+    transition: box-shadow 0.3s ease;
 }
-
-.metric { font-variant-numeric: tabular-nums; }
+@keyframes card-random-glow {
+    0%, 100% {
+        box-shadow:
+            0 0 0 4px #fbbf24,
+            0 0 20px 8px rgba(251, 191, 36, 0.75),
+            0 0 70px 24px rgba(251, 191, 36, 0.5),
+            0 0 130px 40px rgba(217, 70, 239, 0.35),
+            0 0 200px 55px rgba(124, 58, 237, 0.25),
+            inset 0 0 50px rgba(251, 191, 36, 0.3);
+    }
+    50% {
+        box-shadow:
+            0 0 0 6px #f59e0b,
+            0 0 35px 12px rgba(245, 158, 11, 0.85),
+            0 0 100px 32px rgba(245, 158, 11, 0.6),
+            0 0 160px 46px rgba(217, 70, 239, 0.45),
+            0 0 240px 60px rgba(124, 58, 237, 0.32),
+            inset 0 0 70px rgba(245, 158, 11, 0.4);
+    }
+}
 
 .info-card {
     background: var(--card);
@@ -207,6 +387,18 @@ body.light::before {
         opacity: 0;
         transform: translateY(20px);
     }
+}
+
+.ln-card {
+    background: rgba(26, 26, 36, 0.88);
+    backdrop-filter: blur(10px);
+    -webkit-backdrop-filter: blur(10px);
+    border: 1px solid var(--border);
+    transition: transform 0.4s cubic-bezier(0.4, 0, 0.2, 1), 
+                box-shadow 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+}
+.light .ln-card {
+    background: rgba(255, 255, 255, 0.88);
 }
 
 .card-stagger {
@@ -303,35 +495,19 @@ body.light::before {
 #grid-popularity.sort-cozy .score-rating { display: none; }
 #grid-popularity.sort-cozy .score-cozy { display: flex; }
 
-#tab-underline {
-    height: 2px;
-    background: linear-gradient(to right, var(--accent), var(--accent-light));
-    border-radius: 9999px;
-    box-shadow: 0 0 8px rgba(124, 58, 237, 0.35);
-    transition: left 0.22s cubic-bezier(0.4, 0, 0.2, 1), 
-                width 0.22s cubic-bezier(0.4, 0, 0.2, 1);
+/* FLIP-анимация сортировки: пока карточка "летит", CSS hover-transform не участвует */
+.anime-card.flip-animating.anime-card.flip-animating {
+    transition: box-shadow 0.4s cubic-bezier(0.4, 0, 0.2, 1),
+                background 0.3s ease,
+                border-color 0.3s ease;
+}
+.anime-card.flip-animating.anime-card.flip-animating:hover {
+    transform: none;
 }
 
 .tab-content-exit {
     opacity: 0;
     transform: translateY(-10px);
-}
-
-.hero-parallax {
-    background: var(--bg);
-    position: relative;
-    user-select: none;
-}
-
-.hero-parallax::before {
-    content: '';
-    position: absolute;
-    inset: 0;
-    background:
-        radial-gradient(ellipse at 20% 50%, rgba(124, 58, 237, 0.15) 0%, transparent 60%),
-        radial-gradient(ellipse at 80% 50%, rgba(168, 85, 247, 0.1) 0%, transparent 60%),
-        radial-gradient(ellipse at 50% 100%, rgba(236, 72, 153, 0.08) 0%, transparent 50%);
-    z-index: 0;
 }
 
 #random-btn:hover i {
@@ -343,11 +519,4 @@ body.light::before {
     20% { transform: rotate(-20deg) scale(1.2); }
     50% { transform: rotate(10deg) scale(1.1); }
     80% { transform: rotate(-5deg); }
-}
-
-.light .hero-parallax::before {
-    background:
-        radial-gradient(ellipse at 20% 50%, rgba(99, 102, 241, 0.12) 0%, transparent 60%),
-        radial-gradient(ellipse at 80% 50%, rgba(129, 140, 248, 0.08) 0%, transparent 60%),
-        radial-gradient(ellipse at 50% 100%, rgba(244, 114, 182, 0.06) 0%, transparent 50%);
 }

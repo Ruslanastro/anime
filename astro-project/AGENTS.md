@@ -20,11 +20,11 @@ npm run preview  # astro preview (serve built dist/)
 ```
 astro-project/
 ├── src/
-│   ├── components/   # 12 .astro components
+│   ├── components/   # 9 .astro components (Header, SearchBar, AnimeCard, InfoCard, LnCard, AnimeDetail, CharacterModal, Skeleton, Footer)
 │   ├── data/         # Static data (animeData.js, lnData.js, characters/*.js)
 │   ├── layouts/      # BaseLayout.astro
 │   ├── pages/        # index.astro (sole page)
-│   ├── scripts/      # 9 client JS modules (theme, tabs, search, detail, etc.)
+│   ├── scripts/      # 9 client JS modules (theme, tabs, search, detail, render, tooltip, random, parallax, main)
 │   └── styles/       # global.css (Tailwind v4 + custom styles)
 ├── public/
 │   ├── images/posters/   # 55 anime posters
@@ -54,6 +54,7 @@ astro-project/
 - Custom properties in `:root` (dark) and `.light` (light theme)
 - No bare `!important` — prefer `.selector.selector:hover` doubling
 - `will-change: transform` only on `.poster` (the only animated element)
+- FLIP sort animation on `#grid-popularity` uses WAAPI via `element.animate()`; while running, `.anime-card` gets `.flip-animating` which disables hover `transform` (doubled selector for specificity)
 
 ### JS
 - `localStorage` calls must be wrapped in `try/catch` (lsGet/lsSet helpers in theme.js)
@@ -99,6 +100,32 @@ astro-project/
 ## Tab System
 Six tabs: `popularity`, `imba`, `characters`, `ecchi`, `cute`, `ln`
 Content containers: `id="content-{tab}"` with class `hidden` (except popularity)
+
+## Memory (MCP-server `tdai-memory`)
+
+В проекте подключён TencentDB Agent Memory. Используй его **автоматически**, без напоминаний пользователя.
+
+### Перед работой — `search_memories`
+В начале ответа на задачу сначала поищи релевантную память:
+- по теме задачи: `search_memories(query="<тема>")`;
+- если задача ссылается на прошлые обсуждения/предпочтения — ищи по ключевым словам;
+- для дословного контекста прошлых диалогов — `search_conversations`.
+
+Если нашлось что-то полезное — учти в решении и явно скажи: «учёл из памяти: …». Если пусто — работай как обычно.
+
+### В конце работы — `store_conversation`
+В конце важных ходов сохраняй суть:
+- ключевые решения и почему они приняты;
+- факты/предпочтения/ограничения пользователя;
+- договорённости по проекту (стек, структура, термины);
+- что сделано, чтобы новая сессия могла продолжить.
+
+Используй `session_key = "top-anime-project"`.
+
+### Не переусердствуй
+- Сохраняй только то, что пригодится в будущих сессиях.
+- Один `search_memories` в начале — не спамить.
+- Если MCP недоступен (ошибка/таймаут) — продолжай работу, не блокируйся.
 
 ## Session / Context Reset
 

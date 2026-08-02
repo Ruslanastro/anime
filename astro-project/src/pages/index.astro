@@ -3,7 +3,6 @@
 // Главная страница — Аниме Топ 2026
 import BaseLayout from '../layouts/BaseLayout.astro';
 import Header from '../components/Header.astro';
-import TabNav from '../components/TabNav.astro';
 import SearchBar from '../components/SearchBar.astro';
 import AnimeCard from '../components/AnimeCard.astro';
 import InfoCard from '../components/InfoCard.astro';
@@ -14,11 +13,11 @@ import Footer from '../components/Footer.astro';
 import { animeData, imbaData, charactersData, ecchiData, cuteData } from '../data/animeData.js';
 import { lnData } from '../data/lnData.js';
 import LnCard from '../components/LnCard.astro';
+import Skeleton from '../components/Skeleton.astro';
 ---
 
 <BaseLayout>
   <Header />
-  <TabNav />
 
   <div class="max-w-7xl mx-auto px-6 pb-16">
 
@@ -31,7 +30,7 @@ import LnCard from '../components/LnCard.astro';
         </div>
         <div class="text-right">
           <div class="text-sm text-[var(--text-muted)]">Всего тайтлов</div>
-          <div class="text-3xl font-bold text-violet-400">55</div>
+          <div class="text-3xl font-bold text-violet-400">{animeData.length}</div>
         </div>
       </div>
 
@@ -49,9 +48,14 @@ import LnCard from '../components/LnCard.astro';
       <SearchBar tabId="popularity" placeholder="Поиск по названию или жанру..." />
 
       <div class="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 xl:grid-cols-5 2xl:grid-cols-6 gap-5" id="grid-popularity">
-        {animeData.map((anime, i) => (
-          <AnimeCard anime={anime} index={i} />
-        ))}
+        <div class="contents" id="skeleton-popularity">
+          <Skeleton tab="popularity" count={20} />
+        </div>
+        <div class="contents hidden" id="content-popularity-cards">
+          {animeData.map((anime, i) => (
+            <AnimeCard anime={anime} index={i} />
+          ))}
+        </div>
       </div>
 
       <AnimeDetail />

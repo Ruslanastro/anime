@@ -41,12 +41,12 @@ const statusColor = statusColors[data.status] || "bg-gray-500/10 text-gray-400";
       </div>
       <div class="space-y-0.5 text-xs">
         <div class="flex items-center gap-x-2">
-          <span class="text-[var(--text-muted)] flex-shrink-0">Найдено:</span>
+          <span class="text-[var(--text-muted)] flex-shrink-0 opacity-[0.85]">Найдено:</span>
           <span class="font-semibold text-violet-400">{data.volumesFound}</span>
         </div>
         <div class="flex items-start gap-x-2">
-          <span class="text-[var(--text-muted)] flex-shrink-0">Всего:</span>
-          <span class="text-[var(--text-muted)]">{data.totalVolumes}</span>
+          <span class="text-[var(--text-muted)] flex-shrink-0 opacity-[0.85]">Всего:</span>
+          <span class="text-[var(--text-muted)] opacity-[0.85]">{data.totalVolumes}</span>
         </div>
       </div>
     </div>

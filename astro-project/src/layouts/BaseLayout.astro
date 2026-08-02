@@ -15,6 +15,7 @@ const { title = 'Аниме Топ • 2026' } = Astro.props;
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
   <title>{title}</title>
   
   <!-- Font Awesome -->
@@ -23,6 +24,14 @@ const { title = 'Аниме Топ • 2026' } = Astro.props;
   <!-- Global Styles imported in frontmatter -->
 </head>
 <body data-parallax="hero">
-  <slot />
+  <div class="aurora" aria-hidden="true">
+    <div class="aurora-blob aurora-blob-1"></div>
+    <div class="aurora-blob aurora-blob-2"></div>
+    <div class="aurora-blob aurora-blob-3"></div>
+    <div class="aurora-blob aurora-blob-4"></div>
+  </div>
+  <div class="content-layer">
+    <slot />
+  </div>
 </body>
 </html>

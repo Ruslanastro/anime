@@ -9,7 +9,7 @@ export function filterGrid(tabId, query) {
     if (!grid) return;
 
     const trimmed = query.toLowerCase().trim();
-    const cards = grid.children;
+    const cards = Array.from(grid.querySelectorAll('.anime-card, .info-card, .ln-card'));
 
     let visibleCount = 0;
     for (const card of cards) {
@@ -38,6 +38,17 @@ export function sortPopularityGrid(mode) {
     const cards = Array.from(grid.querySelectorAll('.anime-card'));
     if (cards.length === 0) return;
 
+    const reduceMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+
+    // FLIP: запоминаем позиции до перестановки
+    let firstRects = null;
+    if (!reduceMotion) {
+        firstRects = new Map();
+        for (const card of cards) {
+            firstRects.set(card, card.getBoundingClientRect());
+        }
+    }
+
     cards.sort((a, b) => {
         if (mode === 'cozy') {
             const aScore = parseFloat(a.dataset.cozyScore) || 0;
@@ -62,6 +73,31 @@ export function sortPopularityGrid(mode) {
             card.dataset.tooltip = card.dataset.tooltipRating || card.dataset.tooltip;
         } else {
             card.dataset.tooltip = card.dataset.tooltipRating || card.dataset.tooltip;
+        }
+    }
+
+    // FLIP: анимируем смещение на новые места
+    if (firstRects) {
+        const duration = 320;
+        for (const card of cards) {
+            const first = firstRects.get(card);
+            const last = card.getBoundingClientRect();
+            const dx = first.left - last.left;
+            const dy = first.top - last.top;
+            if (!dx && !dy) continue;
+
+            // Пока идет FLIP — отключаем CSS-transform hover, чтобы не было конфликта
+            card.classList.add('flip-animating');
+            const anim = card.animate(
+                [
+                    { transform: `translate(${dx}px, ${dy}px)` },
+                    { transform: 'translate(0, 0)' }
+                ],
+                { duration, easing: 'cubic-bezier(0.4, 0, 0.2, 1)' }
+            );
+            anim.addEventListener('finish', () => {
+                card.classList.remove('flip-animating');
+            }, { once: true });
         }
     }
 

@@ -12,10 +12,10 @@ export function switchTab(tab) {
         closeAnimeDetail();
     }
 
-    const allContents = document.querySelectorAll('[id^="content-"]');
+    const allContents = document.querySelectorAll('[role="tabpanel"]');
     const currentContent = Array.from(allContents).find(el => !el.classList.contains('hidden'));
 
-    document.querySelectorAll('[id^="tab-"]').forEach(el => {
+    document.querySelectorAll('.nav-tab').forEach(el => {
         el.classList.remove('tab-active');
         el.setAttribute('aria-selected', 'false');
         el.setAttribute('tabindex', '-1');
@@ -69,7 +69,7 @@ export function updateTabUnderline() {
 }
 
 export function initTabs() {
-    document.querySelectorAll('[id^="tab-"]').forEach(btn => {
+    document.querySelectorAll('.nav-tab').forEach(btn => {
         btn.addEventListener('click', () => {
             const tab = btn.id.replace('tab-', '');
             switchTab(tab);

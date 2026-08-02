@@ -20,6 +20,22 @@ npm run preview     # просмотр собранной версии
 
 ## Архитектура
 
+### Структура проекта
+
+```
+astro-project/
+├── src/
+│   ├── components/   # 9 .astro компонентов (Header, SearchBar, AnimeCard, InfoCard, LnCard, AnimeDetail, CharacterModal, Skeleton, Footer)
+│   ├── data/         # Статические данные (animeData.js, lnData.js, characters/*.js)
+│   ├── layouts/      # BaseLayout.astro
+│   ├── pages/        # index.astro (единственная страница)
+│   ├── scripts/      # 9 клиентских JS-модулей (theme, tabs, search, detail, render, tooltip, random, parallax, main)
+│   └── styles/       # global.css (Tailwind v4 + кастомные стили)
+├── public/
+│   └── images/       # posters/, characters/, ln/
+└── docs/             # CHANGELOG.md, PLANS.md
+```
+
 ### Страницы
 Единственная страница `src/pages/index.astro` содержит 6 вкладок:
 
@@ -43,9 +59,10 @@ npm run preview     # просмотр собранной версии
 - **parallax.js** — параллакс фона с учётом `prefers-reduced-motion`
 - **random.js** — кнопка случайного аниме с подсветкой
 - **tooltip.js** — кастомные тултипы
+- **main.js** — точка входа, инициализация всех модулей
 
 ### Данные
-Статические данные в `src/data/` — импортируются и в Astro (на сборке), и в клиентские JS-модули (на运行时).
+Статические данные в `src/data/` — импортируются и в Astro (на сборке), и в клиентские JS-модули (в рантайме).
 
 ### Стили
 Единый `src/styles/global.css` с CSS-переменными для тёмной и светлой темы.
