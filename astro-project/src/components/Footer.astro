@@ -1,10 +1,24 @@
 ---
-const months = ['января','февраля','марта','апреля','мая','июня','июля','августа','сентября','октября','ноября','декабря'];
+const months = [
+  'января',
+  'февраля',
+  'марта',
+  'апреля',
+  'мая',
+  'июня',
+  'июля',
+  'августа',
+  'сентября',
+  'октября',
+  'ноября',
+  'декабря',
+];
 const now = new Date();
 const monthStr = months[now.getMonth()];
 const yearStr = now.getFullYear();
 ---
 
 <footer class="text-center py-8 text-xs text-[var(--text-muted)] border-t border-[var(--border)]">
-  Данные: MyAnimeList ({monthStr} {yearStr}) • Составлено на основе обсуждения 55+ тайтлов • Не является официальным рейтингом
+  Данные: MyAnimeList ({monthStr}
+  {yearStr}) • Составлено на основе обсуждения 55+ тайтлов • Не является официальным рейтингом
 </footer>

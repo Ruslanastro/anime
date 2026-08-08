@@ -22,49 +22,72 @@ const tooltipTextRating = anime.shortDescription || anime.description || '';
 const tooltipTextCozy = anime._cozy?.reason || tooltipTextRating;
 ---
 
-<div class="anime-card rounded-3xl overflow-hidden flex flex-col h-full card-stagger"
-     style={`animation-delay: ${index * 35}ms`}
-     data-tooltip={tooltipTextRating}
-     data-tooltip-cozy={tooltipTextCozy}
-     data-tooltip-rating={tooltipTextRating}
-     data-rank={anime.rank}
-     data-rating={anime.score}
-     data-cozy-score={anime._cozy?.score ?? ''}
-     data-members={anime.members.replace(/\s/g, '')}
-     data-anime-id={anime.id}>
+<div
+  class="anime-card rounded-3xl overflow-hidden flex flex-col h-full card-stagger"
+  style={`animation-delay: ${index * 35}ms`}
+  data-tooltip={tooltipTextRating}
+  data-tooltip-cozy={tooltipTextCozy}
+  data-tooltip-rating={tooltipTextRating}
+  data-rank={anime.rank}
+  data-rating={anime.score}
+  data-cozy-score={anime._cozy?.score ?? ''}
+  data-members={anime.members.replace(/\s/g, '')}
+  data-anime-id={anime.id}
+>
   <div class="relative">
     <div class="relative h-48 poster rounded-t-3xl overflow-hidden">
       <!-- Fallback -->
-      <div class="fallback-poster absolute inset-0 rounded-t-3xl flex flex-col items-center justify-center text-center px-4">
-        <div class="w-9 h-9 rounded-full bg-[var(--border)] flex items-center justify-center mb-2.5">
+      <div
+        class="fallback-poster absolute inset-0 rounded-t-3xl flex flex-col items-center justify-center text-center px-4"
+      >
+        <div
+          class="w-9 h-9 rounded-full bg-[var(--border)] flex items-center justify-center mb-2.5"
+        >
           <i class="fa-solid fa-image text-base text-[var(--text-muted)]"></i>
         </div>
-        <div class="font-semibold text-[13px] leading-tight tracking-[-0.1px] text-[var(--text)] line-clamp-3 px-2">
+        <div
+          class="font-semibold text-[13px] leading-tight tracking-[-0.1px] text-[var(--text)] line-clamp-3 px-2"
+        >
           {anime.title}
         </div>
-        <div class="mt-2 text-[9px] px-3 py-0.5 rounded-full bg-white/10 text-[var(--text-muted)] tracking-wide">{anime.genre}</div>
+        <div
+          class="mt-2 text-[9px] px-3 py-0.5 rounded-full bg-white/10 text-[var(--text-muted)] tracking-wide"
+        >
+          {anime.genre}
+        </div>
       </div>
       <!-- Image -->
-      <img src={anime.poster} alt={anime.title} loading="lazy" decoding="async"
-           class="w-full h-full object-cover opacity-0 transition-opacity duration-500"
-           onload="this.style.opacity='1'; this.previousElementSibling.style.display='none';"
-           onerror="this.style.display='none'">
+      <img
+        src={anime.poster}
+        alt={anime.title}
+        loading="lazy"
+        decoding="async"
+        class="w-full h-full object-cover opacity-0 transition-opacity duration-500"
+        onload="this.style.opacity='1'; this.previousElementSibling.style.display='none';"
+        onerror="this.style.display='none'"
+      />
     </div>
 
     <!-- Rank badge -->
-    <div class="absolute top-3 left-3 rank-badge px-3 py-1 rounded-2xl text-xs font-bold flex items-center gap-x-1">
+    <div
+      class="absolute top-3 left-3 rank-badge px-3 py-1 rounded-2xl text-xs font-bold flex items-center gap-x-1"
+    >
       <span>#{anime.rank}</span>
     </div>
 
     <!-- Members badge -->
-    <div class="absolute top-3 right-3 bg-black/70 light:bg-white/70 px-2.5 py-1 rounded-2xl text-xs font-mono text-white light:text-[var(--text)]">
+    <div
+      class="absolute top-3 right-3 bg-black/70 light:bg-white/70 px-2.5 py-1 rounded-2xl text-xs font-mono text-white light:text-[var(--text)]"
+    >
       {anime.members}
     </div>
   </div>
 
   <!-- Info section -->
   <div class="p-4 flex-1 flex flex-col">
-    <div class="font-semibold text-lg leading-tight line-clamp-2 mb-1 cursor-help hover:text-[var(--accent)] transition-colors">
+    <div
+      class="font-semibold text-lg leading-tight line-clamp-2 mb-1 cursor-help hover:text-[var(--accent)] transition-colors"
+    >
       {anime.title}
     </div>
     <div class="text-xs text-violet-400 mb-auto">{anime.genre}</div>
@@ -74,12 +97,14 @@ const tooltipTextCozy = anime._cozy?.reason || tooltipTextRating;
           <span class="text-emerald-400 font-bold text-lg">{anime.score}</span>
           <span class="text-[var(--text-muted)] text-xs">/10</span>
         </div>
-        {anime._cozy && (
-          <div class="score-display score-cozy hidden flex items-baseline gap-x-1">
-            <span class="text-emerald-400 font-bold text-lg">{anime._cozy.score}</span>
-            <span class="text-[var(--text-muted)] text-xs">уют</span>
-          </div>
-        )}
+        {
+          anime._cozy && (
+            <div class="score-display score-cozy hidden flex items-baseline gap-x-1">
+              <span class="text-emerald-400 font-bold text-lg">{anime._cozy.score}</span>
+              <span class="text-[var(--text-muted)] text-xs">уют</span>
+            </div>
+          )
+        }
       </div>
     </div>
   </div>

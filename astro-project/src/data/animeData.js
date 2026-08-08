@@ -85,8 +85,7 @@
 export const animeData = [
     { id: 1, rank: 1, title: "Реинкарнация безработного", members: "1 593 675", score: "8.32", poster: "/images/posters/05_Reinkarnatsiya_bezrabotnogo.jpg", genre: "Магический мир / взросление", description: "Перерождённый неудачник серьёзно подходит к новой жизни. Постепенно становится одним из сильнейших магов мира, проходя путь искупления и роста.",
       details: { malUrl: "https://myanimelist.net/anime/39535/Mushoku_Tensei__Isekai_Ittara_Honki_Dasu" } },
-    { id: 2, rank: 2, title: "Брошенный кролик", members: "527 844", score: "8.31", poster: "/images/posters/15_Broshennyy_krolik.jpg", genre: "Слоуслайф / отцовство", description: "30-летний холостяк внезапно становится опекуном маленькой девочки. Очень тёплая и душевная история взросления." ,
-      details: { malUrl: "https://myanimelist.net/anime/10162" } },
+
     { id: 3, rank: 3, title: "Ре:Зеро", members: "2 493 142", score: "8.25", poster: "/images/posters/01_Re_Zero.jpg", genre: "Психологический / петля смерти", description: "Главный герой погибает и возвращается во времени, пытаясь спасти близких. Тёмный, эмоционально тяжёлый исэкай с сильным психологическим акцентом и петлями смерти.",
       details: { malUrl: "https://myanimelist.net/anime/31240/Re_Zero_kara_Hajimeru_Isekai_Seikatsu" } },
     { id: 4, rank: 4, title: "Волчица и пряности", members: "876 392", score: "8.21", poster: "/images/posters/07_Volchitsa_i_pryanosti.jpg", genre: "Торговля и волчица", description: "Мудрый торговец путешествует вместе с древней богиней-волчицей. История о экономике, философии и медленно развивающихся отношениях в средневековом мире.",
@@ -99,6 +98,11 @@ export const animeData = [
       details: {
         seasons: 3, episodes: 31, source: "Лайт-новел (ранобэ)", volumes: 17, studio: "Studio DEEN (S1-2), Drive (S3)", aired: "2016, 2017, 2024", status: "4 сезон анонсирован (2027)", type: "TV",
         malUrl: "https://myanimelist.net/anime/30831/Kono_Subarashii_Sekai_ni_Shukufuku_wo",
+        russianDub: {
+          official: "Crunchyroll (S1-2, закадровый перевод), S3 — только субтитры",
+          studios: ["Crunchyroll", "AniLibria", "JAM", "AniDUB", "Студийная Банда", "OnWave", "Ancord", "SHIZA Project", "Dream Cast", "AniStar", "AnimeVost", "Freedub Studio", "FumoDub", "KoeKak", "КОМНАТА ДИДИ", "Anidub Online", "OBELISK Project", "Оканэ"],
+          cast: ["AniDUB: Ancord, Trina_D", "AniLibria: Kari, Lali, Sharon, Cleo-chan", "SHIZA Project: Lianna, Dancel, RJ Pandora", "Animedia: Nazel, LolAlice"]
+        },
         mainCharacters: [
           { name: "Казума Сато", desc: "Главный герой. Хикикомори, переродившийся в фэнтези. Ленивый, хитрый и прагматичный лидер самой бесполезной партии в мире." },
           { name: "Аква", desc: "Богиня воды. Эгоцентричная, капризная и бесполезная в бою, но обладает мощной магией очищения и воскрешения." },
@@ -111,14 +115,90 @@ export const animeData = [
         ]
       }
     },
-    { id: 7, rank: 7, title: "Сон в замке демонов", members: "252 806", score: "7.95", poster: "/images/posters/33_Son_v_zamke_demonov.png", genre: "Комедия в замке", description: "Принцесса постоянно спит и видит сны в замке демонов. Безумно смешная, милая и очень оригинальная комедия.",
-      details: { malUrl: "https://myanimelist.net/anime/40357/Maoujou_de_Oyasumi" } },
-    { id: 8, rank: 8, title: "Восхождение героя щита", members: "1 782 680", score: "7.90", poster: "/images/posters/03_Voshozhdenie_geroya_shchita.jpg", genre: "Исекай / месть и рост", description: "Преданный герой со щитом, которого все презирают. Постепенно становится сильнее, собирает команду и ищет справедливость в жестоком мире.",
-      details: { malUrl: "https://myanimelist.net/anime/35790/Tate_no_Yuusha_no_Nariagari" } },
+    { id: 7, rank: 7, title: "Сон в замке демонов", members: "252 806", score: "7.95", poster: "/images/posters/33_Son_v_zamke_demonov.png", genre: "Комедия в замке",
+      shortDescription: "Принцесса в плену у демонов, но её волнует только одно — как бы поудобнее поспать. Безумно смешная и оригинальная комедия.",
+      description: "Принцесса Аврора Суярис похищена Королём Демонов и заточена в его замке. Казалось бы, трагедия — но принцессу волнует только одно: идеальный сон! Ради хорошей подушки она готова убить монстра, ради мягкой простыни — разнести ползамка. Демоны живут в постоянном ужасе от своей «пленницы», а Король Демонов пытается не сойти с ума, параллельно заботясь о ней как о дочери. Одна из самых смешных и оригинальных комедий с невероятно милой главной героиней.",
+      details: {
+        seasons: 1, episodes: 12, source: "Манга (Shounen Sunday)", volumes: 27, studio: "Doga Kobo", aired: "Осень 2020", status: "Завершён", type: "TV",
+        malUrl: "https://myanimelist.net/anime/40397/Maoujou_de_Oyasumi",
+        russianDub: {
+          studios: ["AniStar", "AnimeVost", "AniDUB", "AniLibria", "SHIZA Project", "Studio Band", "HaronMedia"],
+          cast: ["AniStar: Veda, Xelenum", "AniMaunt: Nikidub, Takera", "AniDUB: Berserk, Ket, Orru", "AniLibria: Cleo-chan, Malevich, Nuts"]
+        },
+        mainCharacters: [
+          { name: "Аврора Суярис", desc: "Принцесса-заложница. Ради хорошего сна пойдёт на всё — включая убийство монстров и разрушение замка. Невероятно милая и безжалостная.", image: "/images/characters/Syalis.jpg" },
+          { name: "Король Демонов", desc: "Владыка замка. Похитил принцессу для переговоров, но теперь страдает от её выходок. По сути стал её приёмным отцом.", image: "/images/characters/DemonKing.png" },
+          { name: "Демон-священник", desc: "Главный помощник Короля Демонов. Постоянно в шоке от творящегося безумия, но заботится обо всех обитателях замка.", image: "/images/characters/DemonCleric.png" },
+          { name: "Герой Акацуки", desc: "Легендарный герой людей, пришедший спасти принцессу. Она упорно не запоминает его имя, называя «как-его-там-кун».", image: "/images/characters/Akatsuki.jpg" },
+          { name: "Дикобраз Маджиро", desc: "Вечно ворчащий, но добрый дикобраз. Из-за безотказности постоянно становится жертвой безумных планов принцессы.", image: "/images/characters/Majiro.jpg" },
+          { name: "Малышка-демон", desc: "Пушистый монстр, похожий на плюшевого мишку. Идеальная живая подушка для принцессы и её фанат.", image: "/images/characters/DebiAkuma.png" },
+          { name: "Красный сибирский пёс", desc: "Верный пёс Короля Демонов и главный хранитель порядка. Мечтает, чтобы пленница вела себя прилично.", image: "/images/characters/RedSiberian.png" },
+          { name: "Гоблин-прислужник", desc: "Обычный гоблин-работяга. Вместе с дикобразом и минотавром — вечная жертва принцессы.", image: "/images/characters/Goblin.png" },
+          { name: "Посейдон", desc: "Один из Десяти Старейшин, реинкарнация греческого бога морей. Грозный демон, бессильный против принцессы.", image: "/images/characters/Poseidon.jpg" },
+          { name: "Минотавр", desc: "Огромный демон-бык, сильнейший воин замка. Используется принцессой как мебель, транспорт и строительный материал.", image: "/images/characters/Minotaur.png" },
+          { name: "Гарпия", desc: "Девушка-птица, мечтающая о дружбе с человеком. Принцесса использует её перья для подушек.", image: "/images/characters/Harpy.jpg" },
+          { name: "Алазиф", desc: "Древний дух книги заклинаний. Загадочный наблюдатель, который понимает принцессу лучше всех.", image: "/images/characters/Alazif.png" },
+          { name: "Скелет-солдат", desc: "Безмолвный страж замка. Служит принцессе подставкой, вешалкой и будильником.", image: "/images/characters/SkeletonSoldier.png" },
+          { name: "Двуглавый дракон", desc: "Грозный страж замка. Две головы = две подушки, чешуя = идеальный матрас.", image: "/images/characters/TwoHeadedDragon.png" }
+        ]
+      }
+    },
+    { id: 8, rank: 8, title: "Восхождение героя щита", members: "1 779 394", score: "7.90", poster: "/images/posters/03_Voshozhdenie_geroya_shchita.jpg", genre: "Исекай / месть и рост",
+      shortDescription: "Преданный всеми герой со щитом постепенно становится сильнее и находит настоящих союзников. Мрачная история преодоления и возмездия.",
+      description: "Наофуми Иватани — обычный японский студент, призванный в другой мир как один из четырёх легендарных героев. Но ему достаётся лишь щит, и с первого дня все презирают его. Преданный, оклеветанный и брошенный, он теряет веру в людей. С тяжёлым сердцем он покупает рабыню Рафталию — девочку-полузверя, которая становится его верным спутником и первым настоящим другом. Вместе они проходят путь от изгоев до сильнейших защитников королевства. Мрачная, но вдохновляющая история преодоления, роста команды и поиска справедливости.",
+      details: {
+        seasons: 4, episodes: 62, source: "Лайт-новел (ранобэ)", volumes: 22, studio: "Kinema Citrus (S1, S3, S4), DR Movie (S2)", aired: "2019, 2022, 2023, 2025", status: "5 сезон анонсирован (2027)", type: "TV",
+        malUrl: "https://myanimelist.net/anime/35790/Tate_no_Yuusha_no_Nariagari",
+        russianDub: {
+          studios: ["Kansai Studio", "AniStar", "AniLibria", "AniMedia", "AniMaunt", "AniDUB", "AniRise", "SHIZA Project", "AniFilm"],
+          cast: ["AniStar: Overlords, Zendos, Shoker, Sati Akura, Ruri", "AniLibria: Sharon, December, Hekomi, Amikiri, Ados", "AniMedia: LolAlice, Коварный Бобер, KingMaster, MezIdA", "AniMaunt: Nata_kex, J.Dark, Berofu, Рейви", "AniDUB: JAM, Trina_D", "AniRise: Fiardear, Freedom, Kaize, notonix, PrincessAnnihilation", "SHIZA Project: nDrOiDze, Mamoru, AmnesiaMoon, Lianna, Abe", "AniFilm: hAl, Kawas, Баяна, Rin"]
+        },
+        mainCharacters: [
+          { name: "Наофуми Иватани", desc: "Герой Щита. Преданный всеми, он становится циничным и мрачным. Постепенно, благодаря Рафталии, вновь учится доверять людям.", image: "/images/characters/Naofumi.png" },
+          { name: "Рафталия", desc: "Полузверь-енот. Бывшая рабыня, которую Наофуми купил и вырастил. Его верный клинок, первая любовь и главная опора.", image: "/images/characters/Raphtalia.png" },
+          { name: "Фиро", desc: "Королева филориалов. Вылупилась из яйца монстра и за считанные дни выросла в могущественного зверя. Энергичная, наивная и любит поесть.", image: "/images/characters/Filo.png" },
+          { name: "Малти С. Мелромарк", desc: "Первая принцесса. Лживая и манипулятивная, именно она оклеветала Наофуми и сломала ему жизнь. Главная антагонистка первого сезона.", image: "/images/characters/Malty.png" },
+          { name: "Мелти Мелромарк", desc: "Вторая принцесса. Добрая и справедливая, она одна из немногих, кто верит в Наофуми с самого начала. Полная противоположность сестры.", image: "/images/characters/Melty.png" },
+          { name: "Мотоясу Китамура", desc: "Герой Копья. Добродушный дамский угодник. После предательства Малти видит в женщинах свиней и влюбляется в Фило.", image: "/images/characters/Motoyasu.jpg" },
+          { name: "Рэн Амаки", desc: "Герой Меча. Молчаливый красавец, считавший мир игрой. После гибели партии сломался, но вернулся на путь героя.", image: "/images/characters/RenAmaki.png" },
+          { name: "Ицуки Кавасуми", desc: "Герой Лука. Вежливый «мессия» с комплексом бога. Был предан собственной партией и спасён Наофуми.", image: "/images/characters/ItsukiKawasumi.png" },
+          { name: "Мирелия К. Мелромарк", desc: "Королева, фактическая правительница. Гениальный дипломат, раскрывшая интриги Малти и восстановившая справедливость.", image: "/images/characters/Mirelia.png" },
+          { name: "Король Мелромарка", desc: "Формальный король. Слабый и предвзятый, ослеплён любовью к Малти. За предвзятость лишён власти и переименован в «Мусор».", image: "/images/characters/Aultcray.jpg" },
+          { name: "Эрхард", desc: "Кузнец, единственный в стране, кто продаёт щиты. Первый друг Наофуми в Мелромарке, снабжал его с первых дней.", image: "/images/characters/Erhard.png" },
+          { name: "Белукас", desc: "Работорговец. Честен в своём ремесле. Продал Наофуми Рафталию и яйцо Фило, стал его деловым партнёром.", image: "/images/characters/Beloukas.png" },
+          { name: "Ришия Айвиред", desc: "Разорившаяся дворянка, спасённая Героем Лука. Гениальный маг-комбинатор, чей талант раскрыл именно Наофуми.", image: "/images/characters/Rishia.png" },
+          { name: "Фитория", desc: "Королева всех филориалов. Суровая наставница героев, проверившая партию Наофуми силой.", image: "/images/characters/Fitoria.jpg" },
+          { name: "Кил", desc: "Полузверь-вануи из деревни Рафталии. Спасён Наофуми, мечтает отомстить Волнам и защитить близких.", image: "/images/characters/Keel.png" },
+          { name: "Гласс", desc: "Загадочная воительница из параллельного мира. Победила трёх героев, но проиграла Наофуми. Враг, ставший союзником.", image: "/images/characters/Glass.jpg" },
+          { name: "Л'Арк Берг", desc: "Король-воин из параллельного мира. Беззаботный и справедливый, стал другом Наофуми после дуэли.", image: "/images/characters/LarcBerg.jpg" },
+          { name: "Бискас Т. Балмус", desc: "Верховный Жрец Культа Трёх Героев. Главный антагонист сезона, манипулировавший королевством десятилетиями.", image: "/images/characters/Biscas.png" }
+        ]
+      }
+    },
     { id: 9, rank: 9, title: "Дракон-горничная госпожи Кобаяши", members: "1 339 159", score: "7.90", poster: "/images/posters/06_Drakon_gornichnaya_gospozhi_Kobayasi.jpg", genre: "Повседневность с драконами", description: "Обычная офисная работница живёт вместе с драконами в современном мире. Тёплая, милая и очень смешная повседневная комедия.",
       details: { malUrl: "https://myanimelist.net/anime/33206/Kobayashi-san_Chi_no_Maid_Dragon" } },
-    { id: 10, rank: 10, title: "Ангел по соседству", members: "463 445", score: "7.85", poster: "/images/posters/20_Angel_po_sosedstvu.jpg", genre: "Романтика / повседневность", description: "Замкнутый парень и идеальная девушка-соседка постепенно сближаются. Очень милая и душевная школьная романтика.",
-      details: { malUrl: "https://myanimelist.net/anime/50739/Otonari_no_Tenshi-sama_ni_Itsunomanika_Dame_Ningen_ni_Sareteita_Ken" } },
+    { id: 10, rank: 10, title: "Ангел по соседству", members: "464 929", score: "7.85", poster: "/images/posters/20_Angel_po_sosedstvu.jpg", genre: "Романтика / повседневность",
+      shortDescription: "Замкнутый парень и идеальная соседка постепенно сближаются. Невероятно тёплая и душевная романтика без лишней драмы.",
+      description: "Аманэ Фудзимия живёт один в запущенной квартире, питается фастфудом и ни с кем не общается. Его соседка — Махиру Сиина, «ангел» школы: идеальная во всём, от учёбы до внешности. Однажды в дождливый день Аманэ отдаёт ей свой зонт, и с этого начинается их история. Махиру начинает заботиться о нём: готовит еду, убирает квартиру, а Аманэ постепенно открывается ей. Невероятно нежная и уютная история о том, как два одиноких человека находят тепло друг в друге.",
+      details: {
+        seasons: 2, episodes: 24, source: "Лайт-новел (ранобэ)", volumes: 10, studio: "Project No.9", aired: "Зима 2023, Весна 2026", status: "Завершён (2 сезона)", type: "TV",
+        malUrl: "https://myanimelist.net/anime/50739/Otonari_no_Tenshi-sama_ni_Itsunomanika_Dame_Ningen_ni_Sareteita_Ken",
+        russianDub: {
+          studios: ["AniStar", "AniLibria", "Shiza Project", "Dream Cast", "Fronda", "AniMaunt"],
+          cast: ["AniLibria: Frederica Izzard, HectoR, NeoNoir", "Shiza Project: Skyfinger, Myaurik, LucyNyuElf, Veda", "Dream Cast: Mirona, Indominus Rex, Berserk, Ket", "AniMaunt: Duimovochka, Liebert, Mr. Kro, Задумчивый Хомяк, Mutsuko Air"]
+        },
+        mainCharacters: [
+          { name: "Аманэ Фудзимия", desc: "Главный герой. Живёт один, запустил себя и квартиру. Медленно раскрывается благодаря заботе Махиру. Добрый и благодарный.", image: "/images/characters/Amane.png" },
+          { name: "Махиру Сиина", desc: "«Ангел» школы. Идеальная красавица, отличница и спортсменка. За холодной внешностью скрывает одиночество и желание о ком-то заботиться.", image: "/images/characters/Mahiru.jpg" },
+          { name: "Ицуки Акасава", desc: "Единственный друг Аманэ в школе. Весёлый и общительный, помогает растопить лёд между главными героями.", image: "/images/characters/ItsukiAkazawa.png" },
+          { name: "Титосэ Сиракава", desc: "Девушка Ицуки и подруга Махиру. Энергичная и любопытная, быстро догадывается об отношениях Аманэ и Махиру и активно их сводит.", image: "/images/characters/Chitose.png" },
+          { name: "Юта Кадоваки", desc: "«Принц» школы. Самый популярный парень года, умный и добрый. Проявляет интерес к Махиру, став лёгким соперником Аманэ.", image: "/images/characters/Yuuta.png" },
+          { name: "Сиоко Фудзимия", desc: "Мать Аманэ, медсестра. Эмоциональная и заботливая, мучается виной за отъезд. Обожает Махиру как будущую невестку.", image: "/images/characters/Shihoko.jpg" },
+          { name: "Сюуто Фудзимия", desc: "Отец Аманэ. Выглядит моложе своих лет, лёгкий в общении, но надёжный и любящий отец.", image: "/images/characters/Shuuto.jpg" },
+          { name: "Саё Сиина", desc: "Мать Махиру. Разведена и живёт за границей, редко появляется в жизни дочери. Её холодность — источник одиночества Махиру.", image: "/images/characters/Sayo.jpg" }
+        ]
+      }
+    },
     { id: 11, rank: 11, title: "Путешествие под предводительством Луны", members: "570 322", score: "7.71", poster: "/images/posters/13_Puteshestvie_pod_predvoditelstvom_Luny.jpg", genre: "Исекай / демоны и люди", description: "Макото Мисуми призван в другой мир как герой, но богиня отвергает его из-за внешности. Благословлённый лунным богом Цукуёми, он строит собственный город, собирает сильных союзников и становится одной из влиятельнейших фигур мира.",
       details: { malUrl: "https://myanimelist.net/anime/43523/Tsuki_ga_Michibiku_Isekai_Douchuu" } },
     { id: 12, rank: 12, title: "Дневник наблюдений за моей невестой-злодейкой", members: "56 618", score: "7.70", poster: "/images/posters/50_Dnevnik_nablyudeniy_za_nevestoy_zlodeykoy.jpg", genre: "Новая злодейка-комедия", description: "Принц Сесил обручён с леди Бертией, которая уверяет, что помнит прошлую жизнь и является переродившейся злодейкой из отомэ-игры. Вместо того чтобы гневаться, он с интересом наблюдает за её попытками следовать злодейскому сценарию. Тёплая и смешная история, рассказанная с необычной точки зрения." ,
@@ -127,8 +207,10 @@ export const animeData = [
       details: { malUrl: "https://myanimelist.net/anime/54714/Kimi_no_Koto_ga_Daidaidaidaidaisuki_na_100-nin_no_Kanojo" } },
     { id: 14, rank: 14, title: "Неторопливый фермер в другом мире", members: "306 019", score: "7.52", poster: "/images/posters/27_Netorpelyvy_fermer.jpg", genre: "Фермерский уют", description: "Программист перерождается фермером и просто хочет спокойно жить. Идеальный расслабленный исэкай про ферму, семью и лёгкий гарем.",
       details: { malUrl: "https://myanimelist.net/anime/51462/Isekai_Nonbiri_Nouka" } },
-    { id: 15, rank: 15, title: "Bakarina (Злодейка)", members: "515 955", score: "7.44", poster: "/images/posters/16_Bakarina_Zlodeyka.jpg", genre: "Злодейка / избегает флагов", description: "Девушка перерождается в роль злодейки из отомэ-игры и отчаянно пытается избежать всех плохих концовок." ,
-      details: { malUrl: "https://myanimelist.net/anime/38555" } },
+    { id: 15, rank: 15, title: "Моя реинкарнация в отомэ игре в качестве главной злодейки", members: "587 445", score: "7.46", poster: "/images/posters/16_Bakarina_Zlodeyka.jpg", genre: "Исэкай / романтическая комедия", shortDescription: "Девушка перерождается в злодейку из отомэ-игры и пытается избежать плохих концовок. Невероятно добрая и смешная история.",
+      description: "Катарина Клаэс — обычная японская школьница, которая после удара головой вспоминает свою прошлую жизнь и понимает, что переродилась в злодейку из её любимой отомэ-игры. Все маршруты ведут к её смерти или изгнанию! Теперь она должна любой ценой избежать плохих концовок. Но вместо коварных интриг Катарина... начинает заниматься фермерством, заводит друзей и случайно собирает гарем из всех ключевых персонажей. Самая позитивная и wholesome история в жанре исэкай.",
+      details: { malUrl: "https://myanimelist.net/anime/38555/Otome_Game_no_Hametsu_Flag_shika_Nai_Akuyaku_Reijou_ni_Tensei_shiteshimatta" } },
+
     { id: 16, rank: 16, title: "Да я паук, и что же?", members: "516 001", score: "7.44", poster: "/images/posters/17_Da_ya_pauk_i_chto_zhe.jpg", genre: "Перерождение в монстра", description: "Школьница перерождается слабой паучихой в подземелье и вынуждена выживать, эволюционируя и становясь сильнее.",
       details: { malUrl: "https://myanimelist.net/anime/37984/Kumo_desu_ga_Nani_ka" } },
     { id: 17, rank: 17, title: "Перевоплотился в седьмого принца", members: "272 011", score: "7.42", poster: "/images/posters/30_Perevoplotilsya_v_sedmogo_princa.jpg", genre: "OP-магия + ребёнок", description: "Взрослый маг перерождается маленьким принцем с невероятной жаждой знаний. Один из самых милых и позитивных OP-исэкаев последних лет." ,
@@ -143,8 +225,31 @@ export const animeData = [
       details: { malUrl: "https://myanimelist.net/anime/49470" } },
     { id: 22, rank: 22, title: "Время пыток принцесса", members: "89 900", score: "7.26", poster: "/images/posters/49_Vremya_pytok_princessa.jpg", genre: "Комедия с пытками", description: "Принцесса обожает пытать людей... но на самом деле она просто очень одинокая и милая. Абсурдная и добрая чёрная комедия." ,
       details: { malUrl: "https://myanimelist.net/anime/55774" } },
-    { id: 23, rank: 23, title: "Кума Кума Кума Мишка", members: "189 980", score: "7.23", poster: "/images/posters/42_Kuma_Kuma_Kuma_Mishka.jpg", genre: "Уютный мишка-исэкай", description: "Девушка в костюме мишки спасает мир и заводит друзей. Один из самых милых, добрых и позитивных исэкаев всех времён." ,
-      details: { malUrl: "https://myanimelist.net/anime/40974" } },
+    { id: 23, rank: 23, title: "Кума Кума Кума Мишка", members: "190 819", score: "7.23", poster: "/images/posters/42_Kuma_Kuma_Kuma_Mishka.jpg", genre: "Уютный мишка-исэкай",
+      shortDescription: "Девушка в костюме мишки спасает мир и заводит друзей. Один из самых милых, добрых и позитивных исэкаев всех времён.",
+      description: "15-летняя хикикомори Юна проводит дни в VRMMO World Fantasy Online, а ночи — в роскошной квартире, которую купила на деньги с биржевых спекуляций. Однажды, заснув в игре, она просыпается в другом мире — подозрительно похожем на игровой. В качестве бонуса она получает костюм Мишки с божественными характеристиками и двух призванных медведей-компаньонов. Теперь Юна — самый сильный человек в округе, но вместо захвата мира она спасает деревни, помогает гильдии и медленно, но верно заводит настоящих друзей. Невероятно милый, тёплый и позитивный исэкай про доброту и уют.",
+      details: {
+        seasons: 2, episodes: 24, source: "Лайт-новел (ранобэ)", volumes: 21, studio: "EMT Squared", aired: "Осень 2020, Весна 2023 (Punch!)", status: "Завершён", type: "TV",
+        malUrl: "https://myanimelist.net/anime/40974/Kuma_Kuma_Kuma_Bear",
+        russianDub: {
+          official: "Wakanim (лицензия в РФ с 7 октября 2020)",
+          studios: ["Anistar", "AnimeVost", "AniMaunt", "AniLibria", "AniDub", "Dream Cast", "Studio Band", "SHIZA Project"],
+          cast: ["AniDUB: Indominus Rex, Orru, Shaman", "AniMaunt: Takera, GreenTalker, Mewna"]
+        },
+        mainCharacters: [
+          { name: "Юна", desc: "Главная героиня. Хикикомори, перенесённая в игровой мир. Сильнейший боец в костюме Мишки, спасающая всех вокруг.", image: "/images/characters/Yuna.png" },
+          { name: "Фина", desc: "Первая подруга Юны. 10-летняя трудолюбивая девочка, заботившаяся о больной матери. Мудрая не по годам.", image: "/images/characters/Fina.png" },
+          { name: "Ноир Фошроуз", desc: "Дочь лорда Кримонии. Избалованная, но по-детски милая аристократка. Подруга Юны и Фины.", image: "/images/characters/NoirFochrose.png" },
+          { name: "Шия Фошроуз", desc: "Старшая сестра Ноир. Гордая аристократка-воительница, проигравшая Юне и ставшая её подругой.", image: "/images/characters/ShiaFochrose.jpg" },
+          { name: "Кумакю", desc: "Белый медведь-компаньон Юны. Может менять размер от гигантского до плюшевого. Мощь и милота.", image: "/images/characters/Kumakyuu.png" },
+          { name: "Кумаюру", desc: "Чёрный медведь-компаньон Юны. Транспорт, боевая мощь и преданный друг.", image: "/images/characters/Kumayuru.png" },
+          { name: "Шури", desc: "Младшая сестра Фины. Милый жизнерадостный ребёнок, обожающий сестру и медведей.", image: "/images/characters/Shuri.png" },
+          { name: "Хелен", desc: "Ресепшионист гильдии авантюристов Кримонии. Добрая и терпеливая, помогает Юне с заданиями.", image: "/images/characters/Helen.png" },
+          { name: "Гентц", desc: "Сотрудник гильдии. Практичный и надёжный, быстро признал силу Юны.", image: "/images/characters/Gentz.png" },
+          { name: "Элена", desc: "Жительница Кримонии. Символ людей, чью жизнь изменила к лучшему Юна.", image: "/images/characters/Elena.png" }
+        ]
+      }
+    },
     { id: 24, rank: 24, title: "Как госпожа Вельзевул пожелает", members: "107 874", score: "7.22", poster: "/images/posters/48_Kak_gospozha_Velzevul_pozhelaet.jpg", genre: "Сладкая комедия про демонов", description: "Маленькая госпожа демонов и её служанка-горничная. Очень милая, сладкая и смешная повседневная комедия." ,
       details: { malUrl: "https://myanimelist.net/anime/37716" } },
     { id: 25, rank: 25, title: "Рыцарь-скелет вступает в параллельный мир", members: "386 927", score: "7.13", poster: "/images/posters/55_Rytsar_skelet_v_parallelny_mir.jpg", genre: "Исекай / OP-рыцарь",
@@ -153,20 +258,49 @@ export const animeData = [
       details: {
         seasons: 2, episodes: 24, source: "Лайт-новел (ранобэ)", volumes: 10, studio: "Studio KAI / HORNETS (S1), Aura Studio (S2)", aired: "Весна 2022 (S1), Лето 2026 (S2)", status: "S2 идёт", type: "TV",
         malUrl: "https://myanimelist.net/anime/48760/Gaikotsu_Kishi-sama_Tadaima_Isekai_e_Odekakechuu",
+        russianDub: {
+          studios: ["Anistar", "AniLibria", "Dream Cast", "Amazing Dubbing", "AniRise", "Animedia", "SHIZA Project", "AniDub"],
+          cast: ["AniLibria: Amikiri, Crowley, Itashi, Lupin", "AniRise: TimMachine, k0shar, Салем, Letica, VieliS", "Amazing Dubbing: Rikichae, LeslyXer", "Dream Cast: JAM, Berserk, Rizz_Fisher, Orru, Lelik_time", "Animedia: Seven, Morin", "SHIZA Project: Dancel, Mamoru, Abe, Absentia"]
+        },
         mainCharacters: [
-          { name: "Арк", desc: "Главный герой. Геймер, переродившийся в теле скелета-рыцаря. Добрый, сильный и скрывает свою внешность." },
-          { name: "Арианна Гленис Лалатойя", desc: "Эльфийка-воительница, спутница Арка. Гордая, благородная и очень преданная." },
-          { name: "Понта", desc: "Маленький лисёнок-дух, спутник Арка. Милый, верный и всё понимает." },
-          { name: "Чиёме", desc: "Девушка-зверолюд (лисица). Присоединяется к отряду Арка. Тихая, загадочная и очень сильная." },
-          { name: "Данка", desc: "Воин-зверолюд из отряда гильдии. Верный друг и надёжный боец." },
-          { name: "Гленис", desc: "Мать Арианны, эльфийская лучница. Мудрая, опытная и заботливая." }
+          { name: "Арк", desc: "Главный герой. Геймер, перенёсшийся в тело скелета-рыцаря. Добрый, сильный и скрывает свою внешность под шлемом.", image: "/images/characters/Arc.png" },
+          { name: "Арианна Гленис Мейпл", desc: "Тёмная эльфийка-воительница с белыми волосами. Верная спутница Арка, связь с эльфийским миром.", image: "/images/characters/Ariane.png" },
+          { name: "Понта", desc: "Дух-зверь-лисёнок, спасённый Арком. Сам выбрал его хозяином. Милый талисман группы.", image: "/images/characters/Ponta.png" },
+          { name: "Чиёме", desc: "Ниндзя-зверолюд (лисица), потомок клана Дзинсин. Тихая воительница за освобождение своего народа.", image: "/images/characters/Chiyome.png" },
+          { name: "Лорен Ларайя дю Лувиерт", desc: "Старшая дочь виконта дю Лувиерт. Благородная союзница Арка в высшем обществе.", image: "/images/characters/Lauren.png" },
+          { name: "Рита Фаррен", desc: "Горничная дома Лувиерт. Сдержанная и преданная спутница Лорен.", image: "/images/characters/Rita.png" },
+          { name: "Дилан Таг Лалатойя", desc: "Отец Арианны. Мудрый эльфийский воин, старейшина Леса Канады.", image: "/images/characters/Dylan.png" },
+          { name: "Гленис Альна Лалатойя", desc: "Мать Арианны. Мудрая эльфийская воительница, хранительница семьи.", image: "/images/characters/Glenys.png" },
+          { name: "Данка Нил Мейпл", desc: "Эльфийский воин из Великого Леса Канады. Боец за свободу своего народа.", image: "/images/characters/Danka.png" },
+          { name: "Ээвин Гленис Мейпл", desc: "Старшая сестра Арианны. Одна из лучших мечниц Леса Канады.", image: "/images/characters/Eevin.png" }
         ]
       }
     },
     { id: 26, rank: 26, title: "Злодейка 99 уровня", members: "195 631", score: "7.13", poster: "/images/posters/40_Zlodeyka_99_urovnya.jpg", genre: "OP-злодейка", description: "Девушка перерождается в злодейку из игры и решает стать самой сильной. Отличный микс комедии, экшена и развития персонажа." ,
       details: { malUrl: "https://myanimelist.net/anime/54837" } },
-    { id: 27, rank: 27, title: "Ради своей дочери я смогу победить даже короля демонов", members: "236 393", score: "7.08", poster: "/images/posters/47_Radi_svoey_docheri.jpg", genre: "Уютная история про дочь", description: "Юный авантюрист Дейл находит в лесу маленькую девочку-демона Латину, оставшуюся сиротой. Он решает удочерить её, и с этого момента его жизнь наполняется теплотой отцовства и заботы. Одна из самых душевных историй про семью и привязанность.",
-      details: { malUrl: "https://myanimelist.net/anime/39326/Uchi_no_Ko_no_Tame_naraba_Ore_wa_Moshikashitara_Maou_mo_Taoseru_kamo_Shirenai" } },
+    { id: 27, rank: 27, title: "Ради своей дочери я смогу победить даже короля демонов", members: "243 662", score: "7.07", poster: "/images/posters/47_Radi_svoey_docheri.jpg", genre: "Уютная история про дочь",
+      shortDescription: "Юный авантюрист находит в лесу девочку-демона и удочеряет её. Одна из самых душевных историй про семью и привязанность.",
+      description: "Дейл — 18-летний авантюрист серебряного ранга, один из самых талантливых в гильдии. Во время задания в лесу он находит брошенную маленькую девочку-демона Латину и решает удочерить её. С этого момента его жизнь наполняется теплотой отцовства: он балует дочь, защищает её от любой угрозы и учит доверять миру. Латина же — умная и добрая девочка, скрывающая рожки под лентами, — быстро становится любимицей всего города. Но тёплой семейной идиллии угрожает тёмное наследие девочки: в ней течёт кровь короля демонов. Трогательная, душевная история о родительской любви, способной преодолеть любые предрассудки.",
+      details: {
+        seasons: 1, episodes: 12, source: "Лайт-новел (ранобэ)", volumes: 9, studio: "Maho Film", aired: "Лето 2019", status: "Завершён", type: "TV",
+        malUrl: "https://myanimelist.net/anime/39324/Uchi_no_Ko_no_Tame_naraba_Ore_wa_Moshikashitara_Maou_mo_Taoseru_kamo_Shirenai",
+        russianDub: {
+          studios: ["AniStar", "AniLibria", "SHIZA Project", "AniDUB"],
+          cast: ["AniLibria: Kiyoko Koheiri, HectoR", "SHIZA Project: Mamoru, Uninie, Kitsune, Bvia", "AniDUB: Orru, RiZZ_fisher"]
+        },
+        mainCharacters: [
+          { name: "Дейл", desc: "Главный герой. 18-летний авантюрист серебряного ранга. При виде дочери превращается в размякшего папашу.", image: "/images/characters/Dale.png" },
+          { name: "Латина", desc: "Девочка-полудемон, найденная в лесу. Добрая и умная, скрывает рожки под лентами. Скрывает тёмное наследие короля демонов.", image: "/images/characters/Latina.png" },
+          { name: "Кеннет", desc: "Друг и напарник Дейла по гильдии. Надёжный товарищ и «дядя» Латины.", image: "/images/characters/Kenneth.png" },
+          { name: "Рита", desc: "Хозяйка гостиницы, где поселились Дейл и Латина. Вторая мама девочки.", image: "/images/characters/Rita.png" },
+          { name: "Хлоя", desc: "Напарница Дейла. Энергичная «тётя» Латины, душа команды.", image: "/images/characters/Chloe.png" },
+          { name: "Сильвия", desc: "Напарница Дейла. Сдержанная и надёжная «тётя» Латины.", image: "/images/characters/Sylvia.png" },
+          { name: "Руди", desc: "Лучший друг и детская влюблённость Латины. Символ её счастливого детства.", image: "/images/characters/Rudy.png" },
+          { name: "Марсель", desc: "Житель Кройццо, обожающий Латину. Часть тёплого окружения девочки.", image: "/images/characters/Marcel.png" },
+          { name: "Майя", desc: "Малышка, привязавшаяся к Латине как к старшей сестре.", image: "/images/characters/Maya.png" }
+        ]
+      }
+    },
     { id: 28, rank: 28, title: "Мифический дух: хроники", members: "462 300", score: "7.06", poster: "/images/posters/18_Mificheskiy_duh_hroniki.jpg", genre: "Реинкарнация / месть и магия", description: "Студент погибает и перерождается в другом мире. Пытается отомстить за свою семью и раскрывает тайны своего прошлого.",
       details: { malUrl: "https://myanimelist.net/anime/44203/Seirei_Gensouki" } },
     { id: 29, rank: 29, title: "Чёрный призыватель", members: "299 901", score: "7.00", poster: "/images/posters/28_Cherny_prizyvatel.jpg", genre: "Призыв + OP", description: "Парень с уникальной способностью призыва становится невероятно сильным. Тёмный, стильный и очень динамичный исэкай." ,
@@ -177,8 +311,30 @@ export const animeData = [
       details: { malUrl: "https://myanimelist.net/anime/60523" } },
     { id: 32, rank: 32, title: "Избранный богами", members: "246 331", score: "6.96", poster: "/images/posters/32_Izbrannyy_bogami.jpg", genre: "Уютный исэкай", description: "Взрослый мужчина перерождается ребёнком и начинает бизнес со слаймами. Очень тёплый, добрый и расслабленный тайтл." ,
       details: { malUrl: "https://myanimelist.net/anime/41312" } },
-    { id: 33, rank: 33, title: "Мир Лидейл", members: "183 374", score: "6.95", poster: "/images/posters/43_Mir_Lideyl.jpg", genre: "Бабушка в MMORPG", description: "Пожилая женщина попадает в MMORPG в теле своей аватарки. Очень милая, взрослая и необычная история про второй шанс." ,
-      details: { malUrl: "https://myanimelist.net/anime/48239" } },
+    { id: 33, rank: 33, title: "Мир Лидейл", members: "192 066", score: "6.96", poster: "/images/posters/43_Mir_Lideyl.jpg", genre: "Бабушка в MMORPG",
+      shortDescription: "Пожилая женщина попадает в MMORPG в теле своей аватарки. Очень милая, взрослая и необычная история про второй шанс.",
+      description: "Кайна провела годы в больнице, живя в VRMMORPG «Лидейл». Когда аппарат жизнеобеспечения отключился, она очнулась в игровом мире в теле своей аватарки — юной эльфийки 1100-го уровня. Но с момента её последнего выхода из игры прошло 200 лет: мир изменился, а её «дети» — суб-персонажи Скарго, Май-Май и Картац, которых она усыновила в игре, — выросли и заняли важные посты. Теперь пожилая женщина в теле эльфийки исследует изменившийся мир, помогает людям и воссоединяется с семьёй. Тёплая, взрослая и необычная история о втором шансе, семье и принятии себя.",
+      details: {
+        seasons: 1, episodes: 12, source: "Лайт-новел (ранобэ)", volumes: 7, studio: "Maho Film", aired: "Зима 2022", status: "Завершён", type: "TV",
+        malUrl: "https://myanimelist.net/anime/48239/Leadale_no_Daichi_nite",
+        russianDub: {
+          studios: ["AnimeVost", "AniMaunt", "AniLibria", "Dream Cast", "Shiza Project"],
+          cast: ["AniLibria: Lupin, Itashi, WhiteCrow, Kroxxa", "Dream Cast: Airis, Orru", "AniMaunt: MissClick, Ruta, Sinichka, Yuji"]
+        },
+        mainCharacters: [
+          { name: "Кайна", desc: "Главная героиня. Пожилая женщина в теле эльфийки 1100-го уровня. Мать троих суб-персонажей, одна из сильнейших в мире.", image: "/images/characters/Cayna.png" },
+          { name: "Скарго", desc: "Старший сын Кайны, эльф-священник. Считает себя «полубогом», обожает мать.", image: "/images/characters/Skargo.png" },
+          { name: "Май-Май", desc: "Вторая дочь Кайны, верховная жрица. Голос разума в семье.", image: "/images/characters/MaiMai.png" },
+          { name: "Картац", desc: "Младший сын Кайны, воин. Надёжный защитник и спутник матери.", image: "/images/characters/Kartatz.png" },
+          { name: "Литт", desc: "Дочь хозяйки гостиницы. Первая подруга Кайны в деревне Офель.", image: "/images/characters/Lytt.png" },
+          { name: "Марел", desc: "Хозяйка гостиницы Офеля. Приёмная мать Кайны в новом мире.", image: "/images/characters/Marel.png" },
+          { name: "Кей", desc: "Жительница Офеля. Часть тёплого окружения Кайны.", image: "/images/characters/Key.png" },
+          { name: "Руин", desc: "Житель Офеля. Часть деревенской жизни Кайны.", image: "/images/characters/Ruine.png" },
+          { name: "Дэнсукэ", desc: "Гигантский жук-компаньон Кайны. Транспорт и верный боевой спутник.", image: "/images/characters/Densuke.png" },
+          { name: "Мимили", desc: "Русалка, спасённая Кайной. Необычная жительница Офеля и подруга героини.", image: "/images/characters/Mimily.png" }
+        ]
+      }
+    },
     { id: 34, rank: 34, title: "Жизнь со сводной сестрой", members: "120 632", score: "6.94", poster: "/images/posters/39_Zhizn_so_svodnoy_sestroy.jpg", genre: "Романтика", description: "После повторной свадьбы родителей старшеклассник Юта и школьная красавица Саки становятся сводными братом и сестрой. Они договариваются соблюдать дистанцию, но совместная жизнь постепенно сближает их. Тёплая, взрослая и очень душевная романтика.",
       details: { malUrl: "https://myanimelist.net/anime/52481/Gimai_Seikatsu" } },
     { id: 35, rank: 35, title: "Укротитель зверей изгнанный", members: "247 220", score: "6.90", poster: "/images/posters/35_Ukrotitel_zverey_izgnannyy.jpg", genre: "OP-укротитель", description: "Героя с 'бесполезной' способностью изгоняют, но он становится сильнейшим укротителем монстров. Классический revenge + рост.",
@@ -189,6 +345,10 @@ export const animeData = [
       details: {
         seasons: 2, episodes: 24, source: "Лайт-новел (ранобэ)", volumes: 29, studio: "Revoroot (S1), Teddy (S2)", aired: "2021, 2025", status: "LN продолжается", type: "TV",
         malUrl: "https://myanimelist.net/anime/40586/Slime_Taoshite_300-nen_Shiranai_Uchi_ni_Level_Max_ni_Nattemashita",
+        russianDub: {
+          studios: ["AnimeVost", "AniDub", "AniMaunt", "SHIZA Project", "AniLibria"],
+          cast: ["AniDub: Lonely Dragon, Orru, Dreamy Sleep, Indominus Rex", "AniMaunt: Ruta, AnaShape, GreenTalker, Sedrix", "SHIZA Project: Mamoru, Abe, Absentia, flower", "AniLibria: Ados, WhiteCrow, Amikiri"]
+        },
         mainCharacters: [
           { name: "Азуса Айдзава", desc: "Главная героиня. Бывшая офисная работница, теперь бессмертная ведьма. Хочет только спокойной жизни без стресса." },
           { name: "Лайка", desc: "Алая драконица, первая ученица Азусы. Серьёзная, трудолюбивая и очень преданная «учительнице»." },
@@ -215,6 +375,10 @@ export const animeData = [
       details: {
         seasons: 1, episodes: 12, source: "Лайт-новел (ранобэ)", volumes: 18, studio: "Project No.9", aired: "2019", status: "LN завершена", type: "TV",
         malUrl: "https://myanimelist.net/anime/37393/Watashi_Nouryoku_wa_Heikinchi_de_tte_Itta_yo_ne",
+        russianDub: {
+          studios: ["Kanade Eu", "AniLibria", "AniDub", "Animaunt"],
+          cast: ["AniLibria: Anzen, Kiyoko Koheiri", "AniDub: Orru, Airis", "Animaunt: Berofu, Takera, MissClick, Ceaser"]
+        },
         mainCharacters: [
           { name: "Майл (Мистин)", desc: "Главная героиня. Переродилась с силой в 6800 раз выше средней. Мечтает о спокойной жизни, но постоянно попадает в приключения." },
           { name: "Рейна", desc: "Красноволосая авантюристка, член отряда. Острая на язык, но очень преданная подруга. Обладает огромной физической силой." },
@@ -257,6 +421,10 @@ export const animeData = [
       details: {
         seasons: 2, episodes: 24, source: "Лайт-новел (ранобэ)", volumes: 28, studio: "Production Reed (S1), J.C.Staff (S2)", aired: "2017 (S1), 2023 (S2)", status: "LN продолжается", type: "TV",
         malUrl: "https://myanimelist.net/anime/35203/Isekai_wa_Smartphone_to_Tomo_ni",
+        russianDub: {
+          studios: ["AniLibria", "GreenTalker", "Kansai studio", "AniDub"],
+          cast: ["AniLibria: Itashi, Sharon, Silv", "AniDUB: Trina_D, RiZZ_fisher", "Kansai studio: Никита Красильников, Руслан Габидуллин, Ольга Кравцова"]
+        },
         mainCharacters: [
           { name: "Тоя Мотидзуки", desc: "Главный герой. Школьник, переродившийся с невероятной магией и смартфоном. Добрый, скромный и невероятно сильный." },
           { name: "Юмина Урнеа Белфаст", desc: "Первая невеста Тои. Принцесса королевства Белфаст. Умная, дипломатичная, лидер невест. Маг света." },
@@ -290,7 +458,7 @@ export const charactersData = [
     { name: "Римуру Темпест", anime: "Слизь", desc: "Самый харизматичный и развивающийся ГГ", love: 95 },
     { name: "Эмилия", anime: "Ре:Зеро", desc: "Идеальная героиня с глубокой трагедией", love: 93 },
     { name: "Аква", anime: "KonoSuba", desc: "Богиня-идиотка. Мемы на века", love: 92 },
-    { name: "Катарина Клаэс", anime: "Bakarina", desc: "Самая обаятельная и тупая злодейка в истории", love: 91 },
+    { name: "Катарина Клаэс", anime: "Моя реинкарнация в отомэ игре в качестве главной злодейки", desc: "Самая обаятельная и тупая злодейка в истории", love: 91 },
     { name: "Макото Мисуми", anime: "Tsukimichi", desc: "Реалистичный и сильный ГГ с отличным характером", love: 89 },
     { name: "Хадзимэ Нагумо", anime: "Арифурэта", desc: "От слабого до монстра. Крутая арка мести", love: 87 },
     { name: "Роксанна", anime: "Гарем рабов", desc: "Самая преданная и сексуальная спутница в жанре", love: 86 },
@@ -311,7 +479,7 @@ export const cozyData = [
     { title: "Мир Лидейл", reason: "Бабушка в MMORPG. Тёплая, взрослая и добрая", score: 8.7 },
     { title: "Цубакума (UzaMaid!)", reason: "Бывшая солдатка и маленькая девочка. Очень милая комедия", score: 8.6 },
     { title: "Как госпожа Вельзевул пожелает", reason: "Сладкая повседневная комедия про демонов", score: 8.5 },
-    { title: "Брошенный кролик", reason: "Тёплая история про отцовство и взросление", score: 8.4 },
+    { title: "Моя реинкарнация в отомэ игре в качестве главной злодейки", reason: "Пик wholesome: добрая душа, земледелие, чаепития и невероятно позитивная энергия", score: 8.9 },
     { title: "Ангел по соседству", reason: "Милая и душевная школьная романтика", score: 8.2 },
     { title: "Добро пожаловать в дешёвый ресторан изгнанника", reason: "Тёплый слоуслайф про еду и новую жизнь", score: 8.1 },
     { title: "Дракон-горничная госпожи Кобаяши", reason: "Повседневность с драконами. Милая и смешная", score: 8.0 },
@@ -324,7 +492,6 @@ export const cozyData = [
     { title: "Реинкарнация безработного", reason: "Серьёзный рост персонажа, не самый расслабленный", score: 6.2 },
     { title: "Волчица и пряности", reason: "Очень спокойная, атмосферная и thoughtful повседневность", score: 7.8 },
     { title: "Рапсодия о долгом странствии", reason: "Расслабленный OP-исэкай с фокусом на исследование и свободу", score: 7.9 },
-    { title: "Bakarina (Злодейка)", reason: "Пик wholesome: низкие ставки, чаепития, фермерство и невероятно позитивная энергия", score: 8.4 },
     { title: "Да я паук, и что же?", reason: "Много выживания и эволюции, не очень расслабленно", score: 5.8 },
     { title: "Сильнейший мудрец низшей эмблемы", reason: "Классический OP, не особо повседневный", score: 6.0 },
     { title: "В другом мире со смартфоном", reason: "Лёгкий гарем, но довольно поверхностный", score: 6.5 },

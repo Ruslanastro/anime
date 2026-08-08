@@ -21,14 +21,14 @@ npm run preview  # astro preview (serve built dist/)
 astro-project/
 ├── src/
 │   ├── components/   # 9 .astro components (Header, SearchBar, AnimeCard, InfoCard, LnCard, AnimeDetail, CharacterModal, Skeleton, Footer)
-│   ├── data/         # Static data (animeData.js, lnData.js, characters/*.js)
+│   ├── data/         # Static data (animeData.js, lnData.js, characters/ — 7 файлов)
 │   ├── layouts/      # BaseLayout.astro
 │   ├── pages/        # index.astro (sole page)
 │   ├── scripts/      # 9 client JS modules (theme, tabs, search, detail, render, tooltip, random, parallax, main)
 │   └── styles/       # global.css (Tailwind v4 + custom styles)
 ├── public/
 │   ├── images/posters/   # 55 anime posters
-│   ├── images/characters/ # 26 character images
+│   ├── images/characters/ # 70 character images
 │   └── images/ln/        # 20 light novel covers
 ├── astro.config.mjs   # static output, Tailwind Vite plugin
 └── package.json       # 3 deps: astro, tailwindcss, @tailwindcss/vite

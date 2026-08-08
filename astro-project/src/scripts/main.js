@@ -12,48 +12,48 @@ import { initParallax } from './parallax.js';
 import { initRandomButton } from './random.js';
 
 export function initialize() {
-    initTheme();
-    initTabs();
-    initSearch();
-    initSortButtons();
-    initTooltips();
-    initDetail();
-    initParallax();
-    initRandomButton();
-    initSkeletonLoader();
+  initTheme();
+  initTabs();
+  initSearch();
+  initSortButtons();
+  initTooltips();
+  initDetail();
+  initParallax();
+  initRandomButton();
+  initSkeletonLoader();
 
-    // Start with popularity tab
-    switchTab('popularity');
-    setTimeout(updateTabUnderline, 30);
+  // Start with popularity tab
+  switchTab('popularity');
+  setTimeout(updateTabUnderline, 30);
 }
 
 function initSkeletonLoader() {
-    const skeleton = document.getElementById('skeleton-popularity');
-    const cards = document.getElementById('content-popularity-cards');
+  const skeleton = document.getElementById('skeleton-popularity');
+  const cards = document.getElementById('content-popularity-cards');
 
-    if (!skeleton || !cards) return;
+  if (!skeleton || !cards) return;
 
-    setTimeout(() => {
-        skeleton.classList.add('hidden');
-        cards.classList.remove('hidden');
+  setTimeout(() => {
+    skeleton.classList.add('hidden');
+    cards.classList.remove('hidden');
 
-        cards.querySelectorAll('.anime-card').forEach((card, i) => {
-            card.style.opacity = '0';
-            card.style.transform = 'translateY(20px)';
-            requestAnimationFrame(() => {
-                requestAnimationFrame(() => {
-                    card.style.transition = 'opacity 0.4s ease, transform 0.4s ease';
-                    card.style.opacity = '1';
-                    card.style.transform = 'translateY(0)';
-                });
-            });
+    cards.querySelectorAll('.anime-card').forEach((card, i) => {
+      card.style.opacity = '0';
+      card.style.transform = 'translateY(20px)';
+      requestAnimationFrame(() => {
+        requestAnimationFrame(() => {
+          card.style.transition = 'opacity 0.4s ease, transform 0.4s ease';
+          card.style.opacity = '1';
+          card.style.transform = 'translateY(0)';
         });
-    }, 800);
+      });
+    });
+  }, 800);
 }
 
 // Auto-initialize when DOM is ready
 if (document.readyState === 'loading') {
-    document.addEventListener('DOMContentLoaded', initialize);
+  document.addEventListener('DOMContentLoaded', initialize);
 } else {
-    initialize();
+  initialize();
 }

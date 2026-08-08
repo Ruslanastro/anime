@@ -9,16 +9,24 @@
   <div class="max-w-7xl mx-auto px-6 pt-4">
     <!-- Верхний ряд: бренд + действия -->
     <div class="flex items-center justify-between gap-4">
-      <div class="flex items-center gap-x-3 min-w-0 cursor-pointer select-none hover:opacity-90 active:opacity-75 transition-opacity"
-           id="logo-link"
-           title="Перейти на главную"
-           tabindex="0"
-           role="button"
-           onkeydown="if (event.key === 'Enter' || event.key === ' ') { event.preventDefault(); this.click(); }">
+      <div
+        class="flex items-center gap-x-3 min-w-0 cursor-pointer select-none hover:opacity-90 active:opacity-75 transition-opacity"
+        id="logo-link"
+        title="Перейти на главную"
+        tabindex="0"
+        role="button"
+        onkeydown="if (event.key === 'Enter' || event.key === ' ') { event.preventDefault(); this.click(); }"
+      >
         <div class="hdr-brand-icon"><i class="fa-solid fa-tv"></i></div>
         <div class="min-w-0">
-          <h1 class="text-xl md:text-2xl font-bold tracking-tighter section-header">Аниме Топ 2026</h1>
-          <p class="text-xs text-[var(--text-muted)] whitespace-nowrap overflow-hidden text-ellipsis">55 тайтлов • MyAnimeList • Июль 2026</p>
+          <h1 class="text-xl md:text-2xl font-bold tracking-tighter section-header">
+            Аниме Топ 2026
+          </h1>
+          <p
+            class="text-xs text-[var(--text-muted)] whitespace-nowrap overflow-hidden text-ellipsis"
+          >
+            55 тайтлов • MyAnimeList • Июль 2026
+          </p>
         </div>
       </div>
 
@@ -36,28 +44,79 @@
           <i class="fa-solid fa-sun"></i>
         </button>
 
-        <span class="hdr-tag"><span class="hdr-tag-dot"></span><span class="hidden sm:inline">Данные обновлены</span></span>
+        <span class="hdr-tag"
+          ><span class="hdr-tag-dot"></span><span class="hidden sm:inline">Данные обновлены</span
+          ></span
+        >
       </div>
     </div>
 
     <!-- Нижний ряд: вкладки -->
     <nav class="hdr-nav" id="nav-tabs" role="tablist">
-      <button class="nav-tab tab-active" id="tab-popularity" data-tab="popularity" role="tab" aria-selected="true" aria-controls="content-popularity" tabindex="0">
+      <button
+        class="nav-tab tab-active"
+        id="tab-popularity"
+        data-tab="popularity"
+        role="tab"
+        aria-selected="true"
+        aria-controls="content-popularity"
+        tabindex="0"
+      >
         <i class="fa-solid fa-chart-line"></i><span>Аниме</span>
       </button>
-      <button class="nav-tab" id="tab-imba" data-tab="imba" role="tab" aria-selected="false" aria-controls="content-imba" tabindex="-1">
+      <button
+        class="nav-tab"
+        id="tab-imba"
+        data-tab="imba"
+        role="tab"
+        aria-selected="false"
+        aria-controls="content-imba"
+        tabindex="-1"
+      >
         <i class="fa-solid fa-fist-raised"></i><span>Самые имба ГГ</span>
       </button>
-      <button class="nav-tab" id="tab-characters" data-tab="characters" role="tab" aria-selected="false" aria-controls="content-characters" tabindex="-1">
+      <button
+        class="nav-tab"
+        id="tab-characters"
+        data-tab="characters"
+        role="tab"
+        aria-selected="false"
+        aria-controls="content-characters"
+        tabindex="-1"
+      >
         <i class="fa-solid fa-users"></i><span>Лучшие персонажи</span>
       </button>
-      <button class="nav-tab" id="tab-ecchi" data-tab="ecchi" role="tab" aria-selected="false" aria-controls="content-ecchi" tabindex="-1">
+      <button
+        class="nav-tab"
+        id="tab-ecchi"
+        data-tab="ecchi"
+        role="tab"
+        aria-selected="false"
+        aria-controls="content-ecchi"
+        tabindex="-1"
+      >
         <i class="fa-solid fa-fire"></i><span>Самый экки / интим</span>
       </button>
-      <button class="nav-tab" id="tab-cute" data-tab="cute" role="tab" aria-selected="false" aria-controls="content-cute" tabindex="-1">
+      <button
+        class="nav-tab"
+        id="tab-cute"
+        data-tab="cute"
+        role="tab"
+        aria-selected="false"
+        aria-controls="content-cute"
+        tabindex="-1"
+      >
         <i class="fa-solid fa-smile-beam"></i><span>Милые герои</span>
       </button>
-      <button class="nav-tab" id="tab-ln" data-tab="ln" role="tab" aria-selected="false" aria-controls="content-ln" tabindex="-1">
+      <button
+        class="nav-tab"
+        id="tab-ln"
+        data-tab="ln"
+        role="tab"
+        aria-selected="false"
+        aria-controls="content-ln"
+        tabindex="-1"
+      >
         <i class="fa-solid fa-book"></i><span>Мои лайт-новеллы</span>
       </button>
 

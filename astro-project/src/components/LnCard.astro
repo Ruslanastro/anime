@@ -15,29 +15,38 @@ export interface Props {
 const { data, index = 0 } = Astro.props;
 
 const statusColors = {
-  "Продолжается": "bg-emerald-500/10 text-emerald-400",
-  "Завершена": "bg-blue-500/10 text-blue-400",
-  "Заброшена": "bg-red-500/10 text-red-400",
-  "Приостановлена": "bg-amber-500/10 text-amber-400",
-  "Ожидание перевода": "bg-cyan-500/10 text-cyan-400",
-  "Веб-новелла": "bg-purple-500/10 text-purple-400"
+  Продолжается: 'bg-emerald-500/10 text-emerald-400',
+  Завершена: 'bg-blue-500/10 text-blue-400',
+  Заброшена: 'bg-red-500/10 text-red-400',
+  Приостановлена: 'bg-amber-500/10 text-amber-400',
+  'Ожидание перевода': 'bg-cyan-500/10 text-cyan-400',
+  'Веб-новелла': 'bg-purple-500/10 text-purple-400',
 };
-const statusColor = statusColors[data.status] || "bg-gray-500/10 text-gray-400";
+const statusColor = statusColors[data.status] || 'bg-gray-500/10 text-gray-400';
 ---
 
-<div class="ln-card rounded-3xl border border-[var(--border)] card-stagger overflow-hidden hover:border-violet-500/30 hover:shadow-lg hover:shadow-violet-500/5 transition-all duration-300"
-     style={`animation-delay: ${index * 40}ms`}>
+<div
+  class="ln-card rounded-3xl border border-[var(--border)] card-stagger overflow-hidden hover:border-violet-500/30 hover:shadow-lg hover:shadow-violet-500/5 transition-all duration-300"
+  style={`animation-delay: ${index * 40}ms`}
+>
   <div class="flex">
     <div class="w-28 sm:w-32 flex-shrink-0 relative">
       <div class="absolute inset-0 bg-gradient-to-br from-violet-500/20 to-fuchsia-500/20"></div>
-      <img src={data.cover} alt={data.title} loading="lazy" decoding="async"
-           class="w-full h-full object-cover"
-           onerror="this.style.display='none'">
+      <img
+        src={data.cover}
+        alt={data.title}
+        loading="lazy"
+        decoding="async"
+        class="w-full h-full object-cover"
+        onerror="this.style.display='none'"
+      />
     </div>
     <div class="flex-1 min-w-0 p-4">
       <div class="font-bold text-base leading-tight mb-1 line-clamp-2">{data.title}</div>
       <div class="flex flex-wrap items-center gap-2 mb-2">
-        <span class:list={['text-xs', 'px-2', 'py-0.5', 'rounded-full', 'font-medium', statusColor]}>{data.status}</span>
+        <span class:list={['text-xs', 'px-2', 'py-0.5', 'rounded-full', 'font-medium', statusColor]}
+          >{data.status}</span
+        >
       </div>
       <div class="space-y-0.5 text-xs">
         <div class="flex items-center gap-x-2">
