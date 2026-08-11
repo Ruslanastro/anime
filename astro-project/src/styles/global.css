@@ -600,6 +600,12 @@ body.light .hdr-nav .nav-tab.tab-active {
 #grid-popularity.sort-cozy .score-cozy {
   display: flex;
 }
+#grid-popularity.sort-shiki .score-rating {
+  display: none;
+}
+#grid-popularity.sort-shiki .score-shiki {
+  display: flex;
+}
 
 /* FLIP-анимация сортировки: пока карточка "летит", CSS hover-transform не участвует */
 .anime-card.flip-animating.anime-card.flip-animating {

@@ -34,6 +34,7 @@ export function sortPopularityGrid(mode) {
   if (!grid) return;
 
   grid.classList.toggle('sort-cozy', mode === 'cozy');
+  grid.classList.toggle('sort-shiki', mode === 'shiki');
 
   const cards = Array.from(grid.querySelectorAll('.anime-card'));
   if (cards.length === 0) return;
@@ -60,6 +61,13 @@ export function sortPopularityGrid(mode) {
       const bMembers = parseInt(b.dataset.members) || 0;
       return bMembers - aMembers;
     }
+    if (mode === 'shiki') {
+      const aScore = parseFloat(a.dataset.shikiScore);
+      const bScore = parseFloat(b.dataset.shikiScore);
+      if (Number.isNaN(aScore)) return 1;
+      if (Number.isNaN(bScore)) return -1;
+      return bScore - aScore;
+    }
     const aRank = parseInt(a.dataset.rank) || 999;
     const bRank = parseInt(b.dataset.rank) || 999;
     return aRank - bRank;
@@ -69,8 +77,6 @@ export function sortPopularityGrid(mode) {
     grid.appendChild(card);
     if (mode === 'cozy') {
       card.dataset.tooltip = card.dataset.tooltipCozy || card.dataset.tooltip;
-    } else if (mode === 'members') {
-      card.dataset.tooltip = card.dataset.tooltipRating || card.dataset.tooltip;
     } else {
       card.dataset.tooltip = card.dataset.tooltipRating || card.dataset.tooltip;
     }
