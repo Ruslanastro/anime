@@ -221,9 +221,13 @@ export function showCharacterDetail(characterName) {
     const nameEl = document.getElementById('char-name');
     const animeEl = document.getElementById('char-anime');
     const descEl = document.getElementById('char-full-desc');
+    const chipsEl = document.getElementById('char-chips');
+    const powersWrap = document.getElementById('char-powers-wrap');
     if (nameEl) nameEl.textContent = characterName;
     if (animeEl) animeEl.textContent = '';
     if (descEl) descEl.textContent = 'Информация о персонаже пока не добавлена.';
+    if (chipsEl) chipsEl.innerHTML = '';
+    if (powersWrap) powersWrap.classList.add('hidden');
     modal.classList.remove('hidden');
     modal.classList.add('flex');
     modal.onclick = (e) => {
@@ -238,6 +242,9 @@ export function showCharacterDetail(characterName) {
   const persEl = document.getElementById('char-personality');
   const roleEl = document.getElementById('char-role');
   const bioEl = document.getElementById('char-biography');
+  const powersEl = document.getElementById('char-powers');
+  const powersWrap = document.getElementById('char-powers-wrap');
+  const chipsEl = document.getElementById('char-chips');
   const imageEl = document.getElementById('char-image');
 
   if (nameEl) nameEl.textContent = data.name || characterName;
@@ -246,6 +253,38 @@ export function showCharacterDetail(characterName) {
   if (persEl) persEl.textContent = data.personality || '—';
   if (roleEl) roleEl.textContent = data.role || '—';
   if (bioEl) bioEl.textContent = data.biography || '—';
+
+  if (powersEl) {
+    powersEl.textContent = data.powers || '—';
+  }
+  if (powersWrap) {
+    powersWrap.classList.toggle('hidden', !data.powers);
+  }
+
+  if (chipsEl) {
+    chipsEl.innerHTML = '';
+    const chips = [];
+    if (data.race) chips.push({ label: data.race, tone: 'neutral' });
+    if (data.age) chips.push({ label: data.age, tone: 'neutral' });
+    if (data.villain !== undefined) {
+      chips.push(
+        data.villain
+          ? { label: 'Злодей', tone: 'villain' }
+          : { label: 'Герой', tone: 'hero' }
+      );
+    }
+    for (const chip of chips) {
+      const el = document.createElement('span');
+      const tones = {
+        neutral: 'border-[var(--border)] bg-[var(--card)] text-[var(--text)]/80',
+        hero: 'border-emerald-500/40 bg-emerald-500/10 text-emerald-400',
+        villain: 'border-red-500/40 bg-red-500/10 text-red-400',
+      };
+      el.className = `px-3 py-1 rounded-full border text-xs font-medium ${tones[chip.tone]}`;
+      el.textContent = chip.label;
+      chipsEl.appendChild(el);
+    }
+  }
 
   if (imageEl) {
     if (data.image) {
@@ -287,6 +326,9 @@ export function showTopCharacterDetail(character) {
   const persEl = document.getElementById('char-personality');
   const roleEl = document.getElementById('char-role');
   const bioEl = document.getElementById('char-biography');
+  const powersEl = document.getElementById('char-powers');
+  const powersWrap = document.getElementById('char-powers-wrap');
+  const chipsEl = document.getElementById('char-chips');
   const imageEl = document.getElementById('char-image');
 
   if (nameEl) nameEl.textContent = character.name || '';
@@ -297,6 +339,9 @@ export function showTopCharacterDetail(character) {
   if (bioEl) {
     bioEl.textContent = `Попал в топ-100 лучших персонажей проекта по голосам зрителей MyAnimeList и AniList. ${character.desc || ''}`;
   }
+  if (powersEl) powersEl.textContent = '—';
+  if (powersWrap) powersWrap.classList.add('hidden');
+  if (chipsEl) chipsEl.innerHTML = '';
 
   if (imageEl) {
     if (character.image) {
