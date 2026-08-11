@@ -13,6 +13,7 @@ export interface Props {
     shortDescription?: string;
     description?: string;
     _cozy?: { score: number; reason: string } | null;
+    shikimoriScore?: string | null;
   };
   index?: number;
 }
@@ -31,6 +32,7 @@ const tooltipTextCozy = anime._cozy?.reason || tooltipTextRating;
   data-rank={anime.rank}
   data-rating={anime.score}
   data-cozy-score={anime._cozy?.score ?? ''}
+  data-shiki-score={anime.shikimoriScore ?? ''}
   data-members={anime.members.replace(/\s/g, '')}
   data-anime-id={anime.id}
 >
@@ -102,6 +104,14 @@ const tooltipTextCozy = anime._cozy?.reason || tooltipTextRating;
             <div class="score-display score-cozy hidden flex items-baseline gap-x-1">
               <span class="text-emerald-400 font-bold text-lg">{anime._cozy.score}</span>
               <span class="text-[var(--text-muted)] text-xs">уют</span>
+            </div>
+          )
+        }
+        {
+          anime.shikimoriScore && (
+            <div class="score-display score-shiki hidden flex items-baseline gap-x-1">
+              <span class="text-violet-400 font-bold text-lg">{anime.shikimoriScore}</span>
+              <span class="text-[var(--text-muted)] text-xs">/10</span>
             </div>
           )
         }
