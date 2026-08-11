@@ -11,6 +11,7 @@ import CharacterModal from '../components/CharacterModal.astro';
 import Footer from '../components/Footer.astro';
 
 import { animeData, imbaData, charactersData, ecchiData, cuteData } from '../data/animeData.js';
+import { topCharactersData } from '../data/topCharactersData.js';
 import { lnData } from '../data/lnData.js';
 import LnCard from '../components/LnCard.astro';
 import Skeleton from '../components/Skeleton.astro';
@@ -110,12 +111,12 @@ import Skeleton from '../components/Skeleton.astro';
       <div class="mb-6">
         <h2 class="text-4xl font-bold tracking-tighter section-header">Лучшие персонажи</h2>
         <p class="text-[var(--text-muted)] mt-2">
-          Самые запоминающиеся и любимые герои из наших тайтлов
+          Топ-100 любимых героев из наших 54 тайтлов — по голосам зрителей MyAnimeList и AniList
         </p>
       </div>
       <SearchBar tabId="characters" placeholder="Поиск персонажа..." />
       <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-5" id="grid-characters">
-        {charactersData.map((char, i) => <InfoCard type="characters" data={char} index={i} />)}
+        {topCharactersData.map((char, i) => <InfoCard type="characters" data={char} index={i} />)}
       </div>
     </div>
 

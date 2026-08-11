@@ -368,7 +368,7 @@ export const animeData = [
     { id: 38, rank: 38, title: "Безымянная память", members: "161 061", score: "6.81", poster: "/images/posters/44_Bezymiannaya_pamyat.jpg", genre: "Фэнтези-романтика", description: "Девушка с таинственным прошлым и юноша, потерявший память. Красивая романтическая история в фэнтезийном мире." ,
       details: { malUrl: "https://myanimelist.net/anime/53835" } },
     { id: 39, rank: 39, title: "Как не призвать князя тьмы", members: "805 146", score: "6.80", poster: "/images/posters/09_Kak_ne_prizvat_knyazya_tmy.jpg", genre: "Экки / гарем + контроль", description: "Главный герой попадает в мир игры и использует магию порабощения на демонах и людях. Смесь экки, гарема и чунибё.",
-      details: { malUrl: "https://myanimelist.net/anime/38221/Isekai_Maou_to_Shoukan_Shoujo_no_Dorei_Majutsu" } },
+      details: { malUrl: "https://myanimelist.net/anime/37210/Isekai_Maou_to_Shoukan_Shoujo_no_Dorei_Majutsu" } },
     { id: 40, rank: 40, title: "Средние способности (Mile)", members: "218 175", score: "6.73", poster: "/images/posters/37_Srednie_sposobnosti.jpg", genre: "Лёгкий исэкай",
       shortDescription: "Девушка пожелала 'средних' способностей, но получила силу, которая в 6800 раз больше человеческой, и теперь пытается жить как обычная авантюристка.",
       description: "Майл — бывшая японская школьница, переродившаяся в другом мире. При перерождении она попросила у богини 'средние способности', но из-за непонимания единиц измерения получила возможности, в 6800 раз превосходящие обычного человека. Теперь она отчаянно пытается скрывать свою истинную силу, чтобы просто жить спокойной жизнью авантюристки в компании новых друзей. Лёгкая, весёлая и очень тёплая история про дружбу, приключения и попытки быть 'нормальной'.",
@@ -438,7 +438,31 @@ export const animeData = [
       }
     },
     { id: 55, rank: 55, title: "Похоже сильнейшая профессия — временный инспектор", members: "56 319", score: "5.85", poster: "/images/posters/52_Pohozhe_silneyshaya_professiya.jpg", genre: "Новый OP-инспектор", description: "Парень с читерской силой становится временным инспектором. Лёгкий, динамичный исэкай с отличным чувством юмора.",
-      details: { malUrl: "https://myanimelist.net/anime/62825/Saikyou_no_Shokugyou_wa_Yuusha_demo_Kenja_demo_Naku_Kanteishi_Kari_Rashii_desu_yo" } }
+      details: { malUrl: "https://myanimelist.net/anime/62825/Saikyou_no_Shokugyou_wa_Yuusha_demo_Kenja_demo_Naku_Kanteishi_Kari_Rashii_desu_yo" } },
+    { id: 56, rank: 56, title: "Подручный Луизы Нулизы", members: "875 975", score: "7.20", poster: "/images/posters/56_Podruchnyy_Luizy_Nulizy.png", genre: "Фэнтези / магия / романтика",
+      shortDescription: "Гордая «Нулиза» Луиза случайно призывает в фамильяры обычного японского школьника. Классика гаремного фэнтези с магией и огненными характерами.",
+      description: "Луиза Франсуаза Ле Блан де ла Вальер — дворянка, которую все зовут «Нулизой»: любое её заклинание превращается во взрыв. Во время церемонии вызова фамильяра она случайно призывает обычного японского школьника Сайто Хирагу — человека, а не магического зверя. С этого начинается их история: гордая «Нулиза» и упрямый землянин вынуждены работать вместе, постоянно ссорясь, но всё больше привязываясь друг к другу. Сайто оказывается легендарным Гандальвом — рыцарем, способным использовать любое оружие, — и вместе с Луизой, владеющей редчайшей силой Войда, они оказываются в центре войн, интриг и приключений всей Халкегинии. Тёплая, смешная и драматичная история о любви, долге и взрослении.",
+      details: {
+        seasons: 4, episodes: 49, source: "Лайт-новел (ранобэ)", volumes: 20, studio: "J.C.Staff", aired: "2006, 2007, 2008, 2012", status: "Завершён", type: "TV",
+        malUrl: "https://myanimelist.net/anime/1195/Zero_no_Tsukaima",
+        russianDub: {
+          studios: ["Eladiel & Zendos", "SakaE & Лизавета", "Inspector_Gadjet & Nika Lenina", "SPAWN"],
+          cast: ["Eladiel & Zendos: JeferSon, Е. Лурье, Ali, Irina, ntking, Faraway, Лизавета, Mirven, Salix Danu"]
+        },
+        mainCharacters: [
+          { name: "Луиза Франсуаза Ле Блан де ла Вальер", desc: "«Луиза-Нулиза». Гордая дворянка с силой Войда. Все её заклинания — взрывы, а сердце — золотое.", image: "/images/characters/Louise.png" },
+          { name: "Сайто Хирага", desc: "Призванный фамильяр Луизы. Рыцарь Гандальв, способный использовать любое оружие. Упрямый и живучий.", image: "/images/characters/Saito.jpg" },
+          { name: "Сиеста", desc: "Горничная Академии. Добрая и милая, вечная соперница Луизы за сердце Сайто.", image: "/images/characters/Siesta.jpg" },
+          { name: "Генриетта де Тристейн", desc: "Королева Тристейна и подруга детства Луизы. Тайно влюблена в Сайто.", image: "/images/characters/Henrietta.jpg" },
+          { name: "Шарлотта Орлеанская", desc: "Табита. Лучшая ученица Академии, наследница Гальи. Гениальный маг ветра и рыцарь дракона.", image: "/images/characters/Charlotte.png" },
+          { name: "Кирхе", desc: "Огненная красавица из Германнии. Лучшая подруга Табиты и вечная соперница Луизы.", image: "/images/characters/Kirche.png" },
+          { name: "Дерфлингер", desc: "Говорящий магический меч Сайто. Древний клинок эпохи Бримира, болтливый и верный.", image: "/images/characters/Derflinger.png" },
+          { name: "Гиш де Граммон", desc: "Тщеславный дворянин и «соперник» Сайто. Маг земли, создающий бронзовых големов.", image: "/images/characters/Guiche.jpg" },
+          { name: "Монморанси", desc: "Девушка Гиша. Маг воды и зельевар. Ревнивая «водяная» дворянка.", image: "/images/characters/Montmorency.jpg" },
+          { name: "Кольбер", desc: "Профессор огня в Академии. Добрый изобретатель и наставник Луизы.", image: "/images/characters/Colbert.jpg" }
+        ]
+      }
+    }
 ];
 
 export const imbaData = [

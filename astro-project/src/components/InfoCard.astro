@@ -5,9 +5,12 @@ if (type === 'ecchi' && index === 0) cardExtra += ' ring-2 ring-red-500';
 ---
 
 <div
-  class={`info-card rounded-3xl p-5 border border-[var(--border)]${cardExtra ? ' ' + cardExtra : ''} card-stagger`}
+  class={`info-card rounded-3xl p-5 border border-[var(--border)]${cardExtra ? ' ' + cardExtra : ''} card-stagger${
+    type === 'characters' ? ' cursor-pointer transition-all hover:border-[var(--accent)]/40 hover:bg-[var(--card)] hover:-translate-y-px active:scale-[0.985]' : ''
+  }`}
   style={`animation-delay: ${index * 40}ms`}
   data-info-type={type}
+  data-card-index={index}
 >
   {
     type === 'imba' && (
@@ -35,13 +38,33 @@ if (type === 'ecchi' && index === 0) cardExtra += ' ring-2 ring-red-500';
   {
     type === 'characters' && (
       <div class="flex items-center gap-x-4">
-        <div class="w-14 h-14 bg-gradient-to-br from-violet-500 to-fuchsia-500 rounded-2xl flex-shrink-0 flex items-center justify-center text-2xl text-white">
-          <i class="fa-solid fa-user" />
-        </div>
+        {data.image ? (
+          <img
+            src={data.image}
+            alt={data.name}
+            loading="lazy"
+            class="w-20 h-20 object-cover object-top rounded-2xl flex-shrink-0 border border-[var(--border)]"
+          />
+        ) : (
+          <div class="w-14 h-14 bg-gradient-to-br from-violet-500 to-fuchsia-500 rounded-2xl flex-shrink-0 flex items-center justify-center text-2xl text-white">
+            <i class="fa-solid fa-user" />
+          </div>
+        )}
         <div class="flex-1 min-w-0">
-          <div class="font-bold text-lg">{data.name}</div>
+          <div class="flex items-center gap-x-2">
+            <span
+              class={`flex-shrink-0 rounded-full px-2 py-0.5 text-[10px] font-bold ${
+                index < 3
+                  ? 'bg-gradient-to-r from-amber-400 to-yellow-500 text-black'
+                  : index < 10
+                    ? 'bg-gradient-to-r from-slate-300 to-slate-400 text-black'
+                    : 'bg-[var(--border)] text-[var(--text-muted)]'
+              }`}
+            >#{index + 1}</span>
+            <div class="font-bold text-lg truncate">{data.name}</div>
+          </div>
           <div class="text-xs text-[var(--text-muted)]">{data.anime}</div>
-          <div class="mt-2 text-sm text-[var(--text-muted)] line-clamp-2">{data.desc}</div>
+          <div class="mt-2 text-sm text-[var(--text-muted)] line-clamp-3">{data.desc}</div>
           <div class="mt-3 flex items-center gap-x-2">
             <div class="flex-1 h-1.5 bg-[var(--border)] rounded-full overflow-hidden">
               <div
@@ -51,6 +74,7 @@ if (type === 'ecchi' && index === 0) cardExtra += ' ring-2 ring-red-500';
             </div>
             <span class="text-xs font-mono text-violet-400">{data.love}</span>
           </div>
+          <div class="mt-2 text-[10px] text-[var(--accent)]/70">Подробнее →</div>
         </div>
       </div>
     )

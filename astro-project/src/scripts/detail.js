@@ -4,6 +4,7 @@
  */
 
 import { animeData } from '../data/animeData.js';
+import { topCharactersData } from '../data/topCharactersData.js';
 import { konosubaCharacters } from '../data/characters/konosuba.js';
 import { slime300Characters } from '../data/characters/slime300.js';
 import { mileCharacters } from '../data/characters/mile.js';
@@ -15,6 +16,7 @@ import { kumabearCharacters } from '../data/characters/kumabear.js';
 import { uchimusumeCharacters } from '../data/characters/uchimusume.js';
 import { leadaleCharacters } from '../data/characters/leadale.js';
 import { skeletonCharacters } from '../data/characters/skeleton.js';
+import { zerotsukaimaCharacters } from '../data/characters/zerotsukaima.js';
 
 const CHAR_MAPS = [
   slime300Characters,
@@ -28,6 +30,7 @@ const CHAR_MAPS = [
   uchimusumeCharacters,
   leadaleCharacters,
   skeletonCharacters,
+  zerotsukaimaCharacters,
 ];
 
 let lastScrollPosition = 0;
@@ -271,6 +274,48 @@ export function closeCharacterDetail() {
   modal.onclick = null;
 }
 
+/** Показ модалки персонажа из топ-100 (вкладка «Лучшие персонажи»). */
+export function showTopCharacterDetail(character) {
+  const modal = document.getElementById('character-detail-modal');
+  if (!modal || !character) return;
+
+  const nameEl = document.getElementById('char-name');
+  const animeEl = document.getElementById('char-anime');
+  const descEl = document.getElementById('char-full-desc');
+  const persEl = document.getElementById('char-personality');
+  const roleEl = document.getElementById('char-role');
+  const bioEl = document.getElementById('char-biography');
+  const imageEl = document.getElementById('char-image');
+
+  if (nameEl) nameEl.textContent = character.name || '';
+  if (animeEl) animeEl.textContent = character.anime || '';
+  if (descEl) descEl.textContent = character.desc || 'Описание будет позже.';
+  if (persEl) persEl.textContent = `Любовь зрителей: ${character.love} из 100. Персонаж из аниме «${character.anime}».`;
+  if (roleEl) roleEl.textContent = character.anime || '—';
+  if (bioEl) {
+    bioEl.textContent = `Попал в топ-100 лучших персонажей проекта по голосам зрителей MyAnimeList и AniList. ${character.desc || ''}`;
+  }
+
+  if (imageEl) {
+    if (character.image) {
+      imageEl.src = character.image;
+      imageEl.alt = character.name || '';
+      imageEl.classList.remove('hidden');
+    } else {
+      imageEl.classList.add('hidden');
+    }
+  }
+
+  modal.classList.remove('hidden');
+  modal.classList.add('flex');
+
+  modal.onclick = (e) => {
+    if (e.target === modal) {
+      closeCharacterDetail();
+    }
+  };
+}
+
 export function initDetail() {
   document.getElementById('grid-popularity')?.addEventListener('click', (e) => {
     const card = e.target.closest('.anime-card');
@@ -278,6 +323,14 @@ export function initDetail() {
     const id = parseInt(card.dataset.animeId, 10);
     const anime = animeData.find((a) => a.id === id);
     if (anime) showAnimeDetail(anime);
+  });
+
+  document.getElementById('grid-characters')?.addEventListener('click', (e) => {
+    const card = e.target.closest('.info-card[data-info-type="characters"]');
+    if (!card) return;
+    const index = parseInt(card.dataset.cardIndex, 10);
+    const character = topCharactersData[index];
+    if (character) showTopCharacterDetail(character);
   });
 
   document.getElementById('detail-back-btn')?.addEventListener('click', closeAnimeDetail);
