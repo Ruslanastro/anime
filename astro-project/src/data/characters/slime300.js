@@ -124,7 +124,7 @@ export const slime300Characters = {
   "Сандра": {
     name: "Сандра",
     anime: "300 лет убивала слизней",
-    image: "",
+    image: "/images/characters/Sandra.jpg",
     race: "Дриада",
     age: "Неизвестно (древняя)",
     villain: false,
