@@ -275,9 +275,33 @@ export const animeData = [
         ]
       }
     },
-    { id: 25, rank: 25, title: "Злодейка 99 уровня", members: "195 631", score: "7.13", shikimoriScore: "7.14", poster: "/images/posters/40_Zlodeyka_99_urovnya.jpg", genre: "OP-злодейка", description: "Девушка перерождается в злодейку из игры и решает стать самой сильной. Отличный микс комедии, экшена и развития персонажа." ,
+    { id: 25, rank: 26, title: "Злодейка 99 уровня", members: "195 631", score: "7.13", shikimoriScore: "7.14", poster: "/images/posters/40_Zlodeyka_99_urovnya.jpg", genre: "OP-злодейка", description: "Девушка перерождается в злодейку из игры и решает стать самой сильной. Отличный микс комедии, экшена и развития персонажа." ,
       details: { malUrl: "https://myanimelist.net/anime/54837" } },
-    { id: 26, rank: 26, title: "Рыцарь-скелет вступает в параллельный мир", members: "386 927", score: "7.13", shikimoriScore: "7.13", poster: "/images/posters/55_Rytsar_skelet_v_parallelny_mir.jpg", genre: "Исекай / OP-рыцарь",
+    { id: 57, rank: 25, title: "Мятежная компания", members: "387 089", score: "7.15", shikimoriScore: "7.16", poster: "/images/posters/57_Myatezhnaya_kompaniya.jpg", genre: "Комедия / пародия на исэкай",
+      shortDescription: "Отаку-хикикомори становится «моэ-миссионером» в фэнтезийном мире. Смешная и искренняя пародия на исэкай с пропагандой отаку-культуры.",
+      description: "Шиничи Кано — отаку до мозга костей, знающий всё о манге, аниме, играх и фигурках. В прошлом хикикомори, он устраивается на работу и... оказывается усыплённым и переправленным в Священную империю Эльдант — фэнтезийный мир, где живут эльфы и летают драконы. Японское правительство даёт ему необычное задание: пропагандировать моэ-культуру! Вместе с полуэльфийкой-горничной Мюсель, капризной императрицей Петралкой и телохранителем Минори Шиничи открывает школу отаку-культуры. Но за весёлым фасадом скрываются серьёзные проблемы: расовая дискриминация, политические интриги, конфликты с соседними странами и тайные планы самого японского правительства. Сможет ли отаку принести моэ в чужой мир и остаться человеком?",
+      details: {
+        seasons: 1, episodes: 12, source: "Лайт-новел (ранобэ)", volumes: 12, studio: "feel.", aired: "Осень 2013", status: "Завершён", type: "TV",
+        malUrl: "https://myanimelist.net/anime/19369/Outbreak_Company",
+        russianDub: {
+          studios: ["AniDUB", "SHIZA Project", "AniLibria.TV", "OVERLORDS", "Inspector Gadjet", "Absurd & Eladiel"],
+          cast: ["AniDUB: Berserk, Ket, Orru", "SHIZA Project: Lianna, Dancel, RJ Pandora"]
+        },
+        mainCharacters: [
+          { name: "Шиничи Кано", desc: "Главный герой. Отаку-хикикомори, ставший «моэ-миссионером» в Эльданте. Добрый и принципиальный, несёт японскую культуру в фэнтезийный мир.", image: "/images/characters/Shinichi.jpg" },
+          { name: "Петралка Энн Эльдант III", desc: "16-летняя императрица Эльданта. Вспыльчивая цундэре, быстро освоила японский и стала фанаткой манги. Невеста Шиничи.", image: "/images/characters/Petralka.jpg" },
+          { name: "Мюсель Фоаран", desc: "Полуэльфийка-горничная Шиничи. Боевой маг армии Эльданта. Верная и влюблённая, готова умереть за него.", image: "/images/characters/Myucel.jpg" },
+          { name: "Эльбия Ханайман", desc: "18-летняя девушка-оборотень, личный художник Шиничи. В полнолуние ведёт себя по-собачьи. Добрая и наивная.", image: "/images/characters/Elbia.jpg" },
+          { name: "Минори Коганума", desc: "Телохранитель Шиничи из Сил самообороны Японии. Прагматичный реалист, тайная фудзёси.", image: "/images/characters/Minori.jpg" },
+          { name: "Галиус Эн Кольдобар", desc: "Кузен Петралки, капитан дворцовой стражи. Серьёзный эльфийский рыцарь, скрытый фанат отаку.", image: "/images/characters/Galious.jpg" },
+          { name: "Джинзабуро Матоба", desc: "Чиновник AmuTec, нанявший Шиничи. «Дружелюбное зло» — куратор культурной экспансии Японии.", image: "/images/characters/Matoba.jpg" },
+          { name: "Ромильда Гард", desc: "Гномка-ученица школы Шиничи. Острая на язык, с чудовищной силой, враг эльфов, ставший другом Лойка.", image: "/images/characters/Romilda.jpg" },
+          { name: "Брук Дарвин", desc: "Ящер-человек ростом 210 см, слуга Шиничи. Добряк-великан, дружит с детьми.", image: "/images/characters/Brooke.jpg" },
+          { name: "Лойк Слейсон", desc: "Юный эльф-ученик школы. Влюблён в Минори, безрассуден, но добродушен.", image: "/images/characters/Loic.jpg" }
+        ]
+      }
+    },
+    { id: 26, rank: 27, title: "Рыцарь-скелет вступает в параллельный мир", members: "386 927", score: "7.13", shikimoriScore: "7.13", poster: "/images/posters/55_Rytsar_skelet_v_parallelny_mir.jpg", genre: "Исекай / OP-рыцарь",
       shortDescription: "Геймер просыпается в теле скелета-рыцаря в мире MMO. Путешествует, помогает людям и скрывает свой жуткий облик.",
       description: "Главный герой засыпает за игрой и просыпается в фэнтези-мире в теле своего игрового персонажа — скелета-рыцаря по имени Арк. Он быстро адаптируется, но вынужден скрывать свой облик под шлемом, чтобы его не приняли за монстра. Арк становится авантюристом, выполняет задания и помогает людям, не подозревая, что его добрые дела втягивают его в масштабный конфликт, который изменит судьбу королевства. Классический OP-исэкай с приятной динамикой, эльфийкой-спутницей Арианной и милым лисёнком Понтой.",
       details: {
@@ -301,7 +325,7 @@ export const animeData = [
         ]
       }
     },
-    { id: 27, rank: 27, title: "Ради своей дочери я смогу победить даже короля демонов", members: "243 662", score: "7.07", shikimoriScore: "7.07", poster: "/images/posters/47_Radi_svoey_docheri.jpg", genre: "Уютная история про дочь",
+    { id: 27, rank: 28, title: "Ради своей дочери я смогу победить даже короля демонов", members: "243 662", score: "7.07", shikimoriScore: "7.07", poster: "/images/posters/47_Radi_svoey_docheri.jpg", genre: "Уютная история про дочь",
       shortDescription: "Юный авантюрист находит в лесу девочку-демона и удочеряет её. Одна из самых душевных историй про семью и привязанность.",
       description: "Дейл — 18-летний авантюрист серебряного ранга, один из самых талантливых в гильдии. Во время задания в лесу он находит брошенную маленькую девочку-демона Латину и решает удочерить её. С этого момента его жизнь наполняется теплотой отцовства: он балует дочь, защищает её от любой угрозы и учит доверять миру. Латина же — умная и добрая девочка, скрывающая рожки под лентами, — быстро становится любимицей всего города. Но тёплой семейной идиллии угрожает тёмное наследие девочки: в ней течёт кровь короля демонов. Трогательная, душевная история о родительской любви, способной преодолеть любые предрассудки.",
       details: {
@@ -324,17 +348,17 @@ export const animeData = [
         ]
       }
     },
-    { id: 28, rank: 28, title: "Мифический дух: хроники", members: "462 300", score: "7.06", shikimoriScore: "7.06", poster: "/images/posters/18_Mificheskiy_duh_hroniki.jpg", genre: "Реинкарнация / месть и магия", description: "Студент погибает и перерождается в другом мире. Пытается отомстить за свою семью и раскрывает тайны своего прошлого.",
+    { id: 28, rank: 29, title: "Мифический дух: хроники", members: "462 300", score: "7.06", shikimoriScore: "7.06", poster: "/images/posters/18_Mificheskiy_duh_hroniki.jpg", genre: "Реинкарнация / месть и магия", description: "Студент погибает и перерождается в другом мире. Пытается отомстить за свою семью и раскрывает тайны своего прошлого.",
       details: { malUrl: "https://myanimelist.net/anime/44203/Seirei_Gensouki" } },
-    { id: 29, rank: 29, title: "Чёрный призыватель", members: "299 901", score: "7.00", shikimoriScore: "7.01", poster: "/images/posters/28_Cherny_prizyvatel.jpg", genre: "Призыв + OP", description: "Парень с уникальной способностью призыва становится невероятно сильным. Тёмный, стильный и очень динамичный исэкай." ,
+    { id: 29, rank: 30, title: "Чёрный призыватель", members: "299 901", score: "7.00", shikimoriScore: "7.01", poster: "/images/posters/28_Cherny_prizyvatel.jpg", genre: "Призыв + OP", description: "Парень с уникальной способностью призыва становится невероятно сильным. Тёмный, стильный и очень динамичный исэкай." ,
       details: { malUrl: "https://myanimelist.net/anime/51064" } },
-    { id: 30, rank: 30, title: "Перестану быть героем", members: "361 109", score: "6.99", shikimoriScore: "6.99", poster: "/images/posters/41_Perestanu_byt_gerоем.jpg", genre: "Герой уходит к демонам", description: "Герой разочаровывается в людях и уходит жить к демонам. Интересная история про выбор стороны и настоящую справедливость." ,
+    { id: 30, rank: 31, title: "Перестану быть героем", members: "361 109", score: "6.99", shikimoriScore: "6.99", poster: "/images/posters/41_Perestanu_byt_gerоем.jpg", genre: "Герой уходит к демонам", description: "Герой разочаровывается в людях и уходит жить к демонам. Интересная история про выбор стороны и настоящую справедливость." ,
       details: { malUrl: "https://myanimelist.net/anime/50175" } },
-    { id: 31, rank: 31, title: "Добро пожаловать в дешёвый ресторан изгнанника", members: "72 540", score: "6.98", shikimoriScore: "6.98", poster: "/images/posters/53_Dobro_pozhalovat_v_deshevyi_restoran.jpg", genre: "Уютный ресторанный исэкай", description: "Преданный соратниками авантюрист Деннис изгнан из сильнейшей гильдии. Но он не унывает: его кулинарные навыки 99-го уровня наконец-то пригодятся. Вместе со спасённой из рабства девушкой он открывает ресторан в глуши. Тёплый слоуслайф про еду, друзей и новую жизнь." ,
+    { id: 31, rank: 32, title: "Добро пожаловать в дешёвый ресторан изгнанника", members: "72 540", score: "6.98", shikimoriScore: "6.98", poster: "/images/posters/53_Dobro_pozhalovat_v_deshevyi_restoran.jpg", genre: "Уютный ресторанный исэкай", description: "Преданный соратниками авантюрист Деннис изгнан из сильнейшей гильдии. Но он не унывает: его кулинарные навыки 99-го уровня наконец-то пригодятся. Вместе со спасённой из рабства девушкой он открывает ресторан в глуши. Тёплый слоуслайф про еду, друзей и новую жизнь." ,
       details: { malUrl: "https://myanimelist.net/anime/60523" } },
-    { id: 32, rank: 32, title: "Избранный богами", members: "246 331", score: "6.96", shikimoriScore: "6.95", poster: "/images/posters/32_Izbrannyy_bogami.jpg", genre: "Уютный исэкай", description: "Взрослый мужчина перерождается ребёнком и начинает бизнес со слаймами. Очень тёплый, добрый и расслабленный тайтл." ,
+    { id: 32, rank: 33, title: "Избранный богами", members: "246 331", score: "6.96", shikimoriScore: "6.95", poster: "/images/posters/32_Izbrannyy_bogami.jpg", genre: "Уютный исэкай", description: "Взрослый мужчина перерождается ребёнком и начинает бизнес со слаймами. Очень тёплый, добрый и расслабленный тайтл." ,
       details: { malUrl: "https://myanimelist.net/anime/41312" } },
-    { id: 33, rank: 33, title: "Мир Лидейл", members: "192 066", score: "6.96", shikimoriScore: "6.96", poster: "/images/posters/43_Mir_Lideyl.jpg", genre: "Бабушка в MMORPG",
+    { id: 33, rank: 34, title: "Мир Лидейл", members: "192 066", score: "6.96", shikimoriScore: "6.96", poster: "/images/posters/43_Mir_Lideyl.jpg", genre: "Бабушка в MMORPG",
       shortDescription: "Пожилая женщина попадает в MMORPG в теле своей аватарки. Очень милая, взрослая и необычная история про второй шанс.",
       description: "Кайна провела годы в больнице, живя в VRMMORPG «Лидейл». Когда аппарат жизнеобеспечения отключился, она очнулась в игровом мире в теле своей аватарки — юной эльфийки 1100-го уровня. Но с момента её последнего выхода из игры прошло 200 лет: мир изменился, а её «дети» — суб-персонажи Скарго, Май-Май и Картац, которых она усыновила в игре, — выросли и заняли важные посты. Теперь пожилая женщина в теле эльфийки исследует изменившийся мир, помогает людям и воссоединяется с семьёй. Тёплая, взрослая и необычная история о втором шансе, семье и принятии себя.",
       details: {
@@ -358,11 +382,11 @@ export const animeData = [
         ]
       }
     },
-    { id: 34, rank: 34, title: "Жизнь со сводной сестрой", members: "120 632", score: "6.94", shikimoriScore: "7.31", poster: "/images/posters/39_Zhizn_so_svodnoy_sestroy.jpg", genre: "Романтика", description: "После повторной свадьбы родителей старшеклассник Юта и школьная красавица Саки становятся сводными братом и сестрой. Они договариваются соблюдать дистанцию, но совместная жизнь постепенно сближает их. Тёплая, взрослая и очень душевная романтика.",
+    { id: 34, rank: 35, title: "Жизнь со сводной сестрой", members: "120 632", score: "6.94", shikimoriScore: "7.31", poster: "/images/posters/39_Zhizn_so_svodnoy_sestroy.jpg", genre: "Романтика", description: "После повторной свадьбы родителей старшеклассник Юта и школьная красавица Саки становятся сводными братом и сестрой. Они договариваются соблюдать дистанцию, но совместная жизнь постепенно сближает их. Тёплая, взрослая и очень душевная романтика.",
       details: { malUrl: "https://myanimelist.net/anime/52481/Gimai_Seikatsu" } },
-    { id: 35, rank: 35, title: "Укротитель зверей изгнанный", members: "247 220", score: "6.90", shikimoriScore: "6.90", poster: "/images/posters/35_Ukrotitel_zverey_izgnannyy.jpg", genre: "OP-укротитель", description: "Героя с 'бесполезной' способностью изгоняют, но он становится сильнейшим укротителем монстров. Классический revenge + рост.",
+    { id: 35, rank: 36, title: "Укротитель зверей изгнанный", members: "247 220", score: "6.90", shikimoriScore: "6.90", poster: "/images/posters/35_Ukrotitel_zverey_izgnannyy.jpg", genre: "OP-укротитель", description: "Героя с 'бесполезной' способностью изгоняют, но он становится сильнейшим укротителем монстров. Классический revenge + рост.",
       details: { malUrl: "https://myanimelist.net/anime/52046/Yuusha_Party_wo_Tsuihou_sareta_Beast_Tamer_Saikyoushu_no_Nekomimi_Shoujo_to_Deau" } },
-    { id: 36, rank: 36, title: "300 лет убивала слизней", members: "455 567", score: "6.88", shikimoriScore: "6.89", poster: "/images/posters/19_300_let_ubivala_slizney.jpg", genre: "Уютный исэкай / повседневность",
+    { id: 36, rank: 37, title: "300 лет убивала слизней", members: "455 567", score: "6.88", shikimoriScore: "6.89", poster: "/images/posters/19_300_let_ubivala_slizney.jpg", genre: "Уютный исэкай / повседневность",
       shortDescription: "Бывшая офисная работница стала бессмертной ведьмой и 300 лет спокойно убивала слизней, пока не выяснилось, что она давно достигла максимального уровня.",
       description: "Адзуса Айдзава — бывшая офисная работница, которая умерла от переработки. Богиня дала ей вторую жизнь в роли бессмертной ведьмы в другом мире. Она поселилась в доме на горе и 300 лет спокойно убивала слизней (по 25 в день), не подозревая, что давно достигла максимального 99 уровня. Когда правда раскрылась, к ней начали стекаться драконы, эльфийки, демоны и призраки. Так тихая жизнь превратилась в большую «семью».",
       details: {
@@ -386,13 +410,13 @@ export const animeData = [
         ]
       }
     },
-    { id: 37, rank: 37, title: "Цубакума (UzaMaid!)", members: "130 334", score: "6.85", shikimoriScore: "6.85", poster: "/images/posters/45_Tsubakuma_UzaMaid.jpg", genre: "Горничная-комедия", description: "Бывшая солдатка становится горничной у маленькой девочки. Безумно смешная и милая комедия про семью и привязанность." ,
+    { id: 37, rank: 38, title: "Цубакума (UzaMaid!)", members: "130 334", score: "6.85", shikimoriScore: "6.85", poster: "/images/posters/45_Tsubakuma_UzaMaid.jpg", genre: "Горничная-комедия", description: "Бывшая солдатка становится горничной у маленькой девочки. Безумно смешная и милая комедия про семью и привязанность." ,
       details: { malUrl: "https://myanimelist.net/anime/37722" } },
-    { id: 38, rank: 38, title: "Безымянная память", members: "161 061", score: "6.81", shikimoriScore: "6.81", poster: "/images/posters/44_Bezymiannaya_pamyat.jpg", genre: "Фэнтези-романтика", description: "Девушка с таинственным прошлым и юноша, потерявший память. Красивая романтическая история в фэнтезийном мире." ,
+    { id: 38, rank: 39, title: "Безымянная память", members: "161 061", score: "6.81", shikimoriScore: "6.81", poster: "/images/posters/44_Bezymiannaya_pamyat.jpg", genre: "Фэнтези-романтика", description: "Девушка с таинственным прошлым и юноша, потерявший память. Красивая романтическая история в фэнтезийном мире." ,
       details: { malUrl: "https://myanimelist.net/anime/53835" } },
-    { id: 39, rank: 39, title: "Как не призвать князя тьмы", members: "805 146", score: "6.80", shikimoriScore: "6.81", poster: "/images/posters/09_Kak_ne_prizvat_knyazya_tmy.jpg", genre: "Экки / гарем + контроль", description: "Главный герой попадает в мир игры и использует магию порабощения на демонах и людях. Смесь экки, гарема и чунибё.",
+    { id: 39, rank: 40, title: "Как не призвать князя тьмы", members: "805 146", score: "6.80", shikimoriScore: "6.81", poster: "/images/posters/09_Kak_ne_prizvat_knyazya_tmy.jpg", genre: "Экки / гарем + контроль", description: "Главный герой попадает в мир игры и использует магию порабощения на демонах и людях. Смесь экки, гарема и чунибё.",
       details: { malUrl: "https://myanimelist.net/anime/37210/Isekai_Maou_to_Shoukan_Shoujo_no_Dorei_Majutsu" } },
-    { id: 40, rank: 40, title: "Средние способности (Mile)", members: "218 175", score: "6.73", shikimoriScore: "6.73", poster: "/images/posters/37_Srednie_sposobnosti.jpg", genre: "Лёгкий исэкай",
+    { id: 40, rank: 41, title: "Средние способности (Mile)", members: "218 175", score: "6.73", shikimoriScore: "6.73", poster: "/images/posters/37_Srednie_sposobnosti.jpg", genre: "Лёгкий исэкай",
       shortDescription: "Девушка пожелала 'средних' способностей, но получила силу, которая в 6800 раз больше человеческой, и теперь пытается жить как обычная авантюристка.",
       description: "Майл — бывшая японская школьница, переродившаяся в другом мире. При перерождении она попросила у богини 'средние способности', но из-за непонимания единиц измерения получила возможности, в 6800 раз превосходящие обычного человека. Теперь она отчаянно пытается скрывать свою истинную силу, чтобы просто жить спокойной жизнью авантюристки в компании новых друзей. Лёгкая, весёлая и очень тёплая история про дружбу, приключения и попытки быть 'нормальной'.",
       details: {
@@ -412,33 +436,33 @@ export const animeData = [
         ]
       }
     },
-    { id: 41, rank: 41, title: "Арифурэта", members: "825 535", score: "6.72", shikimoriScore: "6.72", poster: "/images/posters/08_Arifureta.jpg", genre: "Тёмный исэкай / месть", description: "Преданный и брошенный в бездну герой проходит через ад, чтобы стать невероятно сильным. Мрачная история мести и выживания с элементами гарема.",
+    { id: 41, rank: 42, title: "Арифурэта", members: "825 535", score: "6.72", shikimoriScore: "6.72", poster: "/images/posters/08_Arifureta.jpg", genre: "Тёмный исэкай / месть", description: "Преданный и брошенный в бездну герой проходит через ад, чтобы стать невероятно сильным. Мрачная история мести и выживания с элементами гарема.",
       details: { malUrl: "https://myanimelist.net/anime/36882/Arifureta_Shokugyou_de_Sekai_Saikyou" } },
-    { id: 42, rank: 42, title: "Внук мудреца", members: "666 333", score: "6.61", shikimoriScore: "6.61", poster: "/images/posters/10_Vnuk_mudretsa.jpg", genre: "Гений магии / академия", description: "Внук величайшего мудреца с огромной силой, но почти без социального интеллекта. Поступает в магическую академию и быстро становится знаменитостью.",
+    { id: 42, rank: 43, title: "Внук мудреца", members: "666 333", score: "6.61", shikimoriScore: "6.61", poster: "/images/posters/10_Vnuk_mudretsa.jpg", genre: "Гений магии / академия", description: "Внук величайшего мудреца с огромной силой, но почти без социального интеллекта. Поступает в магическую академию и быстро становится знаменитостью.",
       details: { malUrl: "https://myanimelist.net/anime/36407/Kenja_no_Mago" } },
-    { id: 43, rank: 43, title: "Гарем рабов в лабиринте", members: "301 678", score: "6.52", shikimoriScore: "6.52", poster: "/images/posters/26_Garem_rabov_v_labirinte.jpg", genre: "Жёсткий экки-гарем", description: "Главный герой строит гарем рабынь в лабиринте другого мира. Один из самых explicit и детализированных тайтлов жанра (18+)." ,
+    { id: 43, rank: 44, title: "Гарем рабов в лабиринте", members: "301 678", score: "6.52", shikimoriScore: "6.52", poster: "/images/posters/26_Garem_rabov_v_labirinte.jpg", genre: "Жёсткий экки-гарем", description: "Главный герой строит гарем рабынь в лабиринте другого мира. Один из самых explicit и детализированных тайтлов жанра (18+)." ,
       details: { malUrl: "https://myanimelist.net/anime/44524" } },
-    { id: 44, rank: 44, title: "Я стал самым сильным с провальным навыком", members: "209 499", score: "6.48", shikimoriScore: "6.46", poster: "/images/posters/46_Samyi_silny_s_provalnym_navykom.jpg", genre: "Тёмный revenge", description: "Парня с 'провальным' навыком предают. Он становится монстром мести. Жёсткий, мрачный и очень зрелищный тайтл." ,
+    { id: 44, rank: 45, title: "Я стал самым сильным с провальным навыком", members: "209 499", score: "6.48", shikimoriScore: "6.46", poster: "/images/posters/46_Samyi_silny_s_provalnym_navykom.jpg", genre: "Тёмный revenge", description: "Парня с 'провальным' навыком предают. Он становится монстром мести. Жёсткий, мрачный и очень зрелищный тайтл." ,
       details: { malUrl: "https://myanimelist.net/anime/57892" } },
-    { id: 45, rank: 45, title: "Я на самом деле самый сильный?", members: "204 851", score: "6.47", shikimoriScore: "6.46", poster: "/images/posters/38_Ya_na_samom_dele_samyi_silny.jpg", genre: "OP с твистом", description: "Мальчик с огромной силой думает, что он средний. Очень милая история про детство, друзей и скрытую мощь." ,
+    { id: 45, rank: 46, title: "Я на самом деле самый сильный?", members: "204 851", score: "6.47", shikimoriScore: "6.46", poster: "/images/posters/38_Ya_na_samom_dele_samyi_silny.jpg", genre: "OP с твистом", description: "Мальчик с огромной силой думает, что он средний. Очень милая история про детство, друзей и скрытую мощь." ,
       details: { malUrl: "https://myanimelist.net/anime/52969" } },
-    { id: 46, rank: 46, title: "Рапсодия о долгом странствии", members: "563 461", score: "6.42", shikimoriScore: "6.43", poster: "/images/posters/14_Rapsodiya_o_dolgom_stranstvii.jpg", genre: "Исекай / расслабленный OP", description: "Программист попадает в мир игры с читерскими способностями и просто путешествует, исследует и собирает компанию.",
+    { id: 46, rank: 47, title: "Рапсодия о долгом странствии", members: "563 461", score: "6.42", shikimoriScore: "6.43", poster: "/images/posters/14_Rapsodiya_o_dolgom_stranstvii.jpg", genre: "Исекай / расслабленный OP", description: "Программист попадает в мир игры с читерскими способностями и просто путешествует, исследует и собирает компанию.",
       details: { malUrl: "https://myanimelist.net/anime/34497/Death_March_kara_Hajimaru_Isekai_Kyousoukyoku" } },
-    { id: 47, rank: 47, title: "Я получил читерские способности", members: "401 688", score: "6.33", shikimoriScore: "6.33", poster: "/images/posters/21_Ya_poluchil_chiterskie_sposobnosti.jpg", genre: "OP в двух мирах", description: "Студент с инвалидностью получает невероятные способности в параллельном мире и возвращается в реальный. История про рост, месть и силу в двух мирах.",
+    { id: 47, rank: 48, title: "Я получил читерские способности", members: "401 688", score: "6.33", shikimoriScore: "6.33", poster: "/images/posters/21_Ya_poluchil_chiterskie_sposobnosti.jpg", genre: "OP в двух мирах", description: "Студент с инвалидностью получает невероятные способности в параллельном мире и возвращается в реальный. История про рост, месть и силу в двух мирах.",
       details: { malUrl: "https://myanimelist.net/anime/52830/Isekai_de_Cheat_Skill_wo_Te_ni_Shita_Ore_wa_Genjitsu_Sekai_wo_mo_Musou_Suru__Level_Up_wa_Jinsei_wo_Kaeta" } },
-    { id: 48, rank: 48, title: "Жизнь перерожденного мудреца", members: "257 267", score: "6.32", shikimoriScore: "6.33", poster: "/images/posters/31_Zhizn_perezhdennogo_mudretsa.jpg", genre: "OP + вторая профессия", description: "Величайший мудрец перерождается и выбирает 'вторую профессию'. Спокойная, умная история про жизнь после пика силы." ,
+    { id: 48, rank: 49, title: "Жизнь перерожденного мудреца", members: "257 267", score: "6.32", shikimoriScore: "6.33", poster: "/images/posters/31_Zhizn_perezhdennogo_mudretsa.jpg", genre: "OP + вторая профессия", description: "Величайший мудрец перерождается и выбирает 'вторую профессию'. Спокойная, умная история про жизнь после пика силы." ,
       details: { malUrl: "https://myanimelist.net/anime/47163" } },
-    { id: 49, rank: 49, title: "Маг-целитель: Новый старт", members: "650 338", score: "6.30", shikimoriScore: "6.31", poster: "/images/posters/11_Mag_tselitel_Novyy_start.jpg", genre: "Тёмный revenge / исцеление", description: "Бывший целитель, которого предали, возвращается во времени и мстит своим обидчикам крайне жестокими методами. Один из самых тёмных и жёстких тайтлов в жанре.",
+    { id: 49, rank: 50, title: "Маг-целитель: Новый старт", members: "650 338", score: "6.30", shikimoriScore: "6.31", poster: "/images/posters/11_Mag_tselitel_Novyy_start.jpg", genre: "Тёмный revenge / исцеление", description: "Бывший целитель, которого предали, возвращается во времени и мстит своим обидчикам крайне жестокими методами. Один из самых тёмных и жёстких тайтлов в жанре.",
       details: { malUrl: "https://myanimelist.net/anime/40750/Kaifuku_Jutsushi_no_Yarinaoshi" } },
-    { id: 50, rank: 50, title: "Восьмой сын? Я так не думаю!", members: "279 110", score: "6.27", shikimoriScore: "6.27", poster: "/images/posters/29_Vosmoy_syn.jpg", genre: "Классический OP", description: "Мальчик из большой семьи перерождается восьмым сыном аристократа и быстро раскрывает свой потенциал. Лёгкий и приятный исэкай." ,
+    { id: 50, rank: 51, title: "Восьмой сын? Я так не думаю!", members: "279 110", score: "6.27", shikimoriScore: "6.27", poster: "/images/posters/29_Vosmoy_syn.jpg", genre: "Классический OP", description: "Мальчик из большой семьи перерождается восьмым сыном аристократа и быстро раскрывает свой потенциал. Лёгкий и приятный исэкай." ,
       details: { malUrl: "https://myanimelist.net/anime/38830" } },
-    { id: 51, rank: 51, title: "В команде героя была милая девушка поэтому я признался ей", members: "101 585", score: "6.23", shikimoriScore: "6.23", poster: "/images/posters/54_V_komande_geroya_byla_milaya_devushka.jpg", genre: "Лёгкая романтика", description: "Обычный член команды героя влюбляется в милую соратницу. Простая, милая и очень душевная история первой любви." ,
+    { id: 51, rank: 52, title: "В команде героя была милая девушка поэтому я признался ей", members: "101 585", score: "6.23", shikimoriScore: "6.23", poster: "/images/posters/54_V_komande_geroya_byla_milaya_devushka.jpg", genre: "Лёгкая романтика", description: "Обычный член команды героя влюбляется в милую соратницу. Простая, милая и очень душевная история первой любви." ,
       details: { malUrl: "https://myanimelist.net/anime/61983" } },
-    { id: 52, rank: 52, title: "Сильнейший мудрец низшей эмблемы", members: "300 874", score: "6.22", shikimoriScore: "6.22", poster: "/images/posters/25_Silneyshiy_mudrets_nizshey_emblemy.jpg", genre: "OP-мудрец", description: "Гений магии перерождается с самой слабой эмблемой и с нуля становится сильнейшим. Классический OP-исэкай с отличным развитием." ,
+    { id: 52, rank: 53, title: "Сильнейший мудрец низшей эмблемы", members: "300 874", score: "6.22", shikimoriScore: "6.22", poster: "/images/posters/25_Silneyshiy_mudrets_nizshey_emblemy.jpg", genre: "OP-мудрец", description: "Гений магии перерождается с самой слабой эмблемой и с нуля становится сильнейшим. Классический OP-исэкай с отличным развитием." ,
       details: { malUrl: "https://myanimelist.net/anime/47161" } },
-    { id: 53, rank: 53, title: "Плод эволюции", members: "243 794", score: "6.15", shikimoriScore: "6.16", poster: "/images/posters/36_Plod_evolyutsii.jpg", genre: "Эволюция + гарем", description: "Класс из 30 человек эволюционирует в монстров. Главный герой становится самым сильным и собирает гарем сильных спутниц." ,
+    { id: 53, rank: 54, title: "Плод эволюции", members: "243 794", score: "6.15", shikimoriScore: "6.16", poster: "/images/posters/36_Plod_evolyutsii.jpg", genre: "Эволюция + гарем", description: "Класс из 30 человек эволюционирует в монстров. Главный герой становится самым сильным и собирает гарем сильных спутниц." ,
       details: { malUrl: "https://myanimelist.net/anime/46985" } },
-    { id: 54, rank: 54, title: "В другом мире со смартфоном", members: "635 284", score: "6.09", shikimoriScore: "6.10", poster: "/images/posters/12_V_drugom_mire_so_smartfonom.jpg", genre: "Исекай / гарем + повседневность",
+    { id: 54, rank: 55, title: "В другом мире со смартфоном", members: "635 284", score: "6.09", shikimoriScore: "6.10", poster: "/images/posters/12_V_drugom_mire_so_smartfonom.jpg", genre: "Исекай / гарем + повседневность",
       shortDescription: "Парень случайно погибает от молнии Бога и перерождается в фэнтези-мире с невероятной магией и смартфоном. Лёгкий гаремный исэкай без драмы.",
       description: "Тоя Мотидзуки — 15-летний японский школьник, которого Бог случайно убивает молнией. В качестве извинения Бог предлагает ему переродиться в фэнтезийном мире с любым желанием. Тоя просит оставить ему смартфон. В новом мире он обнаруживает, что может использовать все виды магии, и быстро становится сильнейшим магом. Тоя спасает принцессу Юмину, знакомится с сёстрами Эльзе и Линзе, самураем Яэ и древней феей Леен. Вместе они путешествуют по миру, решают проблемы королевств и собирают артефакты древней цивилизации Вавилон. Лёгкий, расслабленный исэкай с минимальной драмой и максимальным количеством милых девушек.",
       details: {
@@ -460,7 +484,7 @@ export const animeData = [
         ]
       }
     },
-    { id: 55, rank: 55, title: "Похоже сильнейшая профессия — временный инспектор", members: "56 319", score: "5.85", shikimoriScore: "5.84", poster: "/images/posters/52_Pohozhe_silneyshaya_professiya.jpg", genre: "Новый OP-инспектор", description: "Парень с читерской силой становится временным инспектором. Лёгкий, динамичный исэкай с отличным чувством юмора.",
+    { id: 55, rank: 56, title: "Похоже сильнейшая профессия — временный инспектор", members: "56 319", score: "5.85", shikimoriScore: "5.84", poster: "/images/posters/52_Pohozhe_silneyshaya_professiya.jpg", genre: "Новый OP-инспектор", description: "Парень с читерской силой становится временным инспектором. Лёгкий, динамичный исэкай с отличным чувством юмора.",
       details: { malUrl: "https://myanimelist.net/anime/62825/Saikyou_no_Shokugyou_wa_Yuusha_demo_Kenja_demo_Naku_Kanteishi_Kari_Rashii_desu_yo" } }
 ];
 

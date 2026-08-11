@@ -2,6 +2,38 @@
 
 Все значимые изменения проекта "Аниме Топ 2026".
 
+## [5.0.23] — 2026-08-11
+
+### Добавлено (тайтл #25 «Мятежная компания»)
+
+- **animeData.js** — новый тайтл id 57 / rank 25 «Мятежная компания» (Outbreak Company): score 7.15 (MAL, актуальный), shikimoriScore 7.16, members 387 089 (проверено на MAL 11.08.2026), 1 сезон / 12 эп. (осень 2013), feel., завершён, malUrl 19369. Ранги 25–55 перенумерованы на +1 (теперь 26–56), всего 56 тайтлов, ранги непрерывны 1–56.
+- **src/data/characters/outbreak.js** — новый файл данных персонажей (10 шт.): Шиничи Кано, Петралка Энн Эльдант III, Мюсель Фоаран, Эльбия Ханайман, Минори Коганума, Галиус Эн Кольдобар, Джинзабуро Матоба, Ромильда Гард, Брук Дарвин, Лойк Слейсон. Биографии собраны из нескольких источников (фандом-вики Outbreak Company, TVTropes, AniBase, Shikimori, MAL).
+- **detail.js** — `outbreakCharacters` зарегистрирован в `CHAR_MAPS` (теперь 13 карт).
+- **public/images/posters/57_Myatezhnaya_kompaniya.jpg** — постер (AniList CDN).
+- **public/images/characters/** — 10 портретов персонажей (Shinichi.jpg, Petralka.jpg, Myucel.jpg, Elbia.jpg, Minori.jpg, Galious.jpg, Matoba.jpg, Romilda.jpg, Brooke.jpg, Loic.jpg; с Shikimori CDN, формат по сигнатуре jpg).
+- **russianDub** — студии озвучки (animespirit.tv, авг. 2026): AniDUB, SHIZA Project, AniLibria.TV, OVERLORDS, Inspector Gadjet, Absurd & Eladiel.
+
+### Проверено
+
+- `npm run build` — OK.
+- HTML-проверка (SSG): 56 карточек, бейджи #1–#56 непрерывны (нет rank 57), «Мятежная компания» на #25 (score 7.15, shiki 7.16), постер 57_ на месте.
+
+## [5.0.22] — 2026-08-11
+
+### Добавлено (сортировка по рейтингу Shikimori)
+
+- **animeData.js** — новое поле `shikimoriScore` для всех 55 тайтлов (актуальные оценки Shikimori, собраны через MCP Shikimori авг. 2026); эталон — `docs/specs/shikimori-scores.csv`.
+- **index.astro** — новая кнопка `#sort-shiki` «По рейтингу Shikimori» в блоке сортировки.
+- **AnimeCard.astro** — data-атрибут `data-shiki-score` + скрытый элемент `.score-shiki` (фиолетовая оценка).
+- **render.js** — ветка `mode === 'shiki'` в `sortPopularityGrid` (сортировка по убыванию Shikimori, тайтлы без оценки — в конец), класс `sort-shiki` на гриде.
+- **search.js** — переключение кнопки/заголовков: «Топ по рейтингу Shikimori» / «По оценке Shikimori (август 2026)».
+- **global.css** — `#grid-popularity.sort-shiki` скрывает MAL-оценку и показывает Shikimori.
+
+### Проверено
+
+- `npm run build` — OK.
+- Playwright (chromium): 4 кнопки сортировки; Shikimori → монотонно убывающий порядок (8.32 → 5.84, все 55), оценка Shikimori на карточках (MAL скрыта); поиск работает в режиме; возврат на MAL восстанавливает порядок и оценки; ошибок консоли нет (кроме 404 Google Fonts).
+
 ## [5.0.21] — 2026-08-11
 
 ### Изменено (нумерация и порядок тайтлов)

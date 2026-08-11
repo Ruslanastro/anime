@@ -17,6 +17,7 @@ import { uchimusumeCharacters } from '../data/characters/uchimusume.js';
 import { leadaleCharacters } from '../data/characters/leadale.js';
 import { skeletonCharacters } from '../data/characters/skeleton.js';
 import { zerotsukaimaCharacters } from '../data/characters/zerotsukaima.js';
+import { outbreakCharacters } from '../data/characters/outbreak.js';
 
 const CHAR_MAPS = [
   slime300Characters,
@@ -31,6 +32,7 @@ const CHAR_MAPS = [
   leadaleCharacters,
   skeletonCharacters,
   zerotsukaimaCharacters,
+  outbreakCharacters,
 ];
 
 let lastScrollPosition = 0;
