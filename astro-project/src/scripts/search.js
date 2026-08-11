@@ -51,7 +51,7 @@ export function setPopularitySort(mode) {
   if (titleEl && subtitleEl) {
     if (mode === 'cozy') {
       titleEl.textContent = 'Топ по уютности';
-      subtitleEl.textContent = 'Самые расслабленные и wholesome тайтлы';
+      subtitleEl.textContent = 'Самые расслабленные и тёплые тайтлы';
     } else if (mode === 'members') {
       titleEl.textContent = 'Топ по участникам';
       subtitleEl.textContent = 'По количеству участников на MyAnimeList (июль 2026)';
