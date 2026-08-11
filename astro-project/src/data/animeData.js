@@ -89,7 +89,28 @@ export const animeData = [
     { id: 2, rank: 2, title: "Ре:Зеро", members: "2 493 142", score: "8.25", shikimoriScore: "8.25", poster: "/images/posters/01_Re_Zero.jpg", genre: "Психологический / петля смерти", description: "Главный герой погибает и возвращается во времени, пытаясь спасти близких. Тёмный, эмоционально тяжёлый исэкай с сильным психологическим акцентом и петлями смерти.",
       details: { malUrl: "https://myanimelist.net/anime/31240/Re_Zero_kara_Hajimeru_Isekai_Seikatsu" } },
     { id: 3, rank: 3, title: "Волчица и пряности", members: "876 392", score: "8.21", shikimoriScore: "8.21", poster: "/images/posters/07_Volchitsa_i_pryanosti.jpg", genre: "Торговля и волчица", description: "Мудрый торговец путешествует вместе с древней богиней-волчицей. История о экономике, философии и медленно развивающихся отношениях в средневековом мире.",
-      details: { malUrl: "https://myanimelist.net/anime/2966/Ookami_to_Koushinryou" } },
+      details: {
+        seasons: 2, episodes: 25, source: "Лайт-новел (ранобэ)", volumes: 23, studio: "Imagin (S1), Brain's Base (S2)", aired: "2008, 2009", status: "Завершён", type: "TV",
+        malUrl: "https://myanimelist.net/anime/2966/Ookami_to_Koushinryou",
+        russianDub: {
+          official: "Реанимедиа (лицензионный дубляж обоих сезонов)",
+          studios: ["Reanimedia"],
+          cast: ["Reanimedia: Ольга Мацкевич (Холо), Василий Шумский (Лоуренс), Елена Симанович (Нора), Мария Мамонтова (Хлоя), Гозий Махмудов (Ремелио)"]
+        },
+        mainCharacters: [
+          { name: "Холо", desc: "Мудрая Волчица из Йойса — божество урожая 600+ лет. Острая на язык, обожает яблоки. Ищет путь домой.", image: "/images/characters/Holo.jpg" },
+          { name: "Крафт Лоуренс", desc: "25-летний странствующий торговец. Мечтает о собственном магазине, но всё чаще жертвует выгодой ради Холо.", image: "/images/characters/Lawrence.jpg" },
+          { name: "Нора Арент", desc: "Опытная пастушка из Рубинхейгена с собакой Энеком. Мечтает стать портнихой.", image: "/images/characters/Norah.jpg" },
+          { name: "Хлоя", desc: "Начинающая торговка из Пасро, ученица Лоуренса. Антагонистка арки Паццио.", image: "/images/characters/Chloe.jpg" },
+          { name: "Мартен Либерт", desc: "Сотрудник компании Ремерио, сопровождает Лоуренса при контрабанде золота.", image: "/images/characters/Marten.jpg" },
+          { name: "Рихтен Марльхайт", desc: "Управляющий филиалом компании Милоне в Паццио. Первый настоящий друг Лоуренса среди торговцев.", image: "/images/characters/Marhait.jpg" },
+          { name: "Ганс Ремерио", desc: "Глава торговой компании на грани банкротства. Готов устранить любых свидетелей своей контрабанды.", image: "/images/characters/Hans.jpg" },
+          { name: "Якоб Тарантино", desc: "Управляющий гильдии «Роуэн» в Рубинхейгене. Покровитель и наставник Лоуренса.", image: "/images/characters/Jacob.jpg" },
+          { name: "Вайс", desc: "Молодой меняла из Паццио, информатор Лоуренса. «Несравненный ловелас».", image: "/images/characters/Weiz.jpg" },
+          { name: "Зерен", desc: "Агент компании Медио под видом наивного торговца. Его ложные слухи запускают валютную аферу.", image: "/images/characters/Zheren.jpg" }
+        ]
+      }
+    },
     { id: 4, rank: 4, title: "О моём перерождении в слизь", members: "1 668 718", score: "8.13", shikimoriScore: "8.13", poster: "/images/posters/04_O_moem_pererozhdenii_v_sliz.jpg", genre: "Нация монстров / дипломатия", description: "Слабый слизь постепенно создаёт собственную страну, налаживает отношения между расами и становится одним из самых влиятельных существ мира.",
       details: { malUrl: "https://myanimelist.net/anime/37430/Tensei_shitara_Slime_Datta_Ken" } },
     { id: 5, rank: 5, title: "KonoSuba", members: "2 171 628", score: "8.09", shikimoriScore: "8.09", poster: "/images/posters/02_KonoSuba.png", genre: "Комедия / пародия на исэкай",
@@ -176,7 +197,27 @@ export const animeData = [
       }
     },
     { id: 8, rank: 8, title: "Дракон-горничная госпожи Кобаяши", members: "1 339 159", score: "7.90", shikimoriScore: "7.90", poster: "/images/posters/06_Drakon_gornichnaya_gospozhi_Kobayasi.jpg", genre: "Повседневность с драконами", description: "Обычная офисная работница живёт вместе с драконами в современном мире. Тёплая, милая и очень смешная повседневная комедия.",
-      details: { malUrl: "https://myanimelist.net/anime/33206/Kobayashi-san_Chi_no_Maid_Dragon" } },
+      details: {
+        seasons: 2, episodes: 25, source: "Манга", volumes: 14, studio: "Kyoto Animation", aired: "2017, 2021", status: "Продолжается (фильм 2025)", type: "TV",
+        malUrl: "https://myanimelist.net/anime/33206/Kobayashi-san_Chi_no_Maid_Dragon",
+        russianDub: {
+          studios: ["AniLibria", "Оканэ", "AniStar", "AnimeVost", "AniDUB"],
+          cast: ["AniLibria: официальная озвучка", "Оканэ: серии в сети VK"]
+        },
+        mainCharacters: [
+          { name: "Кобаяси", desc: "25-летняя программистка, приютившая драконов. Сдержанная, заботливая, обожает горничных.", image: "/images/characters/Kobayashi.jpg" },
+          { name: "Тору", desc: "Дракониха фракции «Хаос», ставшая горничной из благодарности. Ревнивая и преданная.", image: "/images/characters/Tooru.jpg" },
+          { name: "Канна Камуи", desc: "Юная драконица молнии, изгнанная из мира драконов. Приёмная дочь Кобаяси.", image: "/images/characters/Kanna.jpg" },
+          { name: "Кетцалькоатль (Лукоа)", desc: "Бывшая богиня-дракон, потерявшая статус. Живёт с Сётой, который считает её суккубом.", image: "/images/characters/Lucoa.jpg" },
+          { name: "Эльма", desc: "Водная драконица фракции «Равновесие». Офисная работница и вечная соперница Тору.", image: "/images/characters/Elma.jpg" },
+          { name: "Фафнир", desc: "Древний дракон-мизантроп. Стал одержимым отаку, живёт у Макото Такии.", image: "/images/characters/Fafnir.jpg" },
+          { name: "Макото Такия", desc: "Коллега Кобаяси и отаку. Приютил Фафнира, вместе ходят на Комикет.", image: "/images/characters/Makoto.jpg" },
+          { name: "Рико Саикава", desc: "Одноклассница Канны. «Королева» класса, млеющая от милоты подруги.", image: "/images/characters/Riko.jpg" },
+          { name: "Сёта Магацути", desc: "Юный маг, призвавший Лукоа вместо демона. Убеждён, что она суккуб.", image: "/images/characters/Shouta.jpg" },
+          { name: "Джорджи Саикава", desc: "Старшая сестра Рико, «служанка по призванию». Родственная душа Кобаяси по хобби.", image: "/images/characters/Georgie.jpg" }
+        ]
+      }
+    },
     { id: 9, rank: 9, title: "Ангел по соседству", members: "464 929", score: "7.85", shikimoriScore: "7.86", poster: "/images/posters/20_Angel_po_sosedstvu.jpg", genre: "Романтика / повседневность",
       shortDescription: "Замкнутый парень и идеальная соседка постепенно сближаются. Невероятно тёплая и душевная романтика без лишней драмы.",
       description: "Аманэ Фудзимия живёт один в запущенной квартире, питается фастфудом и ни с кем не общается. Его соседка — Махиру Сиина, «ангел» школы: идеальная во всём, от учёбы до внешности. Однажды в дождливый день Аманэ отдаёт ей свой зонт, и с этого начинается их история. Махиру начинает заботиться о нём: готовит еду, убирает квартиру, а Аманэ постепенно открывается ей. Невероятно нежная и уютная история о том, как два одиноких человека находят тепло друг в друге.",
@@ -201,8 +242,28 @@ export const animeData = [
     },
     { id: 10, rank: 10, title: "Путешествие под предводительством Луны", members: "570 322", score: "7.71", shikimoriScore: "7.71", poster: "/images/posters/13_Puteshestvie_pod_predvoditelstvom_Luny.jpg", genre: "Исекай / демоны и люди", description: "Макото Мисуми призван в другой мир как герой, но богиня отвергает его из-за внешности. Благословлённый лунным богом Цукуёми, он строит собственный город, собирает сильных союзников и становится одной из влиятельнейших фигур мира.",
       details: { malUrl: "https://myanimelist.net/anime/43523/Tsuki_ga_Michibiku_Isekai_Douchuu" } },
-    { id: 11, rank: 11, title: "Дневник наблюдений за моей невестой-злодейкой", members: "56 618", score: "7.70", shikimoriScore: "7.68", poster: "/images/posters/50_Dnevnik_nablyudeniy_za_nevestoy_zlodeykoy.jpg", genre: "Новая злодейка-комедия", description: "Принц Сесил обручён с леди Бертией, которая уверяет, что помнит прошлую жизнь и является переродившейся злодейкой из отомэ-игры. Вместо того чтобы гневаться, он с интересом наблюдает за её попытками следовать злодейскому сценарию. Тёплая и смешная история, рассказанная с необычной точки зрения." ,
-      details: { malUrl: "https://myanimelist.net/anime/61687" } },
+    { id: 11, rank: 11, title: "Дневник наблюдений за моей невестой-злодейкой", members: "56 618", score: "7.70", shikimoriScore: "7.68", poster: "/images/posters/50_Dnevnik_nablyudeniy_za_nevestoy_zlodeykoy.jpg", genre: "Новая злодейка-комедия", description: "Принц Сесил обручён с леди Бертией, которая уверяет, что помнит прошлую жизнь и является переродившейся злодейкой из отомэ-игры. Вместо того чтобы гневаться, он с интересом наблюдает за её попытками следовать злодейскому сценарию. Тёплая и смешная история, рассказанная с необычной точки зрения.",
+      details: {
+        seasons: 1, episodes: 12, source: "Лайт-новел (ранобэ)", volumes: 6, studio: "Studio Deen", aired: "Весна 2026", status: "Завершён", type: "TV",
+        malUrl: "https://myanimelist.net/anime/61687",
+        russianDub: {
+          studios: ["AnimeVost", "AniStar", "AniBaza", "AniDUB", "AniLibria", "AniLot", "Fronda Studio"],
+          cast: ["AnimeVost: 12 эп.", "AniLibria: 12 эп.", "AniDUB: 12 эп.", "Fronda Studio: 12 эп."]
+        },
+        mainCharacters: [
+          { name: "Сесил Гло Альфаста", desc: "Наследный принц Альфасты, жених Бертии. Наблюдает за «злодейкой» и втайне её любит.", image: "/images/characters/Cecil.jpg" },
+          { name: "Бертия Ибил Ночес", desc: "Невеста Сесила, убеждённая, что переродилась злодейкой из отомэ-игры. Её «злодейства» оборачиваются добром.", image: "/images/characters/Bertia.jpg" },
+          { name: "Шон Туркуин Альфаста", desc: "Младший брат Сесила. Наивный, но проницательный. Помолвлен с Джоанной.", image: "/images/characters/Shawn.jpg" },
+          { name: "Анна Когалес", desc: "Дворянка, образцовая леди. Подруга Бертии и возлюбленная Чарльза.", image: "/images/characters/AnneCogales.jpg" },
+          { name: "Джоанна Кёртсуоррен", desc: "Герцогиня, президент фан-клуба Бертии. Невеста Шона.", image: "/images/characters/Joanna.jpg" },
+          { name: "Герония Индерон", desc: "«Героиня» игры с Духом Света. Главная антагонистка, пытающаяся разыграть сценарий.", image: "/images/characters/Heronia.jpg" },
+          { name: "Нельт Крум", desc: "Умный и застенчивый друг Сесила. Обручён с Силикой.", image: "/images/characters/Nelt.jpg" },
+          { name: "Куро", desc: "Контрактный дух тьмы Бертии в облике лисёнка. Защищает её барьерами.", image: "/images/characters/Kuro.jpg" },
+          { name: "Чарльз Лаонель", desc: "Ловелас, втайне влюблённый в Анну. Добивается поста адъютанта Сесила.", image: "/images/characters/Charles.jpg" },
+          { name: "Силика Лунея", desc: "Подруга Бертии, невеста Нельта. Материнская забота и кулинарный талант.", image: "/images/characters/Silica.jpg" }
+        ]
+      }
+    },
     { id: 12, rank: 12, title: "Сто девушек которые тебя любят", members: "337 963", score: "7.67", shikimoriScore: "7.67", poster: "/images/posters/24_Sto_devushek_kotorye_tebya_lyubyat.png", genre: "Гарем-комедия", description: "Парень должен встречаться сразу со 100 девушками, иначе мир погибнет. Абсурдная, очень смешная и добрая комедия про любовь и хаос.",
       details: { malUrl: "https://myanimelist.net/anime/54714/Kimi_no_Koto_ga_Daidaidaidaidaisuki_na_100-nin_no_Kanojo" } },
     { id: 13, rank: 13, title: "Неторопливый фермер в другом мире", members: "306 019", score: "7.52", shikimoriScore: "7.52", poster: "/images/posters/27_Netorpelyvy_fermer.jpg", genre: "Фермерский уют", description: "Программист перерождается фермером и просто хочет спокойно жить. Идеальный расслабленный исэкай про ферму, семью и лёгкий гарем.",

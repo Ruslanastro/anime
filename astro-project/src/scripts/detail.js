@@ -18,6 +18,9 @@ import { leadaleCharacters } from '../data/characters/leadale.js';
 import { skeletonCharacters } from '../data/characters/skeleton.js';
 import { zerotsukaimaCharacters } from '../data/characters/zerotsukaima.js';
 import { outbreakCharacters } from '../data/characters/outbreak.js';
+import { spicewolfCharacters } from '../data/characters/spicewolf.js';
+import { maiddragonCharacters } from '../data/characters/maiddragon.js';
+import { villainessdiaryCharacters } from '../data/characters/villainessdiary.js';
 
 const CHAR_MAPS = [
   slime300Characters,
@@ -33,6 +36,9 @@ const CHAR_MAPS = [
   skeletonCharacters,
   zerotsukaimaCharacters,
   outbreakCharacters,
+  spicewolfCharacters,
+  maiddragonCharacters,
+  villainessdiaryCharacters,
 ];
 
 let lastScrollPosition = 0;
