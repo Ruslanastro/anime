@@ -476,7 +476,27 @@ export const animeData = [
     { id: 38, rank: 39, title: "Безымянная память", members: "161 061", score: "6.81", shikimoriScore: "6.81", poster: "/images/posters/44_Bezymiannaya_pamyat.jpg", genre: "Фэнтези-романтика", description: "Девушка с таинственным прошлым и юноша, потерявший память. Красивая романтическая история в фэнтезийном мире." ,
       details: { malUrl: "https://myanimelist.net/anime/53835" } },
     { id: 39, rank: 40, title: "Как не призвать князя тьмы", members: "805 146", score: "6.80", shikimoriScore: "6.81", poster: "/images/posters/09_Kak_ne_prizvat_knyazya_tmy.jpg", genre: "Экки / гарем + контроль", description: "Главный герой попадает в мир игры и использует магию порабощения на демонах и людях. Смесь экки, гарема и чунибё.",
-      details: { malUrl: "https://myanimelist.net/anime/37210/Isekai_Maou_to_Shoukan_Shoujo_no_Dorei_Majutsu" } },
+      details: {
+        seasons: 2, episodes: 22, source: "Лайт-новел (ранобэ)", volumes: 13, studio: "Ajia-do (S1), Okuruto Noboru (S2)", aired: "2018, 2021", status: "Завершён", type: "TV",
+        malUrl: "https://myanimelist.net/anime/37210/Isekai_Maou_to_Shoukan_Shoujo_no_Dorei_Majutsu",
+        russianDub: {
+          studios: ["AniDUB", "AniLibria", "AniStar", "AnimeVost", "SHIZA Project", "AniMaunt"],
+          cast: ["AniDUB: Berserk, Orru", "AniLibria: Sharon, Lali"]
+        },
+        mainCharacters: [
+          { name: "Диабло", desc: "Игрок-хикикомори Такума Сакамото в теле Повелителя Демонов. Уровень 150, чунибё-пафос и доброе сердце.", image: "/images/characters/Diablo.jpg" },
+          { name: "Рем Галлеу", desc: "Пантерианка-призывательница. В её теле запечатана душа Повелителя Демонов Кребскулм.", image: "/images/characters/RemGalleu.jpg" },
+          { name: "Шера Л. Гринвуд", desc: "Эльфийка-лучница, тайная принцесса королевства Гринвуд. Вундеркинд магии и стрельбы.", image: "/images/characters/Shera.jpg" },
+          { name: "Алисия Кристела", desc: "Имперский рыцарь. Сломанная психика, предательница, в финале — раскаявшийся агент Диабло.", image: "/images/characters/AliciaC.jpg" },
+          { name: "Селестина Бодлер", desc: "Глава Ассоциации магов Фалтры. Единственная, кто знал о печати Кребскулм в Рем.", image: "/images/characters/Celestine.jpg" },
+          { name: "Сильви", desc: "Гильдмастер авантюристов Фалтры, грассраннер с кроличьими ушами. Выдаёт группе квесты.", image: "/images/characters/Sylvie.jpg" },
+          { name: "Эмиль Бюшельбельджел", desc: "Сильнейший воин Фалтры, «друг всех женщин». Стал поклонником Диабло.", image: "/images/characters/Emile.jpg" },
+          { name: "Эдельгард", desc: "Падшая, рыцарь-дракон и военачальник. После поражения — важнейший союзник группы.", image: "/images/characters/Edelgard.jpg" },
+          { name: "Честер Рей Гальфорд", desc: "Лорд Фалтры, генерал-лейтенант. Ветеран войны с падшими, антагонист середины сезона.", image: "/images/characters/Chester.jpg" },
+          { name: "Кребскулм (Клем)", desc: "Повелитель Демонов. Возродилась как милая девочка с амнезией, любит печенье и Диабло.", image: "/images/characters/Krebskulm.jpg" }
+        ]
+      }
+    },
     { id: 40, rank: 41, title: "Средние способности (Mile)", members: "218 175", score: "6.73", shikimoriScore: "6.73", poster: "/images/posters/37_Srednie_sposobnosti.jpg", genre: "Лёгкий исэкай",
       shortDescription: "Девушка пожелала 'средних' способностей, но получила силу, которая в 6800 раз больше человеческой, и теперь пытается жить как обычная авантюристка.",
       description: "Майл — бывшая японская школьница, переродившаяся в другом мире. При перерождении она попросила у богини 'средние способности', но из-за непонимания единиц измерения получила возможности, в 6800 раз превосходящие обычного человека. Теперь она отчаянно пытается скрывать свою истинную силу, чтобы просто жить спокойной жизнью авантюристки в компании новых друзей. Лёгкая, весёлая и очень тёплая история про дружбу, приключения и попытки быть 'нормальной'.",
@@ -502,11 +522,51 @@ export const animeData = [
       }
     },
     { id: 41, rank: 42, title: "Арифурэта", members: "825 535", score: "6.72", shikimoriScore: "6.72", poster: "/images/posters/08_Arifureta.jpg", genre: "Тёмный исэкай / месть", description: "Преданный и брошенный в бездну герой проходит через ад, чтобы стать невероятно сильным. Мрачная история мести и выживания с элементами гарема.",
-      details: { malUrl: "https://myanimelist.net/anime/36882/Arifureta_Shokugyou_de_Sekai_Saikyou" } },
+      details: {
+        seasons: 3, episodes: 41, source: "Лайт-новел (ранобэ)", volumes: 13, studio: "Asread, Studio Mother", aired: "2019, 2022, 2024", status: "Завершён (3 сезона)", type: "TV",
+        malUrl: "https://myanimelist.net/anime/36882/Arifureta_Shokugyou_de_Sekai_Saikyou",
+        russianDub: {
+          studios: ["AniLibria", "AniDUB", "AniStar", "AnimeVost", "AniMaunt", "SHIZA Project"],
+          cast: ["AniLibria: Kari, Lali", "AniDUB: Berserk, Orru"]
+        },
+        mainCharacters: [
+          { name: "Хадзимэ Нагумо", desc: "Главный герой. Из слабейшего Синергиста превратился в монстра мести. Беспощаден к врагам, заботлив к близким.", image: "/images/characters/Hajime.jpg" },
+          { name: "Юэ", desc: "Древняя вампирша, заточённая в Бездне 300 лет. Первая возлюбленная и жена Хадзимэ.", image: "/images/characters/Yue.jpg" },
+          { name: "Тио Кларс", desc: "Принцесса изгнанных драконолюдов, превращается в чёрного дракона. Мазохистка-воительница.", image: "/images/characters/Tio.jpg" },
+          { name: "Сиа Хаулия", desc: "Кролик-люд с навыком предвидения. Дочь вождя племени, вторая жена Хадзимэ.", image: "/images/characters/Shea.jpg" },
+          { name: "Каори Сирасаки", desc: "Одноклассница, «богиня» класса. Воскрешена в теле апостола Нойнт.", image: "/images/characters/Kaori.jpg" },
+          { name: "Коки Аманогава", desc: "Герой класса. Наивный идеалист, антипод Хадзимэ.", image: "/images/characters/Kouki.jpg" },
+          { name: "Дайсукэ Хияма", desc: "Хулиган, травивший Хадзимэ. Столкнул его в Бездну, убил Каори.", image: "/images/characters/Daisuke.jpg" },
+          { name: "Мю", desc: "Девочка-дагон, приёмная дочь Хадзимэ. Зовёт его «папа».", image: "/images/characters/Myuu.jpg" },
+          { name: "Сидзуку Яэгаси", desc: "Мечница класса, «богиня». Мастерство катаны и прагматизм.", image: "/images/characters/Shizuku.jpg" },
+          { name: "Рютаро Сакагами", desc: "Мускулистый одноклассник, боец ближнего боя. Преданный друг.", image: "/images/characters/Ryuutarou.jpg" }
+        ]
+      }
+    },
     { id: 42, rank: 43, title: "Внук мудреца", members: "666 333", score: "6.61", shikimoriScore: "6.61", poster: "/images/posters/10_Vnuk_mudretsa.jpg", genre: "Гений магии / академия", description: "Внук величайшего мудреца с огромной силой, но почти без социального интеллекта. Поступает в магическую академию и быстро становится знаменитостью.",
       details: { malUrl: "https://myanimelist.net/anime/36407/Kenja_no_Mago" } },
-    { id: 43, rank: 44, title: "Гарем рабов в лабиринте", members: "301 678", score: "6.52", shikimoriScore: "6.52", poster: "/images/posters/26_Garem_rabov_v_labirinte.jpg", genre: "Жёсткий экки-гарем", description: "Главный герой строит гарем рабынь в лабиринте другого мира. Один из самых откровенных и детализированных тайтлов жанра (18+)." ,
-      details: { malUrl: "https://myanimelist.net/anime/44524" } },
+    { id: 43, rank: 44, title: "Гарем рабов в лабиринте", members: "301 678", score: "6.52", shikimoriScore: "6.52", poster: "/images/posters/26_Garem_rabov_v_labirinte.jpg", genre: "Жёсткий экки-гарем", description: "Главный герой строит гарем рабынь в лабиринте другого мира. Один из самых откровенных и детализированных тайтлов жанра (18+).",
+      details: {
+        seasons: 1, episodes: 12, source: "Лайт-новел (ранобэ)", volumes: 14, studio: "Passione", aired: "2022", status: "Завершён", type: "TV",
+        malUrl: "https://myanimelist.net/anime/44524",
+        russianDub: {
+          studios: ["AniLibria", "AniDUB", "AniStar", "AnimeVost", "SHIZA Project", "AniMaunt"],
+          cast: ["AniLibria: Kari, Lali", "AniDUB: Berserk, Orru"]
+        },
+        mainCharacters: [
+          { name: "Митио Кага", desc: "Главный герой. Попаданец с бонусом 99/99 — свободная перенастройка характеристик. Собрал гарем из 5 рабынь.", image: "/images/characters/Michio.jpg" },
+          { name: "Роксанна", desc: "Волчица-воительница, первая рабыня и «первая жена». Главный боец отряда.", image: "/images/characters/Roxanne.jpg" },
+          { name: "Шерри", desc: "Дварф, «мозг» отряда. Аналитик, кузнец и советник Митио.", image: "/images/characters/Sherry.jpg" },
+          { name: "Мирия", desc: "Кошкодевочка с навязчивой страстью к рыбе. Быстрый боец и «талисман удачи».", image: "/images/characters/Miria.jpg" },
+          { name: "Рутина", desc: "Эльфийка-дворянка, сильный маг. Пятая рабыня, бывшая дочь графа.", image: "/images/characters/Rutina.jpg" },
+          { name: "Хьюго", desc: "Главарь бандитов, убитый Митио в первой серии. Первый антагонист.", image: "/images/characters/Hugo.jpg" },
+          { name: "Бикка", desc: "Торговец деревни Сомары. Помог Митио добраться до города с первой добычей.", image: "/images/characters/Bikka.jpg" },
+          { name: "Мио", desc: "Мальчик из «what-if»-сцены — предполагаемый сын Митио, которому тот передаёт фамильный меч.", image: "/images/characters/Mio.jpg" },
+          { name: "Онеста", desc: "Купчиха Куратара, «риелтор» Митио. Помогла с покупкой дома.", image: "/images/characters/Onesta.jpg" },
+          { name: "Веста", desc: "Драконница ростом под 2 метра, четвёртая рабыня. Главный «танк» отряда.", image: "/images/characters/Vesta.jpg" }
+        ]
+      }
+    },
     { id: 44, rank: 45, title: "Я стал самым сильным с провальным навыком", members: "209 499", score: "6.48", shikimoriScore: "6.46", poster: "/images/posters/46_Samyi_silny_s_provalnym_navykom.jpg", genre: "Тёмный revenge", description: "Парня с 'провальным' навыком предают. Он становится монстром мести. Жёсткий, мрачный и очень зрелищный тайтл." ,
       details: { malUrl: "https://myanimelist.net/anime/57892" } },
     { id: 45, rank: 46, title: "Я на самом деле самый сильный?", members: "204 851", score: "6.47", shikimoriScore: "6.46", poster: "/images/posters/38_Ya_na_samom_dele_samyi_silny.jpg", genre: "OP с твистом", description: "Мальчик с огромной силой думает, что он средний. Очень милая история про детство, друзей и скрытую мощь." ,
