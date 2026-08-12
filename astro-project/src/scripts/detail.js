@@ -27,6 +27,9 @@ import { haremCharacters } from '../data/characters/harem.js';
 import { mushokutenseiCharacters } from '../data/characters/mushokutensei.js';
 import { stepsisterCharacters } from '../data/characters/stepsister.js';
 import { beasttamerCharacters } from '../data/characters/beasttamer.js';
+import { gimaiseikatsuCharacters } from '../data/characters/gimaiseikatsu.js';
+import { unnamedmemoryCharacters } from '../data/characters/unnamedmemory.js';
+import { strongestCharacters } from '../data/characters/strongest.js';
 
 const CHAR_MAPS = [
   slime300Characters,
@@ -51,6 +54,9 @@ const CHAR_MAPS = [
   mushokutenseiCharacters,
   stepsisterCharacters,
   beasttamerCharacters,
+  gimaiseikatsuCharacters,
+  unnamedmemoryCharacters,
+  strongestCharacters,
 ];
 
 let lastScrollPosition = 0;

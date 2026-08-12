@@ -484,7 +484,26 @@ export const animeData = [
       }
     },
     { id: 34, rank: 35, title: "Жизнь со сводной сестрой", members: "120 632", score: "6.94", shikimoriScore: "7.31", poster: "/images/posters/39_Zhizn_so_svodnoy_sestroy.jpg", genre: "Романтика", description: "После повторной свадьбы родителей старшеклассник Юта и школьная красавица Саки становятся сводными братом и сестрой. Они договариваются соблюдать дистанцию, но совместная жизнь постепенно сближает их. Тёплая, взрослая и очень душевная романтика.",
-      details: { malUrl: "https://myanimelist.net/anime/52481/Gimai_Seikatsu" } },
+      details: {
+        seasons: 1, episodes: 12, source: "Лайт-новел (ранобэ)", volumes: "17", studio: "Studio Deen", aired: "2024", status: "Продолжается", type: "TV",
+        malUrl: "https://myanimelist.net/anime/52481/Gimai_Seikatsu",
+        russianDub: {
+          studios: ["AniLibria", "AniDUB", "AniStar", "AnimeVost", "SHIZA Project"],
+          cast: ["AniLibria: Kari, Lali", "AniDUB: Berserk, Orru"]
+        },
+        mainCharacters: [
+          { name: "Юта Асамура", desc: "Главный герой. Бывший парень, ставший сводным братом Саки. Сдержанный книголюб.", image: "/images/characters/YuutaAsamura.jpg" },
+          { name: "Саки Аясэ", desc: "Главная героиня. Сводная сестра Юты, скрытая цундэрэ-отличница.", image: "/images/characters/SakiAyase.jpg" },
+          { name: "Таити Асамура", desc: "Отец Юты, отчим Саки. Мягкий и заботливый.", image: "/images/characters/TaichiAsamura.jpg" },
+          { name: "Акико Аясэ", desc: "Мать Саки, мачеха Юты. Тёплая и жизнерадостная.", image: "/images/characters/AkikoAyase.jpg" },
+          { name: "Томокадзу Мару", desc: "Лучший друг Юты, отаку из бейсбольной команды.", image: "/images/characters/TomokazuMaru.jpg" },
+          { name: "Маая Нарасака", desc: "Подруга Саки. Весёлая и любопытная.", image: "/images/characters/MaayaNarasaka.jpg" },
+          { name: "Сиори Ёмиури", desc: "Старшая коллега Юты по книжному магазину, студентка университета.", image: "/images/characters/ShioriYomiuri.jpg" },
+          { name: "Кэйсукэ Синдзё", desc: "Одноклассник, признавшийся Саки в чувствах.", image: "/images/characters/KeisukeShinjou.jpg" },
+          { name: "Эйха Кудо", desc: "Доцент университета Цукиномия, наставница Сиори.", image: "/images/characters/EihaKudou.jpg" }
+        ]
+      }
+    },
     { id: 35, rank: 36, title: "Укротитель зверей изгнанный", members: "247 220", score: "6.90", shikimoriScore: "6.90", poster: "/images/posters/35_Ukrotitel_zverey_izgnannyy.jpg", genre: "OP-укротитель", description: "Героя с 'бесполезной' способностью изгоняют, но он становится сильнейшим укротителем монстров. Классический revenge + рост.",
       details: {
         seasons: 1, episodes: 13, source: "Лайт-новел (ранобэ)", volumes: 12, studio: "EMT Squared", aired: "2022", status: "Завершён", type: "TV",
@@ -536,8 +555,28 @@ export const animeData = [
     },
     { id: 37, rank: 38, title: "Цубакума (UzaMaid!)", members: "130 334", score: "6.85", shikimoriScore: "6.85", poster: "/images/posters/45_Tsubakuma_UzaMaid.jpg", genre: "Горничная-комедия", description: "Бывшая солдатка становится горничной у маленькой девочки. Безумно смешная и милая комедия про семью и привязанность." ,
       details: { malUrl: "https://myanimelist.net/anime/37722" } },
-    { id: 38, rank: 39, title: "Безымянная память", members: "161 061", score: "6.81", shikimoriScore: "6.81", poster: "/images/posters/44_Bezymiannaya_pamyat.jpg", genre: "Фэнтези-романтика", description: "Девушка с таинственным прошлым и юноша, потерявший память. Красивая романтическая история в фэнтезийном мире." ,
-      details: { malUrl: "https://myanimelist.net/anime/53835" } },
+    { id: 38, rank: 39, title: "Безымянная память", members: "161 061", score: "6.81", shikimoriScore: "6.81", poster: "/images/posters/44_Bezymiannaya_pamyat.jpg", genre: "Фэнтези-романтика", description: "Девушка с таинственным прошлым и юноша, потерявший память. Красивая романтическая история в фэнтезийном мире.",
+      details: {
+        seasons: 2, episodes: 24, source: "Лайт-новел (ранобэ)", volumes: 8, studio: "ENGI (S1), ENGI (S2)", aired: "2024, 2025", status: "Завершён (2 сезона)", type: "TV",
+        malUrl: "https://myanimelist.net/anime/53835",
+        russianDub: {
+          studios: ["AniLibria", "AniDUB", "AniStar", "AnimeVost", "SHIZA Project"],
+          cast: ["AniLibria: Kari, Lali", "AniDUB: Berserk, Orru"]
+        },
+        mainCharacters: [
+          { name: "Оскар Лайет Инкреатос лоз Фарсас", desc: "Проклятый наследный принц Фарсаса. Сильнейший мечник, меч Акасия нейтрализует магию.", image: "/images/characters/Oscar.jpg" },
+          { name: "Тинаша", desc: "«Ведьма Лазурной Луны», сильнейшая из пяти ведьм. Возлюбленная Оскара.", image: "/images/characters/Tinasha.jpg" },
+          { name: "Адерайя", desc: "Отравительница и агент ведьмы Леоноры из арки Гандонны.", image: "/images/characters/Aderayya.jpg" },
+          { name: "Арс", desc: "Генерал армии Фарсаса, верный рыцарь и соратник Оскара.", image: "/images/characters/Ars.jpg" },
+          { name: "Сесилия", desc: "Принцесса Таири, навязчиво пытавшаяся соблазнить Оскара.", image: "/images/characters/Cecilia.jpg" },
+          { name: "Кёрв", desc: "Придворный маг Фарсаса, комический персонаж из окружения Тинаши.", image: "/images/characters/Curve.jpg" },
+          { name: "Доан", desc: "Молодой придворный маг, будущий архимаг Фарсаса.", image: "/images/characters/Doan.jpg" },
+          { name: "Эргард", desc: "Военный офицер из арки племени Ито.", image: "/images/characters/Edgard.jpg" },
+          { name: "Эльза", desc: "Вдова старосты деревни, уничтоженной племенем Ито.", image: "/images/characters/Elze.jpg" },
+          { name: "Эттард", desc: "Ушедший генерал Фарсаса, наставник юного Оскара и Арса.", image: "/images/characters/Ettard.jpg" }
+        ]
+      }
+    },
     { id: 39, rank: 40, title: "Как не призвать князя тьмы", members: "805 146", score: "6.80", shikimoriScore: "6.81", poster: "/images/posters/09_Kak_ne_prizvat_knyazya_tmy.jpg", genre: "Экки / гарем + контроль", description: "Главный герой попадает в мир игры и использует магию порабощения на демонах и людях. Смесь экки, гарема и чунибё.",
       details: {
         seasons: 2, episodes: 22, source: "Лайт-новел (ранобэ)", volumes: 14, studio: "Ajia-do (S1), Okuruto Noboru (S2)", aired: "2018, 2021", status: "Завершён", type: "TV",
@@ -632,8 +671,28 @@ export const animeData = [
     },
     { id: 44, rank: 45, title: "Я стал самым сильным с провальным навыком", members: "209 499", score: "6.48", shikimoriScore: "6.46", poster: "/images/posters/46_Samyi_silny_s_provalnym_navykom.jpg", genre: "Тёмный revenge", description: "Парня с 'провальным' навыком предают. Он становится монстром мести. Жёсткий, мрачный и очень зрелищный тайтл." ,
       details: { malUrl: "https://myanimelist.net/anime/57892" } },
-    { id: 45, rank: 46, title: "Я на самом деле самый сильный?", members: "204 851", score: "6.47", shikimoriScore: "6.46", poster: "/images/posters/38_Ya_na_samom_dele_samyi_silny.jpg", genre: "OP с твистом", description: "Мальчик с огромной силой думает, что он средний. Очень милая история про детство, друзей и скрытую мощь." ,
-      details: { malUrl: "https://myanimelist.net/anime/52969" } },
+    { id: 45, rank: 46, title: "Я на самом деле самый сильный?", members: "204 851", score: "6.47", shikimoriScore: "6.46", poster: "/images/posters/38_Ya_na_samom_dele_samyi_silny.jpg", genre: "OP с твистом", description: "Мальчик с огромной силой думает, что он средний. Очень милая история про детство, друзей и скрытую мощь.",
+      details: {
+        seasons: 1, episodes: 12, source: "Лайт-новел (ранобэ)", volumes: 5, studio: "Studio Palette", aired: "2023", status: "Завершён", type: "TV",
+        malUrl: "https://myanimelist.net/anime/52969",
+        russianDub: {
+          studios: ["AniLibria", "AniDUB", "AniStar", "AnimeVost", "SHIZA Project", "AniMaunt"],
+          cast: ["AniLibria: Kari, Lali", "AniDUB: Berserk, Orru"]
+        },
+        mainCharacters: [
+          { name: "Харуто Зенфис", desc: "Перерождённый хикикомори с уровнем маны 1002 (приборы показывают «2»). Герой Шива.", image: "/images/characters/HarutoZenfis.jpg" },
+          { name: "Шарлотта Зенфис", desc: "Приёмная сестра Харуто, вундеркинд. «Моральный компас» и причина его геройства.", image: "/images/characters/CharlotteZenfis.jpg" },
+          { name: "Флей", desc: "Фенрир, первая служанка Харуто. Превращается в красавицу с волчьими ушами.", image: "/images/characters/Flay.jpg" },
+          { name: "Тиариетта Лусейаннел", desc: "Профессор академии магии, исследователь Древней магии. Первой оценила силу Харуто как божественную.", image: "/images/characters/Tearietta.jpg" },
+          { name: "Марианна", desc: "Принцесса Ортеаса, сводная сестра Харуто. Не знает о его происхождении.", image: "/images/characters/Marianne.jpg" },
+          { name: "Богиня", desc: "Богиня перерождений, «промахнувшаяся» с уровнем маны героя.", image: "/images/characters/Megami.jpg" },
+          { name: "Джилк Ортеас", desc: "Король Ортеаса, биологический отец Харуто. Слабовольный, свергнут женой.", image: "/images/characters/JilkOrteus.jpg" },
+          { name: "Гизелотта Ортеас", desc: "Тиран-королева, биологическая мать Харуто. Главный антагонист.", image: "/images/characters/Gizelotte.jpg" },
+          { name: "Полкос", desc: "Профессор академии, ассистент Тиариетты.", image: "/images/characters/Polkos.jpg" },
+          { name: "Голд Зенфис", desc: "Маркграф, приёмный отец Харуто. «Дробящий землю боевой молот».", image: "/images/characters/GoldZenfis.jpg" }
+        ]
+      }
+    },
     { id: 46, rank: 47, title: "Рапсодия о долгом странствии", members: "563 461", score: "6.42", shikimoriScore: "6.43", poster: "/images/posters/14_Rapsodiya_o_dolgom_stranstvii.jpg", genre: "Исекай / расслабленный OP", description: "Программист попадает в мир игры с читерскими способностями и просто путешествует, исследует и собирает компанию.",
       details: { malUrl: "https://myanimelist.net/anime/34497/Death_March_kara_Hajimaru_Isekai_Kyousoukyoku" } },
     { id: 47, rank: 48, title: "Я получил читерские способности", members: "401 688", score: "6.33", shikimoriScore: "6.33", poster: "/images/posters/21_Ya_poluchil_chiterskie_sposobnosti.jpg", genre: "OP в двух мирах", description: "Студент с инвалидностью получает невероятные способности в параллельном мире и возвращается в реальный. История про рост, месть и силу в двух мирах.",
