@@ -105,29 +105,36 @@ if (type === 'ecchi' && index === 0) cardExtra += ' ring-2 ring-red-500';
     )
   }
 
-  {type === 'cute' && <div class="font-bold text-lg mb-2">{data.title}</div>}
-  {type === 'cute' && <div class="text-sm text-[var(--text-muted)] mb-3">{data.reason}</div>}
-  {
-    type === 'cute' && (
-      <div class="flex items-center justify-between text-xs">
-        <div class="text-amber-400">МИЛОТА: {data.cute}</div>
-        <div class="px-2 py-0.5 bg-amber-500/10 text-amber-400 rounded">{data.note}</div>
-      </div>
-    )
-  }
-
-  {type === 'loli' && <div class="font-bold text-lg mb-2">{data.title}</div>}
-  {type === 'loli' && <div class="text-sm text-[var(--text-muted)] mb-3">{data.reason}</div>}
   {
     type === 'loli' && (
-      <div class="flex items-center justify-between">
-        <div>
-          <div class="text-xs text-amber-400">LOLI INDEX</div>
-          <div class="font-mono text-2xl font-bold text-amber-400">{data.level}</div>
-        </div>
-        {data.note && (
-          <div class="text-[10px] px-2 py-1 bg-amber-500/10 text-amber-400 rounded">{data.note}</div>
+      <div class="flex items-center gap-x-4">
+        {data.image ? (
+          <img
+            src={data.image}
+            alt={data.title}
+            loading="lazy"
+            class="w-20 h-20 object-cover object-top rounded-2xl flex-shrink-0 border border-[var(--border)]"
+          />
+        ) : (
+          <div class="w-14 h-14 bg-gradient-to-br from-amber-400 to-yellow-500 rounded-2xl flex-shrink-0 flex items-center justify-center text-2xl text-black">
+            <i class="fa-solid fa-child" />
+          </div>
         )}
+        <div class="flex-1 min-w-0">
+          <div class="font-bold text-lg leading-tight">{data.title}</div>
+          <div class="text-sm text-[var(--text-muted)] mt-1 line-clamp-3">{data.reason}</div>
+          <div class="mt-3 flex items-center justify-between">
+            <div>
+              <div class="text-xs text-amber-400">LOLI INDEX</div>
+              <div class="font-mono text-2xl font-bold text-amber-400">{data.level}</div>
+            </div>
+            {data.note && (
+              <div class="text-[10px] px-2 py-1 bg-amber-500/10 text-amber-400 rounded">
+                {data.note}
+              </div>
+            )}
+          </div>
+        </div>
       </div>
     )
   }

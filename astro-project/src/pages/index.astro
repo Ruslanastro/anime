@@ -10,7 +10,7 @@ import AnimeDetail from '../components/AnimeDetail.astro';
 import CharacterModal from '../components/CharacterModal.astro';
 import Footer from '../components/Footer.astro';
 
-import { animeData, imbaData, charactersData, ecchiData, cuteData } from '../data/animeData.js';
+import { animeData, imbaData, charactersData, ecchiData } from '../data/animeData.js';
 import { loliData } from '../data/loliData.js';
 import { topCharactersData } from '../data/topCharactersData.js';
 import { lnData } from '../data/lnData.js';
@@ -152,40 +152,6 @@ import Skeleton from '../components/Skeleton.astro';
         <i class="fa-solid fa-exclamation-triangle mr-2"></i>
         <strong>Внимание:</strong> "Гарем рабов в лабиринте другого мира" — один из самых откровенных исэкаев.
         Содержит очень детальные сцены (включая OVA без цензуры). Рекомендуется только взрослой аудитории.
-      </div>
-    </div>
-
-    <!-- CUTE TAB -->
-    <div
-      id="content-cute"
-      class="hidden"
-      role="tabpanel"
-      aria-labelledby="tab-cute"
-      aria-hidden="true"
-    >
-      <div class="mb-6">
-        <div class="flex items-center gap-x-3">
-          <h2 class="text-4xl font-bold tracking-tighter section-header">Милые герои</h2>
-          <div class="px-3 py-1 bg-amber-500/20 text-amber-400 text-xs font-bold rounded-full">
-            Тепло и доброта
-          </div>
-        </div>
-        <p class="text-[var(--text-muted)] mt-2">
-          Тайтлы с особенно очаровательными, милыми и позитивными персонажами — детям и взрослым
-        </p>
-      </div>
-      <SearchBar tabId="cute" placeholder="Поиск милого героя или тайтла..." />
-      <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-5" id="grid-cute">
-        {cuteData.map((item, i) => <InfoCard type="cute" data={item} index={i} />)}
-      </div>
-
-      <div
-        class="mt-8 p-4 bg-amber-950/30 border border-amber-500/30 rounded-2xl text-sm text-amber-300"
-      >
-        <i class="fa-solid fa-info-circle mr-2"></i>
-        <strong>Примечание:</strong> Здесь собраны тайтлы, где главные или важные персонажи выглядят особенно
-        мило и вызывают тёплые эмоции. Многие из них — комедии или истории про детей/подростков с позитивным
-        уклоном.
       </div>
     </div>
 
