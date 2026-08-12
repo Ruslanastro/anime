@@ -24,6 +24,9 @@ import { villainessdiaryCharacters } from '../data/characters/villainessdiary.js
 import { demonlordCharacters } from '../data/characters/demonlord.js';
 import { arifuretaCharacters } from '../data/characters/arifureta.js';
 import { haremCharacters } from '../data/characters/harem.js';
+import { mushokutenseiCharacters } from '../data/characters/mushokutensei.js';
+import { stepsisterCharacters } from '../data/characters/stepsister.js';
+import { beasttamerCharacters } from '../data/characters/beasttamer.js';
 
 const CHAR_MAPS = [
   slime300Characters,
@@ -45,6 +48,9 @@ const CHAR_MAPS = [
   demonlordCharacters,
   arifuretaCharacters,
   haremCharacters,
+  mushokutenseiCharacters,
+  stepsisterCharacters,
+  beasttamerCharacters,
 ];
 
 let lastScrollPosition = 0;

@@ -85,7 +85,27 @@
 
 export const animeData = [
     { id: 1, rank: 1, title: "Реинкарнация безработного", members: "1 593 675", score: "8.32", shikimoriScore: "8.32", poster: "/images/posters/05_Reinkarnatsiya_bezrabotnogo.jpg", genre: "Магический мир / взросление", description: "Перерождённый неудачник серьёзно подходит к новой жизни. Постепенно становится одним из сильнейших магов мира, проходя путь искупления и роста.",
-      details: { malUrl: "https://myanimelist.net/anime/39535/Mushoku_Tensei__Isekai_Ittara_Honki_Dasu" } },
+      details: {
+        seasons: 3, episodes: 61, source: "Лайт-новел (ранобэ)", volumes: 26, studio: "Studio Bind", aired: "2021, 2023-2024, 2026", status: "Продолжается (сезон 3 идёт)", type: "TV",
+        malUrl: "https://myanimelist.net/anime/39535/Mushoku_Tensei__Isekai_Ittara_Honki_Dasu",
+        russianDub: {
+          studios: ["AniLibria", "AniDUB", "AniStar", "AnimeVost", "SHIZA Project", "AniMaunt", "Dream Cast"],
+          cast: ["AniLibria: Kari, Lali, Sharon", "AniDUB: Berserk, Orru"]
+        },
+        mainCharacters: [
+          { name: "Рудеус Грейрат", desc: "Главный герой. Перерождённый хикикомори, ставший гениальным магом. Путь искупления и взросления.", image: "/images/characters/Rudeus.jpg" },
+          { name: "Эрис Бореас Грейрат", desc: "Кузина и ученица Рудеуса. Вспыльчивая цундэрэ с талантом к Стилю Бога Меча.", image: "/images/characters/Eris.jpg" },
+          { name: "Рокси Мигурдия", desc: "Маг-наставница Рудеуса из расы мигурдов. Его первая учительница и вторая жена.", image: "/images/characters/Roxy.jpg" },
+          { name: "Сильфиетта", desc: "Подруга детства, полуэльфийка. Первая жена Рудеуса.", image: "/images/characters/Sylphiette.jpg" },
+          { name: "Пол Грейрат", desc: "Отец Рудеуса. Опытный мечник, бывший лидер «Клыков Чёрного Волка».", image: "/images/characters/PaulGreyrat.jpg" },
+          { name: "Зенит Грейрат", desc: "Мать Рудеуса. Целительница, пропала после инцидента Телепортации.", image: "/images/characters/Zenith.jpg" },
+          { name: "Лилия Грейрат", desc: "Горничная семьи, вторая жена Пола. Мать Айши.", image: "/images/characters/Lilia.jpg" },
+          { name: "Айша Грейрат", desc: "Младшая сестра Рудеуса, дочь Пола и Лилии.", image: "/images/characters/Aisha.jpg" },
+          { name: "Руйджерд Супердия", desc: "Воин племени супердов, спутник Рудеуса в отряде Dead End.", image: "/images/characters/Ruijerd.jpg" },
+          { name: "Гилейн Дедолдия", desc: "Король Меча, наставница Эрис по фехтованию.", image: "/images/characters/Ghislaine.jpg" }
+        ]
+      }
+    },
     { id: 2, rank: 2, title: "Ре:Зеро", members: "2 493 142", score: "8.25", shikimoriScore: "8.25", poster: "/images/posters/01_Re_Zero.jpg", genre: "Психологический / петля смерти", description: "Главный герой погибает и возвращается во времени, пытаясь спасти близких. Тёмный, эмоционально тяжёлый исэкай с сильным психологическим акцентом и петлями смерти.",
       details: { malUrl: "https://myanimelist.net/anime/31240/Re_Zero_kara_Hajimeru_Isekai_Seikatsu" } },
     { id: 3, rank: 3, title: "Волчица и пряности", members: "876 392", score: "8.21", shikimoriScore: "8.21", poster: "/images/posters/07_Volchitsa_i_pryanosti.jpg", genre: "Торговля и волчица", description: "Мудрый торговец путешествует вместе с древней богиней-волчицей. История о экономике, философии и медленно развивающихся отношениях в средневековом мире.",
@@ -281,8 +301,28 @@ export const animeData = [
       details: { malUrl: "https://myanimelist.net/anime/61884" } },
     { id: 19, rank: 19, title: "Всемогущая магия святого", members: "248 393", score: "7.31", shikimoriScore: "7.31", poster: "/images/posters/34_Vsemogushchaya_magiya_svyatogo.jpg", genre: "Уютный исэкай", description: "Девушка с невероятной магией святого попадает в другой мир и просто хочет жить спокойно. Тёплая романтика и зельеварение." ,
       details: { malUrl: "https://myanimelist.net/anime/42826" } },
-    { id: 20, rank: 20, title: "Моя сводная сестра — бывшая", members: "215 182", score: "7.30", shikimoriScore: "6.71", poster: "/images/posters/23_Moya_svodnaya_sestra_byvshaya.jpg", genre: "Романтика", description: "Бывшие возлюбленные внезапно становятся сводными братом и сестрой. Напряжённая, эмоциональная и очень реалистичная романтическая драма." ,
-      details: { malUrl: "https://myanimelist.net/anime/49470" } },
+    { id: 20, rank: 20, title: "Моя сводная сестра — бывшая", members: "215 182", score: "7.30", shikimoriScore: "6.71", poster: "/images/posters/23_Moya_svodnaya_sestra_byvshaya.jpg", genre: "Романтика", description: "Бывшие возлюбленные внезапно становятся сводными братом и сестрой. Напряжённая, эмоциональная и очень реалистичная романтическая драма.",
+      details: {
+        seasons: 1, episodes: 12, source: "Лайт-новел (ранобэ)", volumes: 5, studio: "project No.9", aired: "2022", status: "Завершён", type: "TV",
+        malUrl: "https://myanimelist.net/anime/49470",
+        russianDub: {
+          studios: ["AniLibria", "AniDUB", "AniStar", "AnimeVost", "SHIZA Project"],
+          cast: ["AniLibria: Kari, Lali", "AniDUB: Berserk, Orru"]
+        },
+        mainCharacters: [
+          { name: "Юмэ Иридо", desc: "Главная героиня. Бывшая девушка Мидзуто, ставшая его сводной сестрой. Скрывает возобновлённый роман.", image: "/images/characters/Yume.jpg" },
+          { name: "Мидзуто Иридо", desc: "Главный герой. Бывший парень Юмэ, ставший её сводным братом. Сдержанный книголюб.", image: "/images/characters/Mizuto.jpg" },
+          { name: "Исана Хигасира", desc: "Одноклассница и поклонница ранобэ. Романтическая соперница Юмэ, подруга Мидзуто.", image: "/images/characters/Isana.jpg" },
+          { name: "Нацумэ Иридо", desc: "Бабушка Мидзуто. Расспросами создаёт комичные ситуации вокруг тайны пары.", image: "/images/characters/Natsume.jpg" },
+          { name: "Юни Иридо", desc: "Мать Юмэ, вторая жена Минэаки. Не знает о прошлом дочери и Мидзуто.", image: "/images/characters/Yuni.jpg" },
+          { name: "Минэаки Иридо", desc: "Отец Мидзуто, вдовец, женился на матери Юмэ.", image: "/images/characters/Mineaki.jpg" },
+          { name: "Насука Канаи", desc: "Подруга Юмэ, член клуба каруты.", image: "/images/characters/Nasuka.jpg" },
+          { name: "Когурэ Каванами", desc: "Лучший друг Мидзуто. Бывший парень Акацуки, «аллергия на любовь».", image: "/images/characters/Kogure.jpg" },
+          { name: "Акацуки Минами", desc: "Подруга Юмэ, бывшая девушка Когурэ. Вторая «бета-пара».", image: "/images/characters/Akatsuki.jpg" },
+          { name: "Маки Сакамидзу", desc: "Подруга Юмэ, член баскетбольной команды.", image: "/images/characters/Maki.jpg" }
+        ]
+      }
+    },
     { id: 21, rank: 21, title: "Время пыток принцесса", members: "89 900", score: "7.26", shikimoriScore: "7.26", poster: "/images/posters/49_Vremya_pytok_princessa.jpg", genre: "Комедия с пытками", description: "Принцесса обожает пытать людей... но на самом деле она просто очень одинокая и милая. Абсурдная и добрая чёрная комедия." ,
       details: { malUrl: "https://myanimelist.net/anime/55774" } },
     { id: 22, rank: 22, title: "Кума Кума Кума Мишка", members: "190 819", score: "7.23", shikimoriScore: "7.23", poster: "/images/posters/42_Kuma_Kuma_Kuma_Mishka.jpg", genre: "Уютный мишка-исэкай",
@@ -446,7 +486,27 @@ export const animeData = [
     { id: 34, rank: 35, title: "Жизнь со сводной сестрой", members: "120 632", score: "6.94", shikimoriScore: "7.31", poster: "/images/posters/39_Zhizn_so_svodnoy_sestroy.jpg", genre: "Романтика", description: "После повторной свадьбы родителей старшеклассник Юта и школьная красавица Саки становятся сводными братом и сестрой. Они договариваются соблюдать дистанцию, но совместная жизнь постепенно сближает их. Тёплая, взрослая и очень душевная романтика.",
       details: { malUrl: "https://myanimelist.net/anime/52481/Gimai_Seikatsu" } },
     { id: 35, rank: 36, title: "Укротитель зверей изгнанный", members: "247 220", score: "6.90", shikimoriScore: "6.90", poster: "/images/posters/35_Ukrotitel_zverey_izgnannyy.jpg", genre: "OP-укротитель", description: "Героя с 'бесполезной' способностью изгоняют, но он становится сильнейшим укротителем монстров. Классический revenge + рост.",
-      details: { malUrl: "https://myanimelist.net/anime/52046/Yuusha_Party_wo_Tsuihou_sareta_Beast_Tamer_Saikyoushu_no_Nekomimi_Shoujo_to_Deau" } },
+      details: {
+        seasons: 1, episodes: 13, source: "Лайт-новел (ранобэ)", volumes: 8, studio: "EMT Squared", aired: "2022", status: "Завершён", type: "TV",
+        malUrl: "https://myanimelist.net/anime/52046/Yuusha_Party_wo_Tsuihou_sareta_Beast_Tamer_Saikyoushu_no_Nekomimi_Shoujo_to_Deau",
+        russianDub: {
+          studios: ["AniLibria", "AniDUB", "AniStar", "AnimeVost", "SHIZA Project", "AniMaunt"],
+          cast: ["AniLibria: Kari, Lali", "AniDUB: Berserk, Orru"]
+        },
+        mainCharacters: [
+          { name: "Рейн Шрауд", desc: "Главный герой. Укротитель зверей, изгнанный из Партии Героя. Потомок Первого Героя.", image: "/images/characters/Rein.jpg" },
+          { name: "Канадэ", desc: "Девушка-кошка из Племени Кошек. Первый партнёр и будущая жена Рейна.", image: "/images/characters/Kanade.jpg" },
+          { name: "Тания", desc: "Красный дракон из Племени Драконов. Второй партнёр Рейна, усиливающий его магию.", image: "/images/characters/Tania.jpg" },
+          { name: "Аггат", desc: "Бывший член Партии Героя, воин с клеймором. Жертва предательства Ариоса.", image: "/images/characters/Aggath.jpg" },
+          { name: "Натали Браф", desc: "Регистраторша Гильдии Авантюристов Хоризона. Очистила имя Рейна от ложных обвинений.", image: "/images/characters/NatalieB.jpg" },
+          { name: "Стелла Энплейс", desc: "Рыцарь, капитан ордена Хоризона. Союзница Рейна против коррумпированной знати.", image: "/images/characters/Stella.jpg" },
+          { name: "Эдгар Фромвэр", desc: "Сын мэра Хоризона, жестокий тиран. Пособник Ариоса, превращён в демона.", image: "/images/characters/Edgar.jpg" },
+          { name: "Тина Холли", desc: "Призрак горничной, шестой партнёр Рейна. Контракт дал ему управление гравитацией.", image: "/images/characters/Tina.jpg" },
+          { name: "Ариос Орландо", desc: "Главный антагонист. Герой с навыком «Limit Break», изгнавший Рейна.", image: "/images/characters/Arios.jpg" },
+          { name: "Гилет Стрегар", desc: "Коррумпированный капитан рыцарей Хоризона, приспешник мэра.", image: "/images/characters/Gilet.jpg" }
+        ]
+      }
+    },
     { id: 36, rank: 37, title: "300 лет убивала слизней", members: "455 567", score: "6.88", shikimoriScore: "6.89", poster: "/images/posters/19_300_let_ubivala_slizney.jpg", genre: "Уютный исэкай / повседневность",
       shortDescription: "Бывшая офисная работница стала бессмертной ведьмой и 300 лет спокойно убивала слизней, пока не выяснилось, что она давно достигла максимального уровня.",
       description: "Адзуса Айдзава — бывшая офисная работница, которая умерла от переработки. Богиня дала ей вторую жизнь в роли бессмертной ведьмы в другом мире. Она поселилась в доме на горе и 300 лет спокойно убивала слизней (по 25 в день), не подозревая, что давно достигла максимального 99 уровня. Когда правда раскрылась, к ней начали стекаться драконы, эльфийки, демоны и призраки. Так тихая жизнь превратилась в большую «семью».",
