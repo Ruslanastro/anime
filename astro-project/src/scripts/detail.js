@@ -30,6 +30,9 @@ import { beasttamerCharacters } from '../data/characters/beasttamer.js';
 import { gimaiseikatsuCharacters } from '../data/characters/gimaiseikatsu.js';
 import { unnamedmemoryCharacters } from '../data/characters/unnamedmemory.js';
 import { strongestCharacters } from '../data/characters/strongest.js';
+import { failureframeCharacters } from '../data/characters/failureframe.js';
+import { deathmarchCharacters } from '../data/characters/deathmarch.js';
+import { cheatskillCharacters } from '../data/characters/cheatskill.js';
 
 const CHAR_MAPS = [
   slime300Characters,
@@ -57,6 +60,9 @@ const CHAR_MAPS = [
   gimaiseikatsuCharacters,
   unnamedmemoryCharacters,
   strongestCharacters,
+  failureframeCharacters,
+  deathmarchCharacters,
+  cheatskillCharacters,
 ];
 
 let lastScrollPosition = 0;

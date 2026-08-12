@@ -669,8 +669,28 @@ export const animeData = [
         ]
       }
     },
-    { id: 44, rank: 45, title: "Я стал самым сильным с провальным навыком", members: "209 499", score: "6.48", shikimoriScore: "6.46", poster: "/images/posters/46_Samyi_silny_s_provalnym_navykom.jpg", genre: "Тёмный revenge", description: "Парня с 'провальным' навыком предают. Он становится монстром мести. Жёсткий, мрачный и очень зрелищный тайтл." ,
-      details: { malUrl: "https://myanimelist.net/anime/57892" } },
+    { id: 44, rank: 45, title: "Я стал самым сильным с провальным навыком", members: "209 499", score: "6.48", shikimoriScore: "6.46", poster: "/images/posters/46_Samyi_silny_s_provalnym_navykom.jpg", genre: "Тёмный revenge", description: "Парня с 'провальным' навыком предают. Он становится монстром мести. Жёсткий, мрачный и очень зрелищный тайтл.",
+      details: {
+        seasons: 1, episodes: 12, source: "Лайт-новел (ранобэ)", volumes: 12, studio: "SILVER LINK.", aired: "2024", status: "2 сезон анонсирован", type: "TV",
+        malUrl: "https://myanimelist.net/anime/57892",
+        russianDub: {
+          studios: ["AniLibria", "AniDUB", "AniStar", "AnimeVost", "SHIZA Project"],
+          cast: ["AniLibria: Kari, Lali", "AniDUB: Berserk, Orru"]
+        },
+        mainCharacters: [
+          { name: "Тока Мимори", desc: "Главный герой. Изгнан богиней как «провальный», стал Повелителем Мух. Мстит Вишис.", image: "/images/characters/ToukaMimori.jpg" },
+          { name: "Серас Эшрейн", desc: "Принцесса высоких эльфов, бывший капитан Святых рыцарей. Верная спутница Токи.", image: "/images/characters/SerasAshrain.jpg" },
+          { name: "Асаги Икусаба", desc: "Герой B-ранга, лидер группы. Союзница Токи в поздней части истории.", image: "/images/characters/AsagiIkusaba.jpg" },
+          { name: "Кобато Касима", desc: "Трусливая одноклассница, навык «Раскрытие» раскрыл личность Повелителя Мух.", image: "/images/characters/KobatoKashima.jpg" },
+          { name: "Такуто Кирихара", desc: "Герой S-ранга с «Драконьим Разрушителем». Заносчивый лидер группы.", image: "/images/characters/TakutoKirihara.jpg" },
+          { name: "Сёго Оямада", desc: "Герой A-ранга, жестокий. Марионетка Вишис.", image: "/images/characters/ShougoOyamada.jpg" },
+          { name: "Пиггимару", desc: "Слизень-спутник Токи. Умный и невероятно живучий.", image: "/images/characters/Piggymaru.jpg" },
+          { name: "Аяка Сого", desc: "Староста класса, герой S-ранга. Трагическая пешка Вишис, затем союзница.", image: "/images/characters/AyakaSogou.jpg" },
+          { name: "Ицуки Такао", desc: "Герой A-ранга, младшая сестра Хидзири. Импульсивный боец.", image: "/images/characters/ItsukiTakao.jpg" },
+          { name: "Вишис", desc: "Богиня-антагонистка, изгнавшая Току. Главная цель его мести.", image: "/images/characters/Vicius.jpg" }
+        ]
+      }
+    },
     { id: 45, rank: 46, title: "Я на самом деле самый сильный?", members: "204 851", score: "6.47", shikimoriScore: "6.46", poster: "/images/posters/38_Ya_na_samom_dele_samyi_silny.jpg", genre: "OP с твистом", description: "Мальчик с огромной силой думает, что он средний. Очень милая история про детство, друзей и скрытую мощь.",
       details: {
         seasons: 1, episodes: 12, source: "Лайт-новел (ранобэ)", volumes: 5, studio: "Studio Palette", aired: "2023", status: "Завершён", type: "TV",
@@ -694,9 +714,49 @@ export const animeData = [
       }
     },
     { id: 46, rank: 47, title: "Рапсодия о долгом странствии", members: "563 461", score: "6.42", shikimoriScore: "6.43", poster: "/images/posters/14_Rapsodiya_o_dolgom_stranstvii.jpg", genre: "Исекай / расслабленный OP", description: "Программист попадает в мир игры с читерскими способностями и просто путешествует, исследует и собирает компанию.",
-      details: { malUrl: "https://myanimelist.net/anime/34497/Death_March_kara_Hajimaru_Isekai_Kyousoukyoku" } },
+      details: {
+        seasons: 1, episodes: 12, source: "Лайт-новел (ранобэ)", volumes: 29, studio: "SILVER LINK.", aired: "2018", status: "Завершён", type: "TV",
+        malUrl: "https://myanimelist.net/anime/34497/Death_March_kara_Hajimaru_Isekai_Kyousoukyoku",
+        russianDub: {
+          studios: ["AniLibria", "AniDUB", "AniStar", "AnimeVost", "SHIZA Project", "AniMaunt"],
+          cast: ["AniLibria: Kari, Lali", "AniDUB: Berserk, Orru"]
+        },
+        mainCharacters: [
+          { name: "Ичиро Сузуки", desc: "Программист, перенесённый в мир игры как Сато. Уровень 310, скрывает силу.", image: "/images/characters/IchirouSuzuki.jpg" },
+          { name: "Зена Мариэнтейл", desc: "Маг-солдат Сейрюу, первый друг Сато в новом мире.", image: "/images/characters/ZenaMarientail.jpg" },
+          { name: "Ариса", desc: "Падшая принцесса, перерождённая японка. Стратег группы, комик-релиф.", image: "/images/characters/Arisa.jpg" },
+          { name: "Лиза", desc: "Ящеролюдка-рабыня, спасённая Сато. Боец с копьём, наставница Почи и Тамы.", image: "/images/characters/Liza.jpg" },
+          { name: "Лулу", desc: "Рабыня, сводная сестра Арисы. «Домашняя» героиня группы.", image: "/images/characters/Lulu.jpg" },
+          { name: "Почи", desc: "Деми-человек из собачьего племени. Авангардный лёгкий боец.", image: "/images/characters/Pochi.jpg" },
+          { name: "Тама", desc: "Деми-человек из кошачьего племени. Скоростной боец с парными ножами.", image: "/images/characters/Tama.jpg" },
+          { name: "Миа", desc: "130-летняя эльфийка, спасённая Сато. Маг поддержки группы.", image: "/images/characters/Mia.jpg" },
+          { name: "Нана", desc: "Гомункул, созданный королём нежити. Танк и верная служанка Сато.", image: "/images/characters/Nana.jpg" },
+          { name: "Джин Белтон", desc: "Дворянин и вице-капитан магов Сейрюу, спасённый Сато.", image: "/images/characters/JinBelton.jpg" }
+        ]
+      }
+    },
     { id: 47, rank: 48, title: "Я получил читерские способности", members: "401 688", score: "6.33", shikimoriScore: "6.33", poster: "/images/posters/21_Ya_poluchil_chiterskie_sposobnosti.jpg", genre: "OP в двух мирах", description: "Студент с инвалидностью получает невероятные способности в параллельном мире и возвращается в реальный. История про рост, месть и силу в двух мирах.",
-      details: { malUrl: "https://myanimelist.net/anime/52830/Isekai_de_Cheat_Skill_wo_Te_ni_Shita_Ore_wa_Genjitsu_Sekai_wo_mo_Musou_Suru__Level_Up_wa_Jinsei_wo_Kaeta" } },
+      details: {
+        seasons: 2, episodes: 25, source: "Лайт-новел (ранобэ)", volumes: 8, studio: "Millepensee (S1), Studio Palette (S2)", aired: "2023, 2025", status: "Завершён (2 сезона)", type: "TV",
+        malUrl: "https://myanimelist.net/anime/52830/Isekai_de_Cheat_Skill_wo_Te_ni_Shita_Ore_wa_Genjitsu_Sekai_wo_mo_Musou_Suru__Level_Up_wa_Jinsei_wo_Kaeta",
+        russianDub: {
+          studios: ["AniLibria", "AniDUB", "AniStar", "AnimeVost", "SHIZA Project", "AniMaunt"],
+          cast: ["AniLibria: Kari, Lali", "AniDUB: Berserk, Orru"]
+        },
+        mainCharacters: [
+          { name: "Юя Тэндзё", desc: "Главный герой. Изгой, получивший портал в Аргену. Преобразился в красавца со 100+ уровнями.", image: "/images/characters/YuuyaTenjou.jpg" },
+          { name: "Каори Ходзё", desc: "«Принцесса» академии Осэй. Первый человек, узнавший тайну Юи.", image: "/images/characters/KaoriHoujou.jpg" },
+          { name: "Лексия фон Арселия", desc: "Полуэльфийка-принцесса Арселии. Невеста Юи из другого мира.", image: "/images/characters/Lexia.jpg" },
+          { name: "Акацуки", desc: "Кабан Мэн Хуай, второй фамильяр Юи. Исцеляющая аура.", image: "/images/characters/AkatsukiC.jpg" },
+          { name: "Такэси Араки", desc: "Бывший мучитель Юи из банды «Красные Огры». Разгромлен Юей.", image: "/images/characters/TakeshiAraki.jpg" },
+          { name: "Эмилия", desc: "Регистраторша Гильдии искателей приключений Арселии.", image: "/images/characters/EmiliaC.jpg" },
+          { name: "Глена", desc: "Авантюристка, флиртовавшая с Юей в гильдии.", image: "/images/characters/GlenaC.jpg" },
+          { name: "Хикару", desc: "Фотограф агентства Star Productions, проводник Юи в мир моды.", image: "/images/characters/HikaruC.jpg" },
+          { name: "Цукаса Ходзё", desc: "Председатель академии Осэй, отец Каори. Покровитель Юи.", image: "/images/characters/TsukasaHoujou.jpg" },
+          { name: "Луна", desc: "Ассасин «Headhunter» из Гильдии Тьмы. Стала телохранителем принцессы.", image: "/images/characters/LunaC.jpg" }
+        ]
+      }
+    },
     { id: 48, rank: 49, title: "Жизнь перерожденного мудреца", members: "257 267", score: "6.32", shikimoriScore: "6.33", poster: "/images/posters/31_Zhizn_perezhdennogo_mudretsa.jpg", genre: "OP + вторая профессия", description: "Величайший мудрец перерождается и выбирает 'вторую профессию'. Спокойная, умная история про жизнь после пика силы." ,
       details: { malUrl: "https://myanimelist.net/anime/47163" } },
     { id: 49, rank: 50, title: "Маг-целитель: Новый старт", members: "650 338", score: "6.30", shikimoriScore: "6.31", poster: "/images/posters/11_Mag_tselitel_Novyy_start.jpg", genre: "Тёмный revenge / исцеление", description: "Бывший целитель, которого предали, возвращается во времени и мстит своим обидчикам крайне жестокими методами. Один из самых тёмных и жёстких тайтлов в жанре.",
