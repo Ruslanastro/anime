@@ -110,7 +110,7 @@ export const animeData = [
       details: { malUrl: "https://myanimelist.net/anime/31240/Re_Zero_kara_Hajimeru_Isekai_Seikatsu" } },
     { id: 3, rank: 3, title: "Волчица и пряности", members: "876 392", score: "8.21", shikimoriScore: "8.21", poster: "/images/posters/07_Volchitsa_i_pryanosti.jpg", genre: "Торговля и волчица", description: "Мудрый торговец путешествует вместе с древней богиней-волчицей. История о экономике, философии и медленно развивающихся отношениях в средневековом мире.",
       details: {
-        seasons: 2, episodes: 25, source: "Лайт-новел (ранобэ)", volumes: 23, studio: "Imagin (S1), Brain's Base (S2)", aired: "2008, 2009", status: "Завершён", type: "TV",
+        seasons: 2, episodes: 25, source: "Лайт-новел (ранобэ)", volumes: 24, studio: "Imagin (S1), Brain's Base (S2)", aired: "2008, 2009", status: "Завершён", type: "TV",
         malUrl: "https://myanimelist.net/anime/2966/Ookami_to_Koushinryou",
         russianDub: {
           official: "Реанимедиа (лицензионный дубляж обоих сезонов)",
@@ -160,7 +160,7 @@ export const animeData = [
       shortDescription: "Принцесса в плену у демонов, но её волнует только одно — как бы поудобнее поспать. Безумно смешная и оригинальная комедия.",
       description: "Принцесса Аврора Суярис похищена Королём Демонов и заточена в его замке. Казалось бы, трагедия — но принцессу волнует только одно: идеальный сон! Ради хорошей подушки она готова убить монстра, ради мягкой простыни — разнести ползамка. Демоны живут в постоянном ужасе от своей «пленницы», а Король Демонов пытается не сойти с ума, параллельно заботясь о ней как о дочери. Одна из самых смешных и оригинальных комедий с невероятно милой главной героиней.",
       details: {
-        seasons: 1, episodes: 12, source: "Манга (Shounen Sunday)", volumes: 27, studio: "Doga Kobo", aired: "Осень 2020", status: "Завершён", type: "TV",
+        seasons: 1, episodes: 12, source: "Манга (Shounen Sunday)", volumes: 32, studio: "Doga Kobo", aired: "Осень 2020", status: "Завершён", type: "TV",
         malUrl: "https://myanimelist.net/anime/40397/Maoujou_de_Oyasumi",
         russianDub: {
           studios: ["AniStar", "AnimeVost", "AniDUB", "AniLibria", "SHIZA Project", "Studio Band", "HaronMedia"],
@@ -218,7 +218,7 @@ export const animeData = [
     },
     { id: 8, rank: 8, title: "Дракон-горничная госпожи Кобаяши", members: "1 339 159", score: "7.90", shikimoriScore: "7.90", poster: "/images/posters/06_Drakon_gornichnaya_gospozhi_Kobayasi.jpg", genre: "Повседневность с драконами", description: "Обычная офисная работница живёт вместе с драконами в современном мире. Тёплая, милая и очень смешная повседневная комедия.",
       details: {
-        seasons: 2, episodes: 25, source: "Манга", volumes: 14, studio: "Kyoto Animation", aired: "2017, 2021", status: "Продолжается (фильм 2025)", type: "TV",
+        seasons: 2, episodes: 25, source: "Манга", volumes: 19, studio: "Kyoto Animation", aired: "2017, 2021", status: "Продолжается (фильм 2025)", type: "TV",
         malUrl: "https://myanimelist.net/anime/33206/Kobayashi-san_Chi_no_Maid_Dragon",
         russianDub: {
           studios: ["AniLibria", "Оканэ", "AniStar", "AnimeVost", "AniDUB"],
@@ -242,7 +242,7 @@ export const animeData = [
       shortDescription: "Замкнутый парень и идеальная соседка постепенно сближаются. Невероятно тёплая и душевная романтика без лишней драмы.",
       description: "Аманэ Фудзимия живёт один в запущенной квартире, питается фастфудом и ни с кем не общается. Его соседка — Махиру Сиина, «ангел» школы: идеальная во всём, от учёбы до внешности. Однажды в дождливый день Аманэ отдаёт ей свой зонт, и с этого начинается их история. Махиру начинает заботиться о нём: готовит еду, убирает квартиру, а Аманэ постепенно открывается ей. Невероятно нежная и уютная история о том, как два одиноких человека находят тепло друг в друге.",
       details: {
-        seasons: 2, episodes: 24, source: "Лайт-новел (ранобэ)", volumes: 10, studio: "Project No.9", aired: "Зима 2023, Весна 2026", status: "Завершён (2 сезона)", type: "TV",
+        seasons: 2, episodes: 24, source: "Лайт-новел (ранобэ)", volumes: 12, studio: "Project No.9", aired: "Зима 2023, Весна 2026", status: "Завершён (2 сезона)", type: "TV",
         malUrl: "https://myanimelist.net/anime/50739/Otonari_no_Tenshi-sama_ni_Itsunomanika_Dame_Ningen_ni_Sareteita_Ken",
         russianDub: {
           studios: ["AniStar", "AniLibria", "Shiza Project", "Dream Cast", "Fronda", "AniMaunt"],
@@ -264,7 +264,7 @@ export const animeData = [
       details: { malUrl: "https://myanimelist.net/anime/43523/Tsuki_ga_Michibiku_Isekai_Douchuu" } },
     { id: 11, rank: 11, title: "Дневник наблюдений за моей невестой-злодейкой", members: "56 618", score: "7.70", shikimoriScore: "7.68", poster: "/images/posters/50_Dnevnik_nablyudeniy_za_nevestoy_zlodeykoy.jpg", genre: "Новая злодейка-комедия", description: "Принц Сесил обручён с леди Бертией, которая уверяет, что помнит прошлую жизнь и является переродившейся злодейкой из отомэ-игры. Вместо того чтобы гневаться, он с интересом наблюдает за её попытками следовать злодейскому сценарию. Тёплая и смешная история, рассказанная с необычной точки зрения.",
       details: {
-        seasons: 1, episodes: 12, source: "Лайт-новел (ранобэ)", volumes: 6, studio: "Studio Deen", aired: "Весна 2026", status: "Завершён", type: "TV",
+        seasons: 1, episodes: 12, source: "Лайт-новел (ранобэ)", volumes: "2 + 6 (сиквел)", studio: "Studio Deen", aired: "Весна 2026", status: "Завершён", type: "TV",
         malUrl: "https://myanimelist.net/anime/61687",
         russianDub: {
           studios: ["AnimeVost", "AniStar", "AniBaza", "AniDUB", "AniLibria", "AniLot", "Fronda Studio"],
@@ -303,7 +303,7 @@ export const animeData = [
       details: { malUrl: "https://myanimelist.net/anime/42826" } },
     { id: 20, rank: 20, title: "Моя сводная сестра — бывшая", members: "215 182", score: "7.30", shikimoriScore: "6.71", poster: "/images/posters/23_Moya_svodnaya_sestra_byvshaya.jpg", genre: "Романтика", description: "Бывшие возлюбленные внезапно становятся сводными братом и сестрой. Напряжённая, эмоциональная и очень реалистичная романтическая драма.",
       details: {
-        seasons: 1, episodes: 12, source: "Лайт-новел (ранобэ)", volumes: 5, studio: "project No.9", aired: "2022", status: "Завершён", type: "TV",
+        seasons: 1, episodes: 12, source: "Лайт-новел (ранобэ)", volumes: 13, studio: "project No.9", aired: "2022", status: "Завершён", type: "TV",
         malUrl: "https://myanimelist.net/anime/49470",
         russianDub: {
           studios: ["AniLibria", "AniDUB", "AniStar", "AnimeVost", "SHIZA Project"],
@@ -356,7 +356,7 @@ export const animeData = [
       shortDescription: "Гордая «Нулиза» Луиза случайно призывает в фамильяры обычного японского школьника. Классика гаремного фэнтези с магией и огненными характерами.",
       description: "Луиза Франсуаза Ле Блан де ла Вальер — дворянка, которую все зовут «Нулизой»: любое её заклинание превращается во взрыв. Во время церемонии вызова фамильяра она случайно призывает обычного японского школьника Сайто Хирагу — человека, а не магического зверя. С этого начинается их история: гордая «Нулиза» и упрямый землянин вынуждены работать вместе, постоянно ссорясь, но всё больше привязываясь друг к другу. Сайто оказывается легендарным Гандальвом — рыцарем, способным использовать любое оружие, — и вместе с Луизой, владеющей редчайшей силой Войда, они оказываются в центре войн, интриг и приключений всей Халкегинии. Тёплая, смешная и драматичная история о любви, долге и взрослении.",
       details: {
-        seasons: 4, episodes: 49, source: "Лайт-новел (ранобэ)", volumes: 20, studio: "J.C.Staff", aired: "2006, 2007, 2008, 2012", status: "Завершён", type: "TV",
+        seasons: 4, episodes: 49, source: "Лайт-новел (ранобэ)", volumes: 22, studio: "J.C.Staff", aired: "2006, 2007, 2008, 2012", status: "Завершён", type: "TV",
         malUrl: "https://myanimelist.net/anime/1195/Zero_no_Tsukaima",
         russianDub: {
           studios: ["Eladiel & Zendos", "SakaE & Лизавета", "Inspector_Gadjet & Nika Lenina", "SPAWN"],
@@ -382,7 +382,7 @@ export const animeData = [
       shortDescription: "Отаку-хикикомори становится «моэ-миссионером» в фэнтезийном мире. Смешная и искренняя пародия на исэкай с пропагандой отаку-культуры.",
       description: "Шиничи Кано — отаку до мозга костей, знающий всё о манге, аниме, играх и фигурках. В прошлом хикикомори, он устраивается на работу и... оказывается усыплённым и переправленным в Священную империю Эльдант — фэнтезийный мир, где живут эльфы и летают драконы. Японское правительство даёт ему необычное задание: пропагандировать моэ-культуру! Вместе с полуэльфийкой-горничной Мюсель, капризной императрицей Петралкой и телохранителем Минори Шиничи открывает школу отаку-культуры. Но за весёлым фасадом скрываются серьёзные проблемы: расовая дискриминация, политические интриги, конфликты с соседними странами и тайные планы самого японского правительства. Сможет ли отаку принести моэ в чужой мир и остаться человеком?",
       details: {
-        seasons: 1, episodes: 12, source: "Лайт-новел (ранобэ)", volumes: 12, studio: "feel.", aired: "Осень 2013", status: "Завершён", type: "TV",
+        seasons: 1, episodes: 12, source: "Лайт-новел (ранобэ)", volumes: 18, studio: "feel.", aired: "Осень 2013", status: "Завершён", type: "TV",
         malUrl: "https://myanimelist.net/anime/19369/Outbreak_Company",
         russianDub: {
           studios: ["AniDUB", "SHIZA Project", "AniLibria.TV", "OVERLORDS", "Inspector Gadjet", "Absurd & Eladiel"],
@@ -463,7 +463,7 @@ export const animeData = [
       shortDescription: "Пожилая женщина попадает в MMORPG в теле своей аватарки. Очень милая, взрослая и необычная история про второй шанс.",
       description: "Кайна провела годы в больнице, живя в VRMMORPG «Лидейл». Когда аппарат жизнеобеспечения отключился, она очнулась в игровом мире в теле своей аватарки — юной эльфийки 1100-го уровня. Но с момента её последнего выхода из игры прошло 200 лет: мир изменился, а её «дети» — суб-персонажи Скарго, Май-Май и Картац, которых она усыновила в игре, — выросли и заняли важные посты. Теперь пожилая женщина в теле эльфийки исследует изменившийся мир, помогает людям и воссоединяется с семьёй. Тёплая, взрослая и необычная история о втором шансе, семье и принятии себя.",
       details: {
-        seasons: 1, episodes: 12, source: "Лайт-новел (ранобэ)", volumes: 7, studio: "Maho Film", aired: "Зима 2022", status: "Завершён", type: "TV",
+        seasons: 1, episodes: 12, source: "Лайт-новел (ранобэ)", volumes: 8, studio: "Maho Film", aired: "Зима 2022", status: "Завершён", type: "TV",
         malUrl: "https://myanimelist.net/anime/48239/Leadale_no_Daichi_nite",
         russianDub: {
           studios: ["AnimeVost", "AniMaunt", "AniLibria", "Dream Cast", "Shiza Project"],
@@ -487,7 +487,7 @@ export const animeData = [
       details: { malUrl: "https://myanimelist.net/anime/52481/Gimai_Seikatsu" } },
     { id: 35, rank: 36, title: "Укротитель зверей изгнанный", members: "247 220", score: "6.90", shikimoriScore: "6.90", poster: "/images/posters/35_Ukrotitel_zverey_izgnannyy.jpg", genre: "OP-укротитель", description: "Героя с 'бесполезной' способностью изгоняют, но он становится сильнейшим укротителем монстров. Классический revenge + рост.",
       details: {
-        seasons: 1, episodes: 13, source: "Лайт-новел (ранобэ)", volumes: 8, studio: "EMT Squared", aired: "2022", status: "Завершён", type: "TV",
+        seasons: 1, episodes: 13, source: "Лайт-новел (ранобэ)", volumes: 12, studio: "EMT Squared", aired: "2022", status: "Завершён", type: "TV",
         malUrl: "https://myanimelist.net/anime/52046/Yuusha_Party_wo_Tsuihou_sareta_Beast_Tamer_Saikyoushu_no_Nekomimi_Shoujo_to_Deau",
         russianDub: {
           studios: ["AniLibria", "AniDUB", "AniStar", "AnimeVost", "SHIZA Project", "AniMaunt"],
@@ -540,7 +540,7 @@ export const animeData = [
       details: { malUrl: "https://myanimelist.net/anime/53835" } },
     { id: 39, rank: 40, title: "Как не призвать князя тьмы", members: "805 146", score: "6.80", shikimoriScore: "6.81", poster: "/images/posters/09_Kak_ne_prizvat_knyazya_tmy.jpg", genre: "Экки / гарем + контроль", description: "Главный герой попадает в мир игры и использует магию порабощения на демонах и людях. Смесь экки, гарема и чунибё.",
       details: {
-        seasons: 2, episodes: 22, source: "Лайт-новел (ранобэ)", volumes: 13, studio: "Ajia-do (S1), Okuruto Noboru (S2)", aired: "2018, 2021", status: "Завершён", type: "TV",
+        seasons: 2, episodes: 22, source: "Лайт-новел (ранобэ)", volumes: 14, studio: "Ajia-do (S1), Okuruto Noboru (S2)", aired: "2018, 2021", status: "Завершён", type: "TV",
         malUrl: "https://myanimelist.net/anime/37210/Isekai_Maou_to_Shoukan_Shoujo_no_Dorei_Majutsu",
         russianDub: {
           studios: ["AniDUB", "AniLibria", "AniStar", "AnimeVost", "SHIZA Project", "AniMaunt"],
@@ -586,7 +586,7 @@ export const animeData = [
     },
     { id: 41, rank: 42, title: "Арифурэта", members: "825 535", score: "6.72", shikimoriScore: "6.72", poster: "/images/posters/08_Arifureta.jpg", genre: "Тёмный исэкай / месть", description: "Преданный и брошенный в бездну герой проходит через ад, чтобы стать невероятно сильным. Мрачная история мести и выживания с элементами гарема.",
       details: {
-        seasons: 3, episodes: 41, source: "Лайт-новел (ранобэ)", volumes: 13, studio: "Asread, Studio Mother", aired: "2019, 2022, 2024", status: "Завершён (3 сезона)", type: "TV",
+        seasons: 3, episodes: 41, source: "Лайт-новел (ранобэ)", volumes: 14, studio: "Asread, Studio Mother", aired: "2019, 2022, 2024", status: "Завершён (3 сезона)", type: "TV",
         malUrl: "https://myanimelist.net/anime/36882/Arifureta_Shokugyou_de_Sekai_Saikyou",
         russianDub: {
           studios: ["AniLibria", "AniDUB", "AniStar", "AnimeVost", "AniMaunt", "SHIZA Project"],
@@ -610,7 +610,7 @@ export const animeData = [
       details: { malUrl: "https://myanimelist.net/anime/36407/Kenja_no_Mago" } },
     { id: 43, rank: 44, title: "Гарем рабов в лабиринте", members: "301 678", score: "6.52", shikimoriScore: "6.52", poster: "/images/posters/26_Garem_rabov_v_labirinte.jpg", genre: "Жёсткий экки-гарем", description: "Главный герой строит гарем рабынь в лабиринте другого мира. Один из самых откровенных и детализированных тайтлов жанра (18+).",
       details: {
-        seasons: 1, episodes: 12, source: "Лайт-новел (ранобэ)", volumes: 14, studio: "Passione", aired: "2022", status: "Завершён", type: "TV",
+        seasons: 1, episodes: 12, source: "Лайт-новел (ранобэ)", volumes: 13, studio: "Passione", aired: "2022", status: "Завершён", type: "TV",
         malUrl: "https://myanimelist.net/anime/44524",
         russianDub: {
           studios: ["AniLibria", "AniDUB", "AniStar", "AnimeVost", "SHIZA Project", "AniMaunt"],
@@ -654,7 +654,7 @@ export const animeData = [
       shortDescription: "Парень случайно погибает от молнии Бога и перерождается в фэнтези-мире с невероятной магией и смартфоном. Лёгкий гаремный исэкай без драмы.",
       description: "Тоя Мотидзуки — 15-летний японский школьник, которого Бог случайно убивает молнией. В качестве извинения Бог предлагает ему переродиться в фэнтезийном мире с любым желанием. Тоя просит оставить ему смартфон. В новом мире он обнаруживает, что может использовать все виды магии, и быстро становится сильнейшим магом. Тоя спасает принцессу Юмину, знакомится с сёстрами Эльзе и Линзе, самураем Яэ и древней феей Леен. Вместе они путешествуют по миру, решают проблемы королевств и собирают артефакты древней цивилизации Вавилон. Лёгкий, расслабленный исэкай с минимальной драмой и максимальным количеством милых девушек.",
       details: {
-        seasons: 2, episodes: 24, source: "Лайт-новел (ранобэ)", volumes: 28, studio: "Production Reed (S1), J.C.Staff (S2)", aired: "2017 (S1), 2023 (S2)", status: "LN продолжается", type: "TV",
+        seasons: 2, episodes: 24, source: "Лайт-новел (ранобэ)", volumes: 32, studio: "Production Reed (S1), J.C.Staff (S2)", aired: "2017 (S1), 2023 (S2)", status: "LN продолжается", type: "TV",
         malUrl: "https://myanimelist.net/anime/35203/Isekai_wa_Smartphone_to_Tomo_ni",
         russianDub: {
           studios: ["AniLibria", "GreenTalker", "Kansai studio", "AniDub"],
