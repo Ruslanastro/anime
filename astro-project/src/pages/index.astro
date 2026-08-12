@@ -11,6 +11,7 @@ import CharacterModal from '../components/CharacterModal.astro';
 import Footer from '../components/Footer.astro';
 
 import { animeData, imbaData, charactersData, ecchiData, cuteData } from '../data/animeData.js';
+import { loliData } from '../data/loliData.js';
 import { topCharactersData } from '../data/topCharactersData.js';
 import { lnData } from '../data/lnData.js';
 import LnCard from '../components/LnCard.astro';
@@ -185,6 +186,40 @@ import Skeleton from '../components/Skeleton.astro';
         <strong>Примечание:</strong> Здесь собраны тайтлы, где главные или важные персонажи выглядят особенно
         мило и вызывают тёплые эмоции. Многие из них — комедии или истории про детей/подростков с позитивным
         уклоном.
+      </div>
+    </div>
+
+    <!-- LOLI TAB -->
+    <div
+      id="content-loli"
+      class="hidden"
+      role="tabpanel"
+      aria-labelledby="tab-loli"
+      aria-hidden="true"
+    >
+      <div class="mb-6">
+        <div class="flex items-center gap-x-3">
+          <h2 class="text-4xl font-bold tracking-tighter section-header">Лоли</h2>
+          <div class="px-3 py-1 bg-amber-500/20 text-amber-400 text-xs font-bold rounded-full">
+            Субъективно
+          </div>
+        </div>
+        <p class="text-[var(--text-muted)] mt-2">
+          Тайтлы, где главный герой или ключевые персонажи имеют детскую внешность (с предупреждением)
+        </p>
+      </div>
+      <SearchBar tabId="loli" placeholder="Поиск тайтла..." />
+      <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-5" id="grid-loli">
+        {loliData.map((item, i) => <InfoCard type="loli" data={item} index={i} />)}
+      </div>
+
+      <div
+        class="mt-8 p-4 bg-amber-950/30 border border-amber-500/30 rounded-2xl text-sm text-amber-300"
+      >
+        <i class="fa-solid fa-exclamation-triangle mr-2"></i>
+        <strong>Важно:</strong> Список составлен на основе внешности персонажей и сюжетных
+        особенностей. Многие тайтлы специально делают взрослого в теле ребёнка для комедийного
+        эффекта. Не путать с «лоли-контентом» в негативном смысле.
       </div>
     </div>
 
