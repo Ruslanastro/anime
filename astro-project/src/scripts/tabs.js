@@ -5,6 +5,7 @@
 
 import { setPopularitySort } from './search.js';
 import { closeAnimeDetail, closeCharacterDetail } from './detail.js';
+import { closeLoliDetail } from './loli.js';
 
 export function switchTab(tab) {
   const detailView = document.getElementById('anime-detail-view');
@@ -93,6 +94,10 @@ export function initTabs() {
       const modal = document.getElementById('character-detail-modal');
       if (modal && !modal.classList.contains('hidden')) {
         closeCharacterDetail();
+      }
+      const loliModal = document.getElementById('loli-detail-modal');
+      if (loliModal && !loliModal.classList.contains('hidden')) {
+        closeLoliDetail();
       }
     }
   });

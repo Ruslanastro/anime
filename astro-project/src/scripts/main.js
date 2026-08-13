@@ -8,6 +8,7 @@ import { initTabs, switchTab, updateTabUnderline } from './tabs.js';
 import { initSearch, initSortButtons } from './search.js';
 import { initTooltips } from './tooltip.js';
 import { initDetail } from './detail.js';
+import { initLoliModal } from './loli.js';
 import { initParallax } from './parallax.js';
 import { initRandomButton } from './random.js';
 
@@ -18,6 +19,7 @@ export function initialize() {
   initSortButtons();
   initTooltips();
   initDetail();
+  initLoliModal();
   initParallax();
   initRandomButton();
   initSkeletonLoader();

@@ -1,0 +1,73 @@
+---
+// LoliModal.astro
+// Модальное окно с деталями лоли-персонажа (вкладка «Лоли»)
+---
+
+<div
+  id="loli-detail-modal"
+  class="hidden fixed inset-0 z-[99999] flex items-center justify-center bg-black/60 light:bg-black/30 p-4"
+  role="dialog"
+  aria-modal="true"
+  aria-labelledby="loli-name"
+>
+  <div
+    class="bg-[var(--card)] border border-[var(--border)] rounded-3xl max-w-[720px] w-full relative overflow-y-auto max-h-[90vh] shadow-2xl"
+  >
+    <!-- Close button -->
+    <button
+      id="loli-modal-close"
+      class="absolute top-4 right-4 z-10 flex h-9 w-9 items-center justify-center rounded-2xl border border-[var(--border)] bg-black/20 light:bg-white/50 text-xl text-[var(--text)]/70 light:text-[var(--text)] transition hover:bg-black/30 light:hover:bg-white/70"
+      >×</button
+    >
+
+    <div class="p-7">
+      <!-- Full image -->
+      <img
+        id="loli-image"
+        class="mx-auto max-h-[450px] max-w-full object-cover object-top rounded-2xl mb-5 border border-white/10 shadow-lg hidden"
+        alt=""
+      />
+
+      <!-- Header -->
+      <div>
+        <div id="loli-anime" class="text-xs uppercase tracking-[2px] text-[var(--accent)]"></div>
+        <h2 id="loli-name" class="mt-1 text-4xl font-bold tracking-tighter text-[var(--text)]"></h2>
+      </div>
+
+      <!-- Info chips: age / romance / koikatsu -->
+      <div class="mt-5 flex flex-wrap items-center gap-2" id="loli-chips"></div>
+
+      <!-- Description -->
+      <div class="mt-6">
+        <div class="text-[10px] font-medium uppercase tracking-widest text-[var(--text-muted)]">
+          Описание
+        </div>
+        <p id="loli-desc" class="mt-2 text-[15px] leading-relaxed text-[var(--text)]/90"></p>
+      </div>
+
+      <!-- Personality -->
+      <div class="mt-7">
+        <div class="text-[10px] font-medium uppercase tracking-widest text-[var(--text-muted)]">
+          Характер (кратко)
+        </div>
+        <p id="loli-personality" class="mt-2 text-sm leading-relaxed text-[var(--text)]/85"></p>
+      </div>
+
+      <!-- Romance -->
+      <div class="mt-7">
+        <div class="text-[10px] font-medium uppercase tracking-widest text-[var(--text-muted)]">
+          Романтика
+        </div>
+        <p id="loli-romance" class="mt-2 text-sm leading-relaxed text-[var(--text)]/85"></p>
+      </div>
+    </div>
+
+    <!-- Footer note -->
+    <div
+      class="border-t border-[var(--border)] bg-[var(--bg)]/50 px-7 py-3 text-center text-[10px] text-[var(--text-muted)]"
+    >
+      LOLI INDEX <span id="loli-level" class="font-bold text-amber-400"></span> • Данные: Shikimori •
+      MAL • фандом-вики • BepisDB
+    </div>
+  </div>
+</div>
