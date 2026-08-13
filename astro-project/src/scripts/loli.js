@@ -5,13 +5,15 @@
 
 import { loliData } from '../data/loliData.js';
 
+let currentIndex = 0;
+
 export function initLoliModal() {
   document.querySelectorAll('[data-info-type="loli"]').forEach((card) => {
     card.classList.add('cursor-pointer', 'transition-all', 'hover:border-[var(--accent)]/40', 'hover:bg-[var(--card)]', 'hover:-translate-y-px', 'active:scale-[0.985]');
     card.addEventListener('click', () => {
       const index = Number(card.dataset.cardIndex);
       const data = loliData[index];
-      if (data) showLoliDetail(data);
+      if (data) showLoliDetail(index);
     });
     card.addEventListener('keydown', (e) => {
       if (e.key === 'Enter' || e.key === ' ') {
@@ -25,10 +27,31 @@ export function initLoliModal() {
   if (closeBtn) {
     closeBtn.addEventListener('click', closeLoliDetail);
   }
+
+  document.getElementById('loli-modal-prev')?.addEventListener('click', () => {
+    showLoliDetail(currentIndex - 1);
+  });
+  document.getElementById('loli-modal-next')?.addEventListener('click', () => {
+    showLoliDetail(currentIndex + 1);
+  });
+
+  document.addEventListener('keydown', (e) => {
+    const modal = document.getElementById('loli-detail-modal');
+    if (!modal || modal.classList.contains('hidden')) return;
+    if (e.key === 'ArrowLeft') {
+      e.preventDefault();
+      showLoliDetail(currentIndex - 1);
+    } else if (e.key === 'ArrowRight') {
+      e.preventDefault();
+      showLoliDetail(currentIndex + 1);
+    }
+  });
 }
 
-export function showLoliDetail(data) {
+export function showLoliDetail(index) {
+  const data = loliData[index];
   if (!data) return;
+  currentIndex = index;
   const modal = document.getElementById('loli-detail-modal');
   if (!modal) return;
 
@@ -40,6 +63,9 @@ export function showLoliDetail(data) {
   const romanceEl = document.getElementById('loli-romance');
   const chipsEl = document.getElementById('loli-chips');
   const levelEl = document.getElementById('loli-level');
+  const counterEl = document.getElementById('loli-modal-counter');
+  const prevBtn = document.getElementById('loli-modal-prev');
+  const nextBtn = document.getElementById('loli-modal-next');
 
   if (nameEl) nameEl.textContent = data.name || '';
   if (animeEl) animeEl.textContent = data.anime || '';
@@ -51,6 +77,10 @@ export function showLoliDetail(data) {
       : `Нет — ${data.romanceDesc || 'романтической линии не имеет'}`;
   }
   if (levelEl) levelEl.textContent = data.level ?? '';
+  if (counterEl) counterEl.textContent = `${currentIndex + 1} из ${loliData.length}`;
+
+  if (prevBtn) prevBtn.disabled = currentIndex <= 0;
+  if (nextBtn) nextBtn.disabled = currentIndex >= loliData.length - 1;
 
   if (imageEl) {
     if (data.image) {

@@ -2,6 +2,22 @@
 
 Все значимые изменения проекта "Аниме Топ 2026".
 
+## [5.0.30] — 2026-08-13
+
+### Добавлено (навигация «назад/вперёд» в модалках персонажа и лоли)
+
+- **src/components/CharacterModal.astro** — внизу модалки добавлен блок навигации: кнопки «← Назад» / «Вперёд →» (`#char-modal-prev`, `#char-modal-next`) и счётчик позиции (`#char-modal-counter`).
+- **src/components/LoliModal.astro** — тот же блок навигации для лоли-модалки (`#loli-modal-prev`, `#loli-modal-next`, `#loli-modal-counter`).
+- **src/scripts/detail.js** — навигация для модалки персонажа: состояние `charNavList`/`charNavIndex`, `setupCharNav()` (счётчик + disabled на краях), `stepCharNav(delta)` (листает по картам тайтлов — строки → `showCharacterDetail`, и по топ-100 — объекты → `showTopCharacterDetail`). Подключено в `showCharacterDetail` (запоминает карту и индекс) и `showTopCharacterDetail` (топ-100). Кнопки + **стрелки клавиатуры ←/→** в `initDetail`.
+- **src/scripts/loli.js** — `showLoliDetail(index)` работает по индексу в `loliData`, `currentIndex`; кнопки листают список, на краях отключаются; счётчик «N из 77»; **стрелки ←/→** работают, пока модалка открыта.
+- Навигация не закрывает модалку — переключение между персонажами того же списка (карта тайтла / топ-100 / топ-лоли).
+
+### Проверено
+
+- `npm run build` — OK.
+- HTML: все 6 селекторов навигации на месте; JS-бандл содержит обработчики и ArrowLeft.
+- Preview (localhost): HTTP 200.
+
 ## [5.0.29] — 2026-08-13
 
 ### Изменено (вкладка «Лоли»: Юни 11 лет + фото, Флей удалена)

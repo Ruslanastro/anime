@@ -67,6 +67,50 @@ const CHAR_MAPS = [
 
 let lastScrollPosition = 0;
 
+/** Навигация «назад/вперёд» в модалке персонажа: список + текущий индекс. */
+let charNavList = [];
+let charNavIndex = 0;
+
+function setupCharNav(list, index) {
+  charNavList = list;
+  charNavIndex = index;
+  updateCharNavControls();
+}
+
+function updateCharNavControls() {
+  const counterEl = document.getElementById('char-modal-counter');
+  const prevBtn = document.getElementById('char-modal-prev');
+  const nextBtn = document.getElementById('char-modal-next');
+  if (counterEl) counterEl.textContent = `${charNavIndex + 1} из ${charNavList.length}`;
+  if (prevBtn) prevBtn.disabled = charNavIndex <= 0;
+  if (nextBtn) nextBtn.disabled = charNavIndex >= charNavList.length - 1;
+}
+
+function stepCharNav(delta) {
+  if (!charNavList.length) return;
+  const next = charNavIndex + delta;
+  if (next < 0 || next >= charNavList.length) return;
+  charNavIndex = next;
+  const item = charNavList[next];
+  if (!item) return;
+  if (typeof item === 'string') {
+    showCharacterDetail(item);
+  } else {
+    showTopCharacterDetail(item);
+  }
+}
+
+/** Скрыть chrome детали и открыть модалку персонажа. */
+function openCharacterModal() {
+  const modal = document.getElementById('character-detail-modal');
+  if (!modal) return;
+  modal.classList.remove('hidden');
+  modal.classList.add('flex');
+  modal.onclick = (e) => {
+    if (e.target === modal) closeCharacterDetail();
+  };
+}
+
 /** Hide grid/chrome when detail is open; show when closed. */
 export function setPopularityChromeVisible(visible) {
   const ids = ['popularity-header', 'popularity-sort', 'search-row-popularity', 'grid-popularity'];
@@ -240,14 +284,19 @@ export function showCharacterDetail(characterName) {
   if (!modal) return;
 
   let data = null;
+  let foundMap = null;
+  let foundIndex = -1;
   for (const map of CHAR_MAPS) {
     if (map && map[characterName]) {
       data = map[characterName];
+      foundMap = map;
+      foundIndex = Object.keys(map).indexOf(characterName);
       break;
     }
   }
 
   if (!data) {
+    setupCharNav([], 0);
     const nameEl = document.getElementById('char-name');
     const animeEl = document.getElementById('char-anime');
     const descEl = document.getElementById('char-full-desc');
@@ -329,6 +378,10 @@ export function showCharacterDetail(characterName) {
   modal.classList.remove('hidden');
   modal.classList.add('flex');
 
+  if (foundMap && foundIndex >= 0) {
+    setupCharNav(Object.keys(foundMap), foundIndex);
+  }
+
   modal.onclick = (e) => {
     if (e.target === modal) {
       closeCharacterDetail();
@@ -386,6 +439,9 @@ export function showTopCharacterDetail(character) {
   modal.classList.remove('hidden');
   modal.classList.add('flex');
 
+  const topIndex = topCharactersData.findIndex((c) => c && c.name === character.name);
+  setupCharNav(topCharactersData, topIndex >= 0 ? topIndex : 0);
+
   modal.onclick = (e) => {
     if (e.target === modal) {
       closeCharacterDetail();
@@ -412,6 +468,21 @@ export function initDetail() {
 
   document.getElementById('detail-back-btn')?.addEventListener('click', closeAnimeDetail);
   document.getElementById('char-modal-close')?.addEventListener('click', closeCharacterDetail);
+
+  document.getElementById('char-modal-prev')?.addEventListener('click', () => stepCharNav(-1));
+  document.getElementById('char-modal-next')?.addEventListener('click', () => stepCharNav(+1));
+
+  document.addEventListener('keydown', (e) => {
+    const modal = document.getElementById('character-detail-modal');
+    if (!modal || modal.classList.contains('hidden')) return;
+    if (e.key === 'ArrowLeft') {
+      e.preventDefault();
+      stepCharNav(-1);
+    } else if (e.key === 'ArrowRight') {
+      e.preventDefault();
+      stepCharNav(+1);
+    }
+  });
 
   // Prevent "#" navigation when malUrl is absent (link hidden but still clickable via keyboard)
   document.getElementById('detail-mal-link')?.addEventListener('click', (e) => {
