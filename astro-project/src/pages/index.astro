@@ -172,10 +172,11 @@ import Skeleton from '../components/Skeleton.astro';
           </div>
         </div>
         <p class="text-[var(--text-muted)] mt-2">
-          Тайтлы, где главный герой или ключевые персонажи имеют детскую внешность (с предупреждением)
+          Топ-78 лоли-персонажей (девочки с детской внешностью) из 56 тайтлов проекта — по
+          милоте и культурному влиянию. Нажми на карточку — возраст, романтика и карточка Koikatsu
         </p>
       </div>
-      <SearchBar tabId="loli" placeholder="Поиск тайтла..." />
+      <SearchBar tabId="loli" placeholder="Поиск персонажа..." />
       <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-5" id="grid-loli">
         {loliData.map((item, i) => <InfoCard type="loli" data={item} index={i} />)}
       </div>
@@ -186,7 +187,8 @@ import Skeleton from '../components/Skeleton.astro';
         <i class="fa-solid fa-exclamation-triangle mr-2"></i>
         <strong>Важно:</strong> Список составлен на основе внешности персонажей и сюжетных
         особенностей. Многие тайтлы специально делают взрослого в теле ребёнка для комедийного
-        эффекта. Не путать с «лоли-контентом» в негативном смысле.
+        эффекта (древние драконицы, вампирши, духи). Не путать с «лоли-контентом» в негативном
+        смысле.
       </div>
     </div>
 

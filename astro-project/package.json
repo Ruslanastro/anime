@@ -1,6 +1,6 @@
 {
   "name": "anime-top-2026-astro",
-  "version": "5.0.26",
+  "version": "5.0.27",
   "description": "Аниме Топ 2026 — мигрировано на Astro",
   "private": true,
   "type": "module",
