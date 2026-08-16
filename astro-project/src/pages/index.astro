@@ -172,9 +172,24 @@ import Skeleton from '../components/Skeleton.astro';
           </div>
         </div>
         <p class="text-[var(--text-muted)] mt-2">
-          Топ-77 лоли-персонажей (девочки с детской внешностью) из 56 тайтлов проекта — по
-          милоте и культурному влиянию. Нажми на карточку — возраст, романтика и карточка Koikatsu
+          Топ-{loliData.length} лоли-персонажей (девочки с детской внешностью) из 56 тайтлов
+          проекта — по милоте и культурному влиянию. Нажми на карточку — возраст, романтика и
+          карточка Koikatsu
         </p>
+        <div class="mt-3 flex flex-wrap items-center gap-2">
+          <span class="px-3 py-1 rounded-full border border-[var(--border)] bg-[var(--card)] text-xs font-medium text-[var(--text)]/80">
+            {loliData.length} персонажей
+          </span>
+          <span class="px-3 py-1 rounded-full border border-fuchsia-500/40 bg-fuchsia-500/10 text-xs font-medium text-fuchsia-400">
+            {loliData.filter((x) => x.koikatsu).length} с карточками Koikatsu
+          </span>
+          <span class="px-3 py-1 rounded-full border border-rose-500/40 bg-rose-500/10 text-xs font-medium text-rose-400">
+            {loliData.filter((x) => x.romance).length} с романтикой
+          </span>
+          <span class="px-3 py-1 rounded-full border border-amber-500/40 bg-amber-500/10 text-xs font-medium text-amber-400">
+            {loliData.filter((x) => /внешне|сотни|тысяч|древн|вечно|дракон|дух|вампир|филориал|богин|бессмерт|фенрир/.test(x.age || '')).length} вечно юных
+          </span>
+        </div>
       </div>
       <SearchBar tabId="loli" placeholder="Поиск персонажа..." />
 
@@ -215,10 +230,22 @@ import Skeleton from '../components/Skeleton.astro';
           <i class="fa-solid fa-id-card mr-1 text-fuchsia-400"></i>Только с карточками
         </button>
         <button
+          id="loli-filter-romance"
+          class="px-4 py-1.5 text-sm rounded-xl border border-[var(--border)] hover:bg-[var(--card)]/80"
+        >
+          <i class="fa-solid fa-heart mr-1 text-rose-400"></i>Только с романтикой
+        </button>
+        <button
           id="loli-filter-age"
           class="px-4 py-1.5 text-sm rounded-xl border border-[var(--border)] hover:bg-[var(--card)]/80"
         >
           Все / Дети / Вечно юные
+        </button>
+        <button
+          id="loli-group"
+          class="px-4 py-1.5 text-sm rounded-xl border border-[var(--border)] hover:bg-[var(--card)]/80"
+        >
+          <i class="fa-solid fa-layer-group mr-1"></i>Сгруппировать по аниме
         </button>
         <button
           id="loli-random"

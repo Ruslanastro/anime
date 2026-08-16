@@ -7,10 +7,14 @@ import { loliData } from '../data/loliData.js';
 
 let currentIndex = 0;
 let kkFilter = false;
+let romanceFilter = false;
 let ageFilter = 'all'; // all | child | eternal
+let grouped = false;
 
 const SORT_ACTIVE = ['bg-[var(--card)]', 'border-[var(--accent)]/30'];
 const KK_ACTIVE = ['border-fuchsia-500/40', 'bg-fuchsia-500/10', 'text-fuchsia-400'];
+const ROMANCE_ACTIVE = ['border-rose-500/40', 'bg-rose-500/10', 'text-rose-400'];
+const GROUP_ACTIVE = ['border-[var(--accent)]/40', 'bg-[var(--card)]'];
 const AGE_LABELS = { all: 'Все / Дети / Вечно юные', child: 'Только дети', eternal: 'Только вечно юные' };
 
 function getGrid() {
@@ -22,13 +26,59 @@ function getCards() {
   return grid ? Array.from(grid.querySelectorAll('.info-card[data-info-type="loli"]')) : [];
 }
 
-function setSortActive(activeId) {
-  ['loli-sort-level', 'loli-sort-age', 'loli-sort-anime', 'loli-sort-koikatsu', 'loli-sort-romance'].forEach((id) => {
-    const btn = document.getElementById(id);
-    if (!btn) return;
-    if (id === activeId) btn.classList.add(...SORT_ACTIVE);
-    else btn.classList.remove(...SORT_ACTIVE);
-  });
+function updateGroupHeaders() {
+  const grid = getGrid();
+  if (!grid) return;
+  const headers = Array.from(grid.querySelectorAll('.loli-group-header'));
+  const cards = getCards();
+  for (const header of headers) {
+    const anime = header.dataset.anime;
+    const hasVisible = cards.some(
+      (c) => c.dataset.loliAnime === anime && c.style.display !== 'none'
+    );
+    header.style.display = hasVisible ? '' : 'none';
+  }
+}
+
+function clearGroupHeaders() {
+  const grid = getGrid();
+  if (!grid) return;
+  grid.querySelectorAll('.loli-group-header').forEach((h) => h.remove());
+}
+
+function buildGroupHeaders() {
+  const grid = getGrid();
+  if (!grid) return;
+  clearGroupHeaders();
+  const cards = getCards();
+  let lastAnime = null;
+  let count = 0;
+  const groups = [];
+  for (const card of cards) {
+    const anime = card.dataset.loliAnime || '';
+    if (anime !== lastAnime) {
+      if (lastAnime !== null) groups.push({ anime: lastAnime, count });
+      lastAnime = anime;
+      count = 1;
+    } else {
+      count++;
+    }
+  }
+  if (lastAnime !== null) groups.push({ anime: lastAnime, count });
+
+  let i = 0;
+  for (const card of cards) {
+    const anime = card.dataset.loliAnime || '';
+    if (i < groups.length && groups[i].anime === anime) {
+      const header = document.createElement('div');
+      header.className = 'loli-group-header col-span-full mt-6 mb-2 text-sm font-bold tracking-wide text-[var(--accent)]';
+      header.dataset.anime = anime;
+      header.innerHTML =
+        `<i class="fa-solid fa-film mr-2"></i>${anime} <span class="font-normal text-[var(--text-muted)]">— ${groups[i].count}</span>`;
+      grid.insertBefore(header, card);
+      i++;
+    }
+  }
 }
 
 export function applyLoliFilters() {
@@ -36,10 +86,21 @@ export function applyLoliFilters() {
   for (const card of cards) {
     let visible = true;
     if (kkFilter && card.dataset.koikatsu !== 'true') visible = false;
+    if (visible && romanceFilter && card.dataset.romance !== 'true') visible = false;
     if (visible && ageFilter === 'child' && card.dataset.ageType !== 'child') visible = false;
     if (visible && ageFilter === 'eternal' && card.dataset.ageType !== 'eternal') visible = false;
     card.style.display = visible ? '' : 'none';
   }
+  if (grouped) updateGroupHeaders();
+}
+
+function setSortActive(activeId) {
+  ['loli-sort-level', 'loli-sort-age', 'loli-sort-anime', 'loli-sort-koikatsu', 'loli-sort-romance'].forEach((id) => {
+    const btn = document.getElementById(id);
+    if (!btn) return;
+    if (id === activeId) btn.classList.add(...SORT_ACTIVE);
+    else btn.classList.remove(...SORT_ACTIVE);
+  });
 }
 
 export function sortLoliGrid(mode) {
@@ -73,6 +134,7 @@ export function sortLoliGrid(mode) {
   });
 
   for (const card of cards) grid.appendChild(card);
+  if (grouped) buildGroupHeaders();
   applyLoliFilters();
 }
 
@@ -88,6 +150,30 @@ function initLoliControls() {
     kkBtn.addEventListener('click', () => {
       kkFilter = !kkFilter;
       kkBtn.classList.toggle(...KK_ACTIVE);
+      applyLoliFilters();
+    });
+  }
+
+  const romanceBtn = document.getElementById('loli-filter-romance');
+  if (romanceBtn) {
+    romanceBtn.addEventListener('click', () => {
+      romanceFilter = !romanceFilter;
+      romanceBtn.classList.toggle(...ROMANCE_ACTIVE);
+      applyLoliFilters();
+    });
+  }
+
+  const groupBtn = document.getElementById('loli-group');
+  if (groupBtn) {
+    groupBtn.addEventListener('click', () => {
+      grouped = !grouped;
+      groupBtn.classList.toggle(...GROUP_ACTIVE);
+      if (grouped) {
+        sortLoliGrid('anime');
+        buildGroupHeaders();
+      } else {
+        clearGroupHeaders();
+      }
       applyLoliFilters();
     });
   }
@@ -124,6 +210,12 @@ export function initLoliModal() {
         card.click();
       }
     });
+    const kkLink = card.querySelector('.loli-kk-link');
+    if (kkLink) {
+      kkLink.addEventListener('click', (e) => {
+        e.stopPropagation();
+      });
+    }
   });
 
   const closeBtn = document.getElementById('loli-modal-close');
