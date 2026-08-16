@@ -2,6 +2,12 @@
 const { type, data, index = 0, extraClasses = '' } = Astro.props;
 let cardExtra = extraClasses;
 if (type === 'ecchi' && index === 0) cardExtra += ' ring-2 ring-red-500';
+
+// Лоли: нормализованный возраст и тип «вечно юная / настоящий ребёнок» для сортировок/фильтров
+const loliAge = data.age || '';
+const loliEternal = /внешне|сотни|тысяч|древн|вечно|дракон|дух|вампир|филориал|богин|бессмерт|фенрир|300\+|500\+|1000\+/.test(loliAge);
+const loliAgeMatch = loliAge.match(/\d+/);
+const loliAgeNum = loliEternal ? 9999 : loliAgeMatch ? parseInt(loliAgeMatch[0], 10) : 9999;
 ---
 
 <div
@@ -13,6 +19,11 @@ if (type === 'ecchi' && index === 0) cardExtra += ' ring-2 ring-red-500';
   style={`animation-delay: ${index * 40}ms`}
   data-info-type={type}
   data-card-index={index}
+  data-koikatsu={type === 'loli' ? (data.koikatsu ? 'true' : 'false') : null}
+  data-romance={type === 'loli' ? (data.romance ? 'true' : 'false') : null}
+  data-age-num={type === 'loli' ? loliAgeNum : null}
+  data-age-type={type === 'loli' ? (loliEternal ? 'eternal' : 'child') : null}
+  data-loli-anime={type === 'loli' ? data.anime : null}
 >
   {
     type === 'imba' && (
@@ -126,6 +137,21 @@ if (type === 'ecchi' && index === 0) cardExtra += ' ring-2 ring-red-500';
           <div class="font-bold text-lg leading-tight truncate">{data.name}</div>
           <div class="text-xs text-[var(--text-muted)]">{data.anime}</div>
           <div class="mt-1 text-sm text-[var(--text-muted)] line-clamp-2">{data.reason}</div>
+          <div class="mt-2 flex items-center gap-2 flex-wrap">
+            {data.age && (
+              <span class="px-2 py-0.5 rounded-full border border-[var(--border)] text-[10px] font-medium text-[var(--text-muted)]">
+                {loliEternal ? 'вечно юная' : data.age}
+              </span>
+            )}
+            {data.koikatsu && (
+              <span
+                class="px-2 py-0.5 rounded-full border border-fuchsia-500/40 bg-fuchsia-500/10 text-[10px] font-medium text-fuchsia-400"
+                title="Есть карточка Koikatsu на BepisDB"
+              >
+                <i class="fa-solid fa-id-card mr-1"></i>Koikatsu
+              </span>
+            )}
+          </div>
           <div class="mt-2 flex items-center justify-between">
             <div>
               <div class="text-[10px] text-amber-400">LOLI INDEX</div>

@@ -1,11 +1,114 @@
 /**
  * loli.js
- * Модальное окно лоли-персонажа (вкладка «Лоли»)
+ * Модальное окно лоли-персонажа + сортировки/фильтры/случайная кнопка (вкладка «Лоли»)
  */
 
 import { loliData } from '../data/loliData.js';
 
 let currentIndex = 0;
+let kkFilter = false;
+let ageFilter = 'all'; // all | child | eternal
+
+const SORT_ACTIVE = ['bg-[var(--card)]', 'border-[var(--accent)]/30'];
+const KK_ACTIVE = ['border-fuchsia-500/40', 'bg-fuchsia-500/10', 'text-fuchsia-400'];
+const AGE_LABELS = { all: 'Все / Дети / Вечно юные', child: 'Только дети', eternal: 'Только вечно юные' };
+
+function getGrid() {
+  return document.getElementById('grid-loli');
+}
+
+function getCards() {
+  const grid = getGrid();
+  return grid ? Array.from(grid.querySelectorAll('.info-card[data-info-type="loli"]')) : [];
+}
+
+function setSortActive(activeId) {
+  ['loli-sort-level', 'loli-sort-age', 'loli-sort-anime', 'loli-sort-koikatsu', 'loli-sort-romance'].forEach((id) => {
+    const btn = document.getElementById(id);
+    if (!btn) return;
+    if (id === activeId) btn.classList.add(...SORT_ACTIVE);
+    else btn.classList.remove(...SORT_ACTIVE);
+  });
+}
+
+export function applyLoliFilters() {
+  const cards = getCards();
+  for (const card of cards) {
+    let visible = true;
+    if (kkFilter && card.dataset.koikatsu !== 'true') visible = false;
+    if (visible && ageFilter === 'child' && card.dataset.ageType !== 'child') visible = false;
+    if (visible && ageFilter === 'eternal' && card.dataset.ageType !== 'eternal') visible = false;
+    card.style.display = visible ? '' : 'none';
+  }
+}
+
+export function sortLoliGrid(mode) {
+  const grid = getGrid();
+  if (!grid) return;
+  setSortActive(`loli-sort-${mode}`);
+  const cards = getCards();
+
+  cards.sort((a, b) => {
+    if (mode === 'age') {
+      const an = parseInt(a.dataset.ageNum, 10) ?? 9999;
+      const bn = parseInt(b.dataset.ageNum, 10) ?? 9999;
+      return an - bn;
+    }
+    if (mode === 'anime') {
+      return (a.dataset.loliAnime || '').localeCompare(b.dataset.loliAnime || '', 'ru');
+    }
+    if (mode === 'koikatsu') {
+      const av = a.dataset.koikatsu === 'true' ? 0 : 1;
+      const bv = b.dataset.koikatsu === 'true' ? 0 : 1;
+      if (av !== bv) return av - bv;
+      return parseInt(a.dataset.cardIndex, 10) - parseInt(b.dataset.cardIndex, 10);
+    }
+    if (mode === 'romance') {
+      const av = a.dataset.romance === 'true' ? 0 : 1;
+      const bv = b.dataset.romance === 'true' ? 0 : 1;
+      if (av !== bv) return av - bv;
+      return parseInt(a.dataset.cardIndex, 10) - parseInt(b.dataset.cardIndex, 10);
+    }
+    return parseInt(a.dataset.cardIndex, 10) - parseInt(b.dataset.cardIndex, 10);
+  });
+
+  for (const card of cards) grid.appendChild(card);
+  applyLoliFilters();
+}
+
+function initLoliControls() {
+  document.getElementById('loli-sort-level')?.addEventListener('click', () => sortLoliGrid('level'));
+  document.getElementById('loli-sort-age')?.addEventListener('click', () => sortLoliGrid('age'));
+  document.getElementById('loli-sort-anime')?.addEventListener('click', () => sortLoliGrid('anime'));
+  document.getElementById('loli-sort-koikatsu')?.addEventListener('click', () => sortLoliGrid('koikatsu'));
+  document.getElementById('loli-sort-romance')?.addEventListener('click', () => sortLoliGrid('romance'));
+
+  const kkBtn = document.getElementById('loli-filter-kk');
+  if (kkBtn) {
+    kkBtn.addEventListener('click', () => {
+      kkFilter = !kkFilter;
+      kkBtn.classList.toggle(...KK_ACTIVE);
+      applyLoliFilters();
+    });
+  }
+
+  const ageBtn = document.getElementById('loli-filter-age');
+  if (ageBtn) {
+    ageBtn.addEventListener('click', () => {
+      ageFilter = ageFilter === 'all' ? 'child' : ageFilter === 'child' ? 'eternal' : 'all';
+      ageBtn.textContent = AGE_LABELS[ageFilter];
+      applyLoliFilters();
+    });
+  }
+
+  document.getElementById('loli-random')?.addEventListener('click', () => {
+    const visible = getCards().filter((c) => c.style.display !== 'none');
+    if (!visible.length) return;
+    const card = visible[Math.floor(Math.random() * visible.length)];
+    const index = parseInt(card.dataset.cardIndex, 10);
+    showLoliDetail(index);
+  });
+}
 
 export function initLoliModal() {
   document.querySelectorAll('[data-info-type="loli"]').forEach((card) => {
@@ -46,6 +149,8 @@ export function initLoliModal() {
       showLoliDetail(currentIndex + 1);
     }
   });
+
+  initLoliControls();
 }
 
 export function showLoliDetail(index) {

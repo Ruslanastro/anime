@@ -177,6 +177,57 @@ import Skeleton from '../components/Skeleton.astro';
         </p>
       </div>
       <SearchBar tabId="loli" placeholder="Поиск персонажа..." />
+
+      <!-- Loli controls: sort + filters + random -->
+      <div class="mt-4 flex flex-wrap items-center gap-2">
+        <span class="text-sm text-[var(--text-muted)] mr-1">Сортировка:</span>
+        <button
+          id="loli-sort-level"
+          class="px-4 py-1.5 text-sm rounded-xl border border-[var(--border)] bg-[var(--card)] border-[var(--accent)]/30"
+          >По LOLI INDEX</button
+        >
+        <button
+          id="loli-sort-age"
+          class="px-4 py-1.5 text-sm rounded-xl border border-[var(--border)] hover:bg-[var(--card)]/80"
+          >По возрасту</button
+        >
+        <button
+          id="loli-sort-anime"
+          class="px-4 py-1.5 text-sm rounded-xl border border-[var(--border)] hover:bg-[var(--card)]/80"
+          >По аниме</button
+        >
+        <button
+          id="loli-sort-koikatsu"
+          class="px-4 py-1.5 text-sm rounded-xl border border-[var(--border)] hover:bg-[var(--card)]/80"
+          >Сначала с карточками</button
+        >
+        <button
+          id="loli-sort-romance"
+          class="px-4 py-1.5 text-sm rounded-xl border border-[var(--border)] hover:bg-[var(--card)]/80"
+          >Сначала с романтикой</button
+        >
+      </div>
+      <div class="mt-2 flex flex-wrap items-center gap-2">
+        <button
+          id="loli-filter-kk"
+          class="px-4 py-1.5 text-sm rounded-xl border border-[var(--border)] hover:bg-[var(--card)]/80"
+        >
+          <i class="fa-solid fa-id-card mr-1 text-fuchsia-400"></i>Только с карточками
+        </button>
+        <button
+          id="loli-filter-age"
+          class="px-4 py-1.5 text-sm rounded-xl border border-[var(--border)] hover:bg-[var(--card)]/80"
+        >
+          Все / Дети / Вечно юные
+        </button>
+        <button
+          id="loli-random"
+          class="px-4 py-1.5 text-sm rounded-xl border border-amber-500/40 bg-amber-500/10 text-amber-400 hover:bg-amber-500/20"
+        >
+          <i class="fa-solid fa-dice mr-1"></i>Случайная лоли
+        </button>
+      </div>
+
       <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-5" id="grid-loli">
         {loliData.map((item, i) => <InfoCard type="loli" data={item} index={i} />)}
       </div>
