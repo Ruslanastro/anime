@@ -99,7 +99,7 @@ export function showLoliDetail(index) {
     if (data.koikatsu !== undefined) {
       chips.push(
         data.koikatsu
-          ? { label: 'Карточка Koikatsu: есть', tone: 'koikatsu' }
+          ? { label: data.koikatsuUrl ? 'Карточка Koikatsu: есть ↗' : 'Карточка Koikatsu: есть', tone: 'koikatsu', href: data.koikatsuUrl }
           : { label: 'Карточка Koikatsu: нет', tone: 'muted' }
       );
     }
@@ -109,9 +109,16 @@ export function showLoliDetail(index) {
       muted: 'border-[var(--border)] bg-[var(--card)] text-[var(--text-muted)]',
     };
     for (const chip of chips) {
-      const el = document.createElement('span');
-      el.className = `px-3 py-1 rounded-full border text-xs font-medium ${tones[chip.tone]}`;
+      const el = document.createElement(chip.href ? 'a' : 'span');
+      el.className = `px-3 py-1 rounded-full border text-xs font-medium ${tones[chip.tone]}${
+        chip.href ? ' hover:border-fuchsia-400 hover:text-fuchsia-300 transition cursor-pointer' : ''
+      }`;
       el.textContent = chip.label;
+      if (chip.href) {
+        el.href = chip.href;
+        el.target = '_blank';
+        el.rel = 'noopener';
+      }
       chipsEl.appendChild(el);
     }
   }
